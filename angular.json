@@ -15,7 +15,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "cluster",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "clusterio"
+  "defaultProject": "clusterio",
+  "cli": {
+    "analytics": false
+  }
 }
