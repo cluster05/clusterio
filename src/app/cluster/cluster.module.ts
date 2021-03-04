@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClusterComponent } from './cluster.component';
 
+import { ClusterRoutingModule } from './cluster-routing.module';
+import { ClusterComponent } from './cluster.component';
 
 
 @NgModule({
   declarations: [ClusterComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    ClusterRoutingModule
   ]
 })
 export class ClusterModule { }
