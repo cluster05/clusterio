@@ -1,0 +1,28 @@
+.medium {
+  color: #fff;
+  margin: 0.25rem 0.25rem 0.25rem 0;
+  border: 2px solid transparent;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 3px;
+  vertical-align: bottom;
+  cursor: pointer;
+  padding: 0.8rem 2rem;
+  font-size: 0.7rem;
+}
+
+.big {
+  @extend .medium;
+  padding: 0.9rem 3rem;
+  font-size: 1rem;
+}
+
+.small {
+  @extend .medium;
+  padding: 0.4rem 1rem;
+  font-size: 0.625rem;
+}
