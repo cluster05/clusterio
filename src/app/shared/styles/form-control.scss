@@ -1,4 +1,5 @@
 .form-group {
+  @apply mt-4;
   label {
     @apply italic font-medium;
   }

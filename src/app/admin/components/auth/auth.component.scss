@@ -1,0 +1,9 @@
+#authantication {
+  @apply w-screen h-screen flex justify-center items-center;
+  form {
+    @apply w-96 px-10 py-20 border shadow;
+    legend {
+      @apply text-lg font-medium;
+    }
+  }
+}

@@ -4,7 +4,7 @@ import { PageNotFoundComponent } from './shared/components/page-not-found/page-n
 
 const routes: Routes = [
   {
-    path: 'admin',
+    path: 'cryptic',
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
   {

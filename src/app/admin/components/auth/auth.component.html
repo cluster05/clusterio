@@ -1,1 +1,23 @@
-<p>auth works!</p>
+<section id="authantication">
+  <form [formGroup]="authForm" (ngSubmit)="login()">
+    <legend>Log in</legend>
+    <div class="form-group">
+      <label for="email"> Eamil </label>
+      <input type="email" id="email" formControlName="email" />
+    </div>
+    <div class="form-group">
+      <label for="password"> Password </label>
+      <input type="password" id="password" formControlName="password" />
+    </div>
+    <div class="text-right">
+      <button
+        class="mt-8 btn btn-sm btn-blue"
+        type="submit"
+        [disabled]="authForm.invalid"
+        [class.btn-gray]="authForm.invalid"
+      >
+        log in
+      </button>
+    </div>
+  </form>
+</section>

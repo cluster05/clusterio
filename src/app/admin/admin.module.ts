@@ -11,6 +11,7 @@ import { ManageQuickSnippetComponent } from './components/manage-quick-snippet/m
 import { ManageArticlesComponent } from './components/manage-articles/manage-articles.component';
 import { BuilderTagComponent } from './components/manage-tags/builder-tag/builder-tag.component';
 import { BuilderArticlesComponent } from './components/manage-articles/builder-articles/builder-articles.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -27,7 +28,9 @@ import { BuilderArticlesComponent } from './components/manage-articles/builder-a
   imports: [
     CommonModule,
     AdminRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }
