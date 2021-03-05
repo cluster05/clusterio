@@ -1,1 +1,5 @@
-<quill-editor [modules]="modules" [(ngModel)]="htmlString"></quill-editor>
+<quill-editor
+  [modules]="modules"
+  [(ngModel)]="htmlString"
+  (onEditorChanged)="onEditorChanged($event)"
+></quill-editor>

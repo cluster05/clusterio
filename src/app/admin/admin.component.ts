@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  htmlString = '';
+  viewPreview = false;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  editorChangeEmitter(event: string): void {
+    if (event) {
+      this.htmlString = event;
+    }
   }
 
 }

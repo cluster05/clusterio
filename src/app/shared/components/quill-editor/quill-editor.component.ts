@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'cluster-quill-editor',
@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class QuillEditorComponent implements OnInit {
 
   htmlString = '';
-
   modules = {
     syntax: true,
     toolbar: [
@@ -34,9 +33,15 @@ export class QuillEditorComponent implements OnInit {
     ]
   };
 
+  @Output() editorChangeEmitter = new EventEmitter<any>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onEditorChanged(event: any): void {
+    this.editorChangeEmitter.emit(event.html);
   }
 
 
