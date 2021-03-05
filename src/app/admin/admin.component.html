@@ -28,4 +28,10 @@
     </div>
   </section>
 </div> -->
-<router-outlet></router-outlet>
+<div class="grid grid-cols-12">
+  <cluster-admin-sidebar></cluster-admin-sidebar>
+  <div class="col-span-11">
+    <cluster-admin-navbar></cluster-admin-navbar>
+    <router-outlet></router-outlet>
+  </div>
+</div>

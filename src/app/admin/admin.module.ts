@@ -13,6 +13,7 @@ import { BuilderTagComponent } from './components/manage-tags/builder-tag/builde
 import { BuilderArticlesComponent } from './components/manage-articles/builder-articles/builder-articles.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
+import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.com
     ManageArticlesComponent,
     BuilderTagComponent,
     BuilderArticlesComponent,
-    AdminNavbarComponent
+    AdminNavbarComponent,
+    AdminSidebarComponent
   ],
   imports: [
     CommonModule,
