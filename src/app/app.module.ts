@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuillModule } from 'ngx-quill';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { QuillModule } from 'ngx-quill';
     BrowserModule,
     AppRoutingModule,
     QuillModule.forRoot(),
+    FontAwesomeModule,
 
   ],
   providers: [],
