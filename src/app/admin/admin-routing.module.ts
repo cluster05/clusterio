@@ -12,6 +12,7 @@ import { AllQuickSnippetComponent } from './components/manage-quick-snippet/all-
 import { BuildQuickSnippetComponent } from './components/manage-quick-snippet/build-quick-snippet/build-quick-snippet.component';
 import { ManageQuickSnippetComponent } from './components/manage-quick-snippet/manage-quick-snippet.component';
 import { ManageTagsComponent } from './components/manage-tags/manage-tags.component';
+import { AdminGuard } from './shared/guards/admin.guard';
 
 const routes: Routes = [
   { path: 'auth', component: AuthComponent },
@@ -19,11 +20,11 @@ const routes: Routes = [
     path: '',
     component: AdminComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard, AdminGuard] },
       {
         path: 'articles',
         component: ManageArticlesComponent,
-        canActivate: [AuthGuard],
+        canActivate: [AuthGuard, AdminGuard],
         children: [
           { path: 'create', component: BuildArticleComponent },
           { path: 'update/:articleId', component: BuildArticleComponent },
@@ -33,7 +34,7 @@ const routes: Routes = [
       {
         path: 'quick-snippet',
         component: ManageQuickSnippetComponent,
-        canActivate: [AuthGuard],
+        canActivate: [AuthGuard, AdminGuard],
         children: [
           { path: 'create', component: BuildQuickSnippetComponent },
           { path: 'update/:snippetId', component: BuildQuickSnippetComponent },
@@ -41,7 +42,7 @@ const routes: Routes = [
           { path: '', redirectTo: 'snippets', pathMatch: 'full' }
         ]
       },
-      { path: 'tags', component: ManageTagsComponent, canActivate: [AuthGuard] },
+      { path: 'tags', component: ManageTagsComponent, canActivate: [AuthGuard, AdminGuard] },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },
