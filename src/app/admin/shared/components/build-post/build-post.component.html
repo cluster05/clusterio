@@ -1,0 +1,47 @@
+<div>
+  <div class="flex items-center justify-between">
+    <button (click)="viewPreview = !viewPreview" class="btn btn-sm btn-blue">
+      show preview
+    </button>
+    <button class="btn btn-sm btn-green" (click)="postPost(postTitle.value)">
+      post {{ buildType }}
+    </button>
+  </div>
+
+  <div class="form-group">
+    <label for="post-title">{{ buildType }} title</label>
+    <input type="text" id="post-title" #postTitle />
+  </div>
+  <cluster-build-post-manage-tags
+    [tags]="tags"
+    [snippetTags]="snippetTags"
+    (addTagEmitter)="addTag($event)"
+    (removeTagEmitter)="removeTag($event)"
+  ></cluster-build-post-manage-tags>
+  <div class="form-group">
+    <label for="post">{{ buildType }}</label>
+  </div>
+
+  <cluster-quill-editor
+    (editorChangeEmitter)="editorChangeEmitter($event)"
+  ></cluster-quill-editor>
+  <section
+    *ngIf="viewPreview"
+    class="absolute top-0 left-0 w-screen h-screen overflow-y-auto bg-black bg-opacity-50"
+  >
+    <div class="m-20 bg-white shadow-md">
+      <button
+        (click)="viewPreview = !viewPreview"
+        class="btn btn-sm btn-red absolute top-10 right-20"
+      >
+        close
+      </button>
+      <div
+        class="ql-container ql-snow"
+        style="font-family: 'Open Sans', sans-serif"
+      >
+        <div class="ql-editor" [innerHTML]="htmlString"></div>
+      </div>
+    </div>
+  </section>
+</div>

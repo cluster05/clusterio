@@ -18,6 +18,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BuildQuickSnippetComponent } from './components/manage-quick-snippet/build-quick-snippet/build-quick-snippet.component';
 import { AllQuickSnippetComponent } from './components/manage-quick-snippet/all-quick-snippet/all-quick-snippet.component';
 import { SingleQuickSnippetComponent } from './components/manage-quick-snippet/all-quick-snippet/single-quick-snippet/single-quick-snippet.component';
+import { BuildPostComponent } from './shared/components/build-post/build-post.component';
+import { BuildPostManageTagsComponent } from './shared/components/build-post/build-post-manage-tags/build-post-manage-tags.component';
 
 
 @NgModule({
@@ -34,7 +36,9 @@ import { SingleQuickSnippetComponent } from './components/manage-quick-snippet/a
     AdminSidebarComponent,
     BuildQuickSnippetComponent,
     AllQuickSnippetComponent,
-    SingleQuickSnippetComponent
+    SingleQuickSnippetComponent,
+    BuildPostComponent,
+    BuildPostManageTagsComponent
   ],
   imports: [
     CommonModule,

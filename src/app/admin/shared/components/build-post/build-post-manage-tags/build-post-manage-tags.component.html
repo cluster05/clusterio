@@ -1,0 +1,18 @@
+<div class="form-group">
+  <label for="post-tag">snippet tags</label>
+  <div *ngIf="snippetTags.length > 0">
+    <p class="btn btn-sm btn-gray inline-block" *ngFor="let tag of snippetTags">
+      <span>{{ tag.name }}</span>
+      <span
+        class="ml-5 px-2 py-1 bg-red-400 hover:bg-red-600 text-red-50 rounded"
+        (click)="removeTag(tag.id)"
+      >
+        <fa-icon [icon]="deleteTagIcon"></fa-icon>
+      </span>
+    </p>
+  </div>
+  <select (change)="addTag(selectedTag.value)" #selectedTag>
+    <option selected disabled>select snippet tag</option>
+    <option *ngFor="let tag of tags" [value]="tag.id">{{ tag.name }}</option>
+  </select>
+</div>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'cluster-build-quick-snippet',
   templateUrl: './build-quick-snippet.component.html',
@@ -7,25 +6,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuildQuickSnippetComponent implements OnInit {
 
-  htmlString = '';
-  viewPreview = false;
-
-  tags = [
-    { name: 'angular', id: '1234567890' },
-    { name: 'react', id: '1234567891' },
-    { name: 'vue', id: '1234567892' },
-  ];
-
-  constructor() {
-  }
+  buildType = 'snippet';
 
   ngOnInit(): void {
   }
 
-  editorChangeEmitter(event: string): void {
-    if (event) {
-      this.htmlString = event;
-    }
-  }
+  outputPost(snippet: any): void {
+    console.log(snippet);
 
+  }
 }
