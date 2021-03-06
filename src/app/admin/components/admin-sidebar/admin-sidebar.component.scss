@@ -1,3 +1,7 @@
 li {
   @apply p-4 text-2xl text-blue-300;
 }
+
+.active {
+  @apply text-blue-500;
+}

@@ -1,6 +1,10 @@
 <div class="w-full h-screen bg-white shadow">
   <ul>
-    <li *ngFor="let link of links" [routerLink]="link.link">
+    <li
+      *ngFor="let link of links"
+      [routerLink]="link.link"
+      routerLinkActive="active"
+    >
       <fa-icon [icon]="link.icon"></fa-icon>
     </li>
     <li>
