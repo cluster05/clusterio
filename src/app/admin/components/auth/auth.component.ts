@@ -30,10 +30,15 @@ export class AuthComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     if (this.authForm.get('email')?.valid && this.authForm.get('password')?.valid) {
       const { email, password } = this.authForm.value;
-      this.authService.login(email, password).subscribe((response: any) => {
-        this.tokenService.token = response.access_token;
-        this.router.navigate(['./../dashboard'], { relativeTo: this.route });
-      });
+      this.authService.login(email, password).subscribe(
+        (response: any) => {
+          this.tokenService.token = response.access_token;
+          this.router.navigate(['./../dashboard'], { relativeTo: this.route });
+        }, (error) => {
+          let errorMessage = '';
+          errorMessage = error.error.message;
+          alert(errorMessage)
+        });
     }
 
   }

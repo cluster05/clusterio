@@ -14,11 +14,11 @@ import { ManageQuickSnippetComponent } from './components/manage-quick-snippet/m
 import { ManageTagsComponent } from './components/manage-tags/manage-tags.component';
 
 const routes: Routes = [
+  { path: 'auth', component: AuthComponent },
   {
     path: '',
     component: AdminComponent,
     children: [
-      { path: 'auth', component: AuthComponent },
       { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
       {
         path: 'articles',
