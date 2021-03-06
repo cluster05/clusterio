@@ -22,6 +22,8 @@ import { BuildPostManageTagsComponent } from './shared/components/build-post/bui
 import { AllArticlesComponent } from './components/manage-articles/all-articles/all-articles.component';
 import { SingleArticleComponent } from './components/manage-articles/all-articles/single-article/single-article.component';
 import { BuildArticleComponent } from './components/manage-articles/build-article/build-article.component';
+import { QuillEditorComponent } from './shared/components/quill-editor/quill-editor.component';
+import { QuillModule } from 'ngx-quill';
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { BuildArticleComponent } from './components/manage-articles/build-articl
     BuildPostManageTagsComponent,
     AllArticlesComponent,
     SingleArticleComponent,
-    BuildArticleComponent
+    BuildArticleComponent,
+    QuillEditorComponent
   ],
   imports: [
     CommonModule,
@@ -50,7 +53,8 @@ import { BuildArticleComponent } from './components/manage-articles/build-articl
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    QuillModule
   ]
 })
 export class AdminModule { }
