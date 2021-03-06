@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { LocalstorageService } from '../shared/services/localstorage.service';
 import { TokenService } from '../shared/services/token.service';
 
 @Component({
@@ -10,7 +9,6 @@ import { TokenService } from '../shared/services/token.service';
 export class AdminComponent implements OnInit {
 
 
-  authState = false;
 
   constructor(
     private tokenService: TokenService) {
@@ -18,8 +16,5 @@ export class AdminComponent implements OnInit {
 
   ngOnInit(): void {
 
-    if (!this.tokenService.isTokenExpired()) {
-      this.authState = true;
-    }
   }
 }

@@ -18,10 +18,10 @@ export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.tokenService.isTokenExpired()) {
-      this.localStorageService.removeItemFromLocalstorage('access_token');
-      this.router.navigate(['/cryptic/auth']);
-    }
+    // if (this.tokenService.isTokenExpired()) {
+    //   this.localStorageService.removeItemFromLocalstorage('access_token');
+    //   this.router.navigate(['/cryptic/auth']);
+    // }
     return true;
   }
 
