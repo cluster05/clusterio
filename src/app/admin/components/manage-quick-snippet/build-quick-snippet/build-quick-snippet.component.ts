@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Article } from 'src/app/constant/interface/post.interface';
 @Component({
   selector: 'cluster-build-quick-snippet',
   templateUrl: './build-quick-snippet.component.html',
@@ -11,8 +12,8 @@ export class BuildQuickSnippetComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  outputPost(snippet: any): void {
-    console.log(snippet);
+  outputPost(snippet: Article): void {
+
 
   }
 }

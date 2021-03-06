@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Article } from 'src/app/constant/interface/post.interface';
 
 @Component({
   selector: 'cluster-build-article',
@@ -12,8 +13,8 @@ export class BuildArticleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  outputPost(article: any): void {
-    console.log(article);
+  outputPost(article: Article): void {
+
 
   }
 }

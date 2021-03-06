@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Article } from 'src/app/constant/interface/post.interface';
 import { Tag } from 'src/app/constant/interface/tag.inteface';
 
 @Component({
@@ -43,11 +44,11 @@ export class BuildPostComponent implements OnInit {
   }
 
   postPost(postTitle: string): void {
-    const buildPost = {
+    const buildPost: Article = {
       type: this.buildType,
       title: postTitle,
+      content: this.htmlString,
       tags: this.snippetTags,
-      desc: this.htmlString
     };
     this.outputPost.emit(buildPost);
   }
