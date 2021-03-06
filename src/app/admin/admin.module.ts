@@ -16,11 +16,9 @@ import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BuildQuickSnippetComponent } from './components/manage-quick-snippet/build-quick-snippet/build-quick-snippet.component';
 import { AllQuickSnippetComponent } from './components/manage-quick-snippet/all-quick-snippet/all-quick-snippet.component';
-import { SingleQuickSnippetComponent } from './components/manage-quick-snippet/all-quick-snippet/single-quick-snippet/single-quick-snippet.component';
 import { BuildPostComponent } from './shared/components/build-post/build-post.component';
 import { BuildPostManageTagsComponent } from './shared/components/build-post/build-post-manage-tags/build-post-manage-tags.component';
 import { AllArticlesComponent } from './components/manage-articles/all-articles/all-articles.component';
-import { SingleArticleComponent } from './components/manage-articles/all-articles/single-article/single-article.component';
 import { BuildArticleComponent } from './components/manage-articles/build-article/build-article.component';
 import { QuillEditorComponent } from './shared/components/quill-editor/quill-editor.component';
 import { QuillModule } from 'ngx-quill';
@@ -39,11 +37,9 @@ import { QuillModule } from 'ngx-quill';
     AdminSidebarComponent,
     BuildQuickSnippetComponent,
     AllQuickSnippetComponent,
-    SingleQuickSnippetComponent,
     BuildPostComponent,
     BuildPostManageTagsComponent,
     AllArticlesComponent,
-    SingleArticleComponent,
     BuildArticleComponent,
     QuillEditorComponent
   ],
