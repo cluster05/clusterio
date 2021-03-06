@@ -11,7 +11,7 @@ const components = [
 @NgModule({
   declarations: [
     components,
-    SinglePostComponent
+    SinglePostComponent,
   ],
   imports: [
     CommonModule,

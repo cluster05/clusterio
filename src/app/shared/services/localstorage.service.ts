@@ -19,6 +19,10 @@ export class LocalstorageService {
     localStorage.setItem(key, payload);
   }
 
+  removeItemFromLocalstorage(key: string) {
+    localStorage.removeItem(key);
+  }
+
 
 
 }

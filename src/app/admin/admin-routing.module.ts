@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from '../shared/guards/auth.guard';
 
 import { AdminComponent } from './admin.component';
 import { AuthComponent } from './components/auth/auth.component';
@@ -18,10 +19,11 @@ const routes: Routes = [
     component: AdminComponent,
     children: [
       { path: 'auth', component: AuthComponent },
-      { path: 'dashboard', component: DashboardComponent },
+      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
       {
         path: 'articles',
         component: ManageArticlesComponent,
+        canActivate: [AuthGuard],
         children: [
           { path: 'create', component: BuildArticleComponent },
           { path: 'update/:articleId', component: BuildArticleComponent },
@@ -31,6 +33,7 @@ const routes: Routes = [
       {
         path: 'quick-snippet',
         component: ManageQuickSnippetComponent,
+        canActivate: [AuthGuard],
         children: [
           { path: 'create', component: BuildQuickSnippetComponent },
           { path: 'update/:snippetId', component: BuildQuickSnippetComponent },
@@ -38,7 +41,7 @@ const routes: Routes = [
           { path: '', redirectTo: 'snippets', pathMatch: 'full' }
         ]
       },
-      { path: 'tags', component: ManageTagsComponent },
+      { path: 'tags', component: ManageTagsComponent, canActivate: [AuthGuard] },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },

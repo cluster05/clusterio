@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AuthStateManagerService } from '../shared/services/auth-state-manager.service';
+import { LocalstorageService } from '../shared/services/localstorage.service';
 import { TokenService } from '../shared/services/token.service';
 
 @Component({
@@ -10,21 +10,16 @@ import { TokenService } from '../shared/services/token.service';
 export class AdminComponent implements OnInit {
 
 
-  authState: boolean = false;
+  authState = false;
 
   constructor(
-    private authStateManager: AuthStateManagerService,
     private tokenService: TokenService) {
   }
 
   ngOnInit(): void {
-    if (this.tokenService.isTokenExpired()) {
-      // remove access_token from local storage
-    } else {
+
+    if (!this.tokenService.isTokenExpired()) {
       this.authState = true;
-      this.authStateManager.currentAuthState.subscribe(authState => this.authState = authState);
     }
   }
-
-
 }
