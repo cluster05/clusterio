@@ -18,8 +18,9 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    if (!this.tokenService.token) {
-      this.router.navigate(['/cyptic/auth']);
+    if (!this.tokenService.isAuthaticated()) {
+      this.router.navigate(['/cryptic/auth']);
+      return false;
     }
     return true;
 

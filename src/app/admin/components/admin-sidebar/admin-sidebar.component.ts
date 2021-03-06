@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faTag, faBlog, faArchive, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-// import {   } from '@fortawesome/free-regular-svg-icons';
 import { faDashcube } from '@fortawesome/free-brands-svg-icons';
 import { Router } from '@angular/router';
+import { LocalstorageService } from 'src/app/shared/services/localstorage.service';
 @Component({
   selector: 'cluster-admin-sidebar',
   templateUrl: './admin-sidebar.component.html',
@@ -18,13 +18,16 @@ export class AdminSidebarComponent implements OnInit {
   ];
   faSignOutAlt = faSignOutAlt;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private localStorageservice: LocalstorageService) { }
 
   ngOnInit(): void {
   }
 
   logout() {
-    this.router.navigate(['./auh'])
+    this.localStorageservice.removeItemFromLocalStorage('access_token');
+    this.router.navigate(['cryptic/auth'],);
   }
 
 }

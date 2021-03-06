@@ -23,7 +23,10 @@ export class TokenService {
     return this.helper.decodeToken(this.token);
   }
 
-  isTokenExpired() {
-    return this.helper.isTokenExpired(this.token);
+  isAuthaticated() {
+    if (this.token && !this.helper.isTokenExpired(this.token)) {
+      return true;
+    }
+    return false;
   }
 }
