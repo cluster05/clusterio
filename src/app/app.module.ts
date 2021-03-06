@@ -9,7 +9,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 
 import { TokenService } from './shared/services/token.service';
 import { LocalstorageService } from './shared/services/localstorage.service';
-const token = new TokenService(new LocalstorageService()).token;
+import { HttpClientModule } from '@angular/common/http';
+// const token = new TokenService(new LocalstorageService()).token;
 @NgModule({
   declarations: [
     AppComponent
@@ -18,14 +19,15 @@ const token = new TokenService(new LocalstorageService()).token;
     BrowserModule,
     AppRoutingModule,
     QuillModule.forRoot(),
+    HttpClientModule,
     FontAwesomeModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: () => {
-          return token;
-        }
-      }
-    })
+    // JwtModule.forRoot({
+    //   config: {
+    //     tokenGetter: () => {
+    //       return token;
+    //     }
+    //   }
+    // })
 
   ],
   providers: [],

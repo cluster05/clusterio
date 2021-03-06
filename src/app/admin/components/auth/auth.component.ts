@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validator, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthStateManagerService } from 'src/app/shared/services/auth-state-manager.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { TokenService } from 'src/app/shared/services/token.service';
 @Component({
@@ -20,7 +21,8 @@ export class AuthComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private authService: AuthService,
-    private tokenService: TokenService
+    private tokenService: TokenService,
+    private authStateManager: AuthStateManagerService
   ) { }
 
   ngOnInit(): void {
@@ -30,11 +32,11 @@ export class AuthComponent implements OnInit {
     // TODO: Use EventEmitter with form value
     if (this.authForm.get('email')?.valid && this.authForm.get('password')?.valid) {
       const { email, password } = this.authForm.value;
-      console.log({ email, password });
-      this.authService.login(email, password).subscribe(response => {
-        console.log(response);
+      this.authService.login(email, password).subscribe((response: any) => {
+        this.tokenService.token = response.access_token;
+        this.authStateManager.changeAuthState(true);
+        this.router.navigate(['./../dashboard'], { relativeTo: this.route });
       });
-      // this.router.navigate(['./../'], { relativeTo: this.route });
     }
 
   }

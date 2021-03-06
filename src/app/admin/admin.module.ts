@@ -22,6 +22,7 @@ import { AllArticlesComponent } from './components/manage-articles/all-articles/
 import { BuildArticleComponent } from './components/manage-articles/build-article/build-article.component';
 import { QuillEditorComponent } from './shared/components/quill-editor/quill-editor.component';
 import { QuillModule } from 'ngx-quill';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { QuillModule } from 'ngx-quill';
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    QuillModule
+    QuillModule,
+    HttpClientModule
   ]
 })
 export class AdminModule { }

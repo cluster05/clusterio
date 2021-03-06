@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AuthStateManagerService } from '../shared/services/auth-state-manager.service';
+import { TokenService } from '../shared/services/token.service';
 
 @Component({
   selector: 'cluster-admin',
@@ -7,11 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() {
+
+  authState: boolean = false;
+
+  constructor(
+    private authStateManager: AuthStateManagerService,
+    private tokenService: TokenService) {
   }
 
   ngOnInit(): void {
 
+    this.authStateManager.currentAuthState.subscribe(authState => this.authState = authState);
   }
+
 
 }
