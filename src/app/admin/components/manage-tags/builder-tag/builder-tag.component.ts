@@ -10,7 +10,7 @@ import { Tag } from 'src/app/constant/interface/tag.inteface';
 export class BuilderTagComponent implements OnInit {
 
   @Input() tag: Tag = { id: '', name: '' };
-  @Output() editTag = new EventEmitter<string>();
+  @Output() editTag = new EventEmitter<Tag>();
   @Output() deleteTag = new EventEmitter<string>();
 
   deleteIcon = faTimes;
@@ -21,8 +21,8 @@ export class BuilderTagComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  edit(tagId: string): void {
-    this.editTag.emit(tagId);
+  edit(tag: Tag): void {
+    this.editTag.emit(tag);
   }
   delete(tagId: string): void {
     this.deleteTag.emit(tagId);

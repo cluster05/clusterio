@@ -3,13 +3,21 @@
   <input
     type="text"
     id="addtag"
-    maxLength="20"
+    maxLength="21"
     minlength="1"
     #addTagText
+    [value]="editTagInput.name"
     (keyup.enter)="addTag(addTagText)"
   />
   <button class="btn btn-sm btn-blue" (click)="addTag(addTagText)">
-    add tag
+    {{ tagMode.add ? "add tag" : "update tag" }}
+  </button>
+  <button
+    class="btn btn-sm btn-red"
+    *ngIf="tagMode.edit"
+    (click)="cancelUpdate()"
+  >
+    cancel update
   </button>
 </div>
 

@@ -11,6 +11,12 @@ export class ManageTagsComponent implements OnInit {
 
   tags: Tag[] = [];
 
+  tagMode = {
+    edit: false,
+    add: true
+  };
+  editTagInput: Tag = { id: '', name: '' };
+
   constructor(private tagService: TagsService) { }
 
   ngOnInit(): void {
@@ -22,27 +28,53 @@ export class ManageTagsComponent implements OnInit {
     const tagText = tagTextInputElement.value;
 
     if (tagText.length > 1 && tagText.length <= 20) {
-      this.tagService.createTag(tagText).subscribe(
-        tag => {
-          this.tags.push(tag);
-          tagTextInputElement.value = '';
-        },
-        error => {
-          alert(error.error.message)
-        });
 
-
+      if (this.tagMode.add) {
+        this.tagService.createTag(tagText).subscribe(
+          tag => {
+            this.tags.push(tag);
+          },
+          error => {
+            alert(error.error.message)
+          });
+      } else {
+        this.tagService.updateTag(this.editTagInput.id, tagText).subscribe(
+          response => {
+            const index = this.tags.findIndex(t => t.id === this.editTagInput.id);
+            this.tags.splice(index, 1, response);
+            this.cancelUpdate();
+          },
+          error => alert(error.error.message))
+      }
+      tagTextInputElement.value = '';
     } else {
       alert('Not valid tag name');
     }
   }
 
-  editTag(tagId: string): void {
-    // API CALL HERE
+  editTag(tag: Tag): void {
+    this.editTagInput = tag;
+    this.tagMode = {
+      add: false,
+      edit: true
+    }
+  }
+
+  cancelUpdate() {
+    this.editTagInput = { id: '', name: '' };
+    this.tagMode = {
+      edit: false,
+      add: true
+    };
   }
 
   deleteTag(tagId: string): void {
-    // API CALL HERE
+    this.tagService.deleteTag(tagId).subscribe(
+      response => {
+        this.tags = this.tags.filter(t => t.id !== tagId);
+      },
+      error => alert(error.error.message)
+    );
   }
 
 }
