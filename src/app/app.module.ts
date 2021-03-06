@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { QuillModule } from 'ngx-quill';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -14,6 +17,14 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     QuillModule.forRoot(),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('access_token');
+        },
+        allowedDomains: ["localhost:3000"],
+      }
+    }),
     HttpClientModule,
     FontAwesomeModule,
 
