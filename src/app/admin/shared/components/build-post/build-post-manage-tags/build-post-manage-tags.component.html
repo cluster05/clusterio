@@ -1,5 +1,5 @@
 <div class="form-group">
-  <label for="post-tag">snippet tags</label>
+  <label for="post-tag">{{ buildType }} tags</label>
   <div *ngIf="snippetTags.length > 0">
     <p class="btn btn-sm btn-gray inline-block" *ngFor="let tag of snippetTags">
       <span>{{ tag.name }}</span>

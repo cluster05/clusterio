@@ -8,6 +8,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 })
 export class BuildPostManageTagsComponent implements OnInit {
 
+  @Input() buildType = 'article';
   @Input() snippetTags: any[] = [];
   @Input() tags: any[] = [];
   @Output() addTagEmitter = new EventEmitter<string>();

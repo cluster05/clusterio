@@ -13,6 +13,7 @@
     <input type="text" id="post-title" #postTitle />
   </div>
   <cluster-build-post-manage-tags
+    [buildType]="buildType"
     [tags]="tags"
     [snippetTags]="snippetTags"
     (addTagEmitter)="addTag($event)"
