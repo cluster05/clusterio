@@ -20,6 +20,9 @@ import { AllQuickSnippetComponent } from './components/manage-quick-snippet/all-
 import { SingleQuickSnippetComponent } from './components/manage-quick-snippet/all-quick-snippet/single-quick-snippet/single-quick-snippet.component';
 import { BuildPostComponent } from './shared/components/build-post/build-post.component';
 import { BuildPostManageTagsComponent } from './shared/components/build-post/build-post-manage-tags/build-post-manage-tags.component';
+import { AllArticlesComponent } from './components/manage-articles/all-articles/all-articles.component';
+import { SingleArticleComponent } from './components/manage-articles/all-articles/single-article/single-article.component';
+import { BuildArticleComponent } from './components/manage-articles/build-article/build-article.component';
 
 
 @NgModule({
@@ -38,7 +41,10 @@ import { BuildPostManageTagsComponent } from './shared/components/build-post/bui
     AllQuickSnippetComponent,
     SingleQuickSnippetComponent,
     BuildPostComponent,
-    BuildPostManageTagsComponent
+    BuildPostManageTagsComponent,
+    AllArticlesComponent,
+    SingleArticleComponent,
+    BuildArticleComponent
   ],
   imports: [
     CommonModule,
