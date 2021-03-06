@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuildArticleComponent implements OnInit {
 
-  constructor() { }
+  buildType = 'article';
 
   ngOnInit(): void {
   }
 
+  outputPost(article: any): void {
+    console.log(article);
+
+  }
 }

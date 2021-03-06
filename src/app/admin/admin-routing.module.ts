@@ -24,7 +24,7 @@ const routes: Routes = [
         component: ManageArticlesComponent,
         children: [
           { path: 'create', component: BuildArticleComponent },
-          { path: 'update/:snippetId', component: BuildArticleComponent },
+          { path: 'update/:articleId', component: BuildArticleComponent },
           { path: '', component: AllArticlesComponent },
         ]
       },
