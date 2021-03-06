@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SingleQuickSnippetComponent } from './single-quick-snippet.component';
+import { SinglePostComponent } from './single-post.component';
 
-describe('SingleQuickSnippetComponent', () => {
-  let component: SingleQuickSnippetComponent;
-  let fixture: ComponentFixture<SingleQuickSnippetComponent>;
+describe('SinglePostComponent', () => {
+  let component: SinglePostComponent;
+  let fixture: ComponentFixture<SinglePostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SingleQuickSnippetComponent ]
+      declarations: [ SinglePostComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SingleQuickSnippetComponent);
+    fixture = TestBed.createComponent(SinglePostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
