@@ -15,9 +15,15 @@ export class TagsService {
     return this.http.get<Tag[]>(environment.backendBaseURL + '/tags');
   }
 
-  createTag(tagId: string, payload: string) { }
+  createTag(name: string): Observable<Tag> {
+    return this.http.post<Tag>(environment.backendBaseURL + '/tags', { name });
+  }
 
-  updateTag(tagId: string) { }
+  updateTag(tagId: string, name: string) {
+    return this.http.patch<Tag>(environment.backendBaseURL + '/tags/' + tagId, { name });
+  }
 
-  deleteTag(tagId: string) { }
+  deleteTag(tagId: string) {
+    return this.http.delete<Tag>(environment.backendBaseURL + '/tags/' + tagId);
+  }
 }

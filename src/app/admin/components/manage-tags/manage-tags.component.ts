@@ -22,8 +22,15 @@ export class ManageTagsComponent implements OnInit {
     const tagText = tagTextInputElement.value;
 
     if (tagText.length > 1 && tagText.length <= 20) {
-      // API CALL HERE
-      tagTextInputElement.value = '';
+      this.tagService.createTag(tagText).subscribe(
+        tag => {
+          this.tags.push(tag);
+          tagTextInputElement.value = '';
+        },
+        error => {
+          alert(error.error.message)
+        });
+
 
     } else {
       alert('Not valid tag name');
