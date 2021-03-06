@@ -6,13 +6,13 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthStateManagerService {
 
-  private userAuthState = new BehaviorSubject(false);
-  currentMessage = this.userAuthState.asObservable();
+  private authState = new BehaviorSubject(false);
+  currentAuthState = this.authState.asObservable();
 
   constructor() { }
 
   changeAuthState(authState: boolean) {
-    this.userAuthState.next(authState)
+    this.authState.next(authState)
   }
 
 }
