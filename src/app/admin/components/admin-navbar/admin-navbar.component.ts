@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenService } from 'src/app/shared/services/token.service';
 
 @Component({
   selector: 'cluster-admin-navbar',
@@ -7,12 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminNavbarComponent implements OnInit {
 
+  username = 'user';
 
-  username = 'ajay';
-
-  constructor() { }
+  constructor(private tokenService: TokenService) { }
 
   ngOnInit(): void {
+    const decodedToken = this.tokenService.getDecodedToken();
+    this.username = decodedToken.username;
+
   }
 
 }

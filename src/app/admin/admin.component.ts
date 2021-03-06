@@ -8,17 +8,9 @@ import { TokenService } from '../shared/services/token.service';
 })
 export class AdminComponent implements OnInit {
 
-  authState = false;
-
-  constructor(
-    private tokenService: TokenService) {
+  constructor() {
   }
 
   ngOnInit(): void {
-
-    if (this.tokenService.isAuthaticated()) {
-      this.authState = true;
-    }
-
   }
 }
