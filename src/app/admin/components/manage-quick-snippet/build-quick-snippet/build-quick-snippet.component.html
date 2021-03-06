@@ -1,7 +1,28 @@
 <div>
-  <button (click)="viewPreview = !viewPreview" class="btn btn-sm btn-blue">
-    show preview
-  </button>
+  <div class="flex items-center justify-between">
+    <button (click)="viewPreview = !viewPreview" class="btn btn-sm btn-blue">
+      show preview
+    </button>
+    <!-- <button class="btn btn-sm bg-green-500 text-green-50">
+      post quick snippet
+    </button> -->
+  </div>
+
+  <div class="form-group">
+    <label for="snippet-title">snippet title</label>
+    <input type="text" id="snippet-title" />
+  </div>
+  <div class="form-group">
+    <label for="snippet-tag">snippet tags</label>
+    <div></div>
+    <select>
+      <option *ngFor="let tag of tags" [value]="tag.id">{{ tag.name }}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="snippet">snippet</label>
+  </div>
+
   <cluster-quill-editor
     (editorChangeEmitter)="editorChangeEmitter($event)"
   ></cluster-quill-editor>

@@ -43,7 +43,4 @@ export class QuillEditorComponent implements OnInit {
   onEditorChanged(event: any): void {
     this.editorChangeEmitter.emit(event.html);
   }
-
-
-
 }

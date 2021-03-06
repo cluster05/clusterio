@@ -10,6 +10,12 @@ export class BuildQuickSnippetComponent implements OnInit {
   htmlString = '';
   viewPreview = false;
 
+  tags = [
+    { name: 'angular', id: '1234567890' },
+    { name: 'react', id: '1234567891' },
+    { name: 'vue', id: '1234567892' },
+  ];
+
   constructor() {
   }
 
