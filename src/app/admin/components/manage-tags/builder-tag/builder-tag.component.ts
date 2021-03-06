@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { faTimes, faPen } from '@fortawesome/free-solid-svg-icons'
+import { Tag } from 'src/app/constant/interface/tag.inteface';
 
 @Component({
   selector: 'cluster-builder-tag',
@@ -8,7 +9,7 @@ import { faTimes, faPen } from '@fortawesome/free-solid-svg-icons'
 })
 export class BuilderTagComponent implements OnInit {
 
-  @Input() tag: any;
+  @Input() tag: Tag = { id: '', name: '' };
   @Output() editTag = new EventEmitter<string>();
   @Output() deleteTag = new EventEmitter<string>();
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Tag } from 'src/app/constant/interface/tag.inteface';
+import { TagsService } from 'src/app/shared/services/tags.service';
 
 @Component({
   selector: 'cluster-manage-tags',
@@ -7,15 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageTagsComponent implements OnInit {
 
-  tags = [
-    { name: 'angular', id: '1234567890' },
-    { name: 'react', id: '1234567891' },
-    { name: 'vue', id: '1234567892' },
-  ];
+  tags: Tag[] = [];
 
-  constructor() { }
+  constructor(private tagService: TagsService) { }
 
   ngOnInit(): void {
+    this.tagService.readAllTag().subscribe(tags => this.tags = tags);
   }
 
   addTag(tagTextInputElement: HTMLInputElement): void {
