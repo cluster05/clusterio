@@ -15,6 +15,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BuildQuickSnippetComponent } from './components/manage-quick-snippet/build-quick-snippet/build-quick-snippet.component';
+import { AllQuickSnippetComponent } from './components/manage-quick-snippet/all-quick-snippet/all-quick-snippet.component';
+import { SingleQuickSnippetComponent } from './components/manage-quick-snippet/all-quick-snippet/single-quick-snippet/single-quick-snippet.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BuilderTagComponent,
     BuilderArticlesComponent,
     AdminNavbarComponent,
-    AdminSidebarComponent
+    AdminSidebarComponent,
+    BuildQuickSnippetComponent,
+    AllQuickSnippetComponent,
+    SingleQuickSnippetComponent
   ],
   imports: [
     CommonModule,

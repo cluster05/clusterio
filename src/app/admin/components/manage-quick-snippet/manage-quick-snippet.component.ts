@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManageQuickSnippetComponent implements OnInit {
 
+
+
+
   constructor() { }
 
   ngOnInit(): void {
+
+
+
   }
 
 }
