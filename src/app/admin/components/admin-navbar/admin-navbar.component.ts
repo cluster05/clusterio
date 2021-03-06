@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { TokenService } from 'src/app/shared/services/token.service';
 
 @Component({
@@ -6,9 +7,11 @@ import { TokenService } from 'src/app/shared/services/token.service';
   templateUrl: './admin-navbar.component.html',
   styleUrls: ['./admin-navbar.component.scss']
 })
-export class AdminNavbarComponent implements OnInit {
+export class AdminNavbarComponent implements OnInit, OnDestroy {
 
   username = 'user';
+  subscription: Subscription = new Subscription()
+
 
   constructor(private tokenService: TokenService) { }
 
@@ -17,5 +20,9 @@ export class AdminNavbarComponent implements OnInit {
     this.username = decodedToken.username;
 
   }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
 
 }
