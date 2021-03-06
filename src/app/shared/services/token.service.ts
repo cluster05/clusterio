@@ -7,7 +7,7 @@ import { JwtHelperService } from "@auth0/angular-jwt";
 })
 export class TokenService {
 
-  helper = new JwtHelperService();
+  private helper = new JwtHelperService();
 
   constructor(private localStorageService: LocalstorageService) { }
 
@@ -23,4 +23,7 @@ export class TokenService {
     return this.helper.decodeToken(this.token);
   }
 
+  isTokenExpired() {
+    return this.helper.isTokenExpired(this.token);
+  }
 }

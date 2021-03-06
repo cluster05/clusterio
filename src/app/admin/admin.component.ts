@@ -18,8 +18,12 @@ export class AdminComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
-    this.authStateManager.currentAuthState.subscribe(authState => this.authState = authState);
+    if (this.tokenService.isTokenExpired()) {
+      // remove access_token from local storage
+    } else {
+      this.authState = true;
+      this.authStateManager.currentAuthState.subscribe(authState => this.authState = authState);
+    }
   }
 
 
