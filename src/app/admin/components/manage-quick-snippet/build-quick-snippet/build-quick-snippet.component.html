@@ -1,1 +1,27 @@
-<p>build-quick-snippet works!</p>
+<div>
+  <button (click)="viewPreview = !viewPreview" class="btn btn-sm btn-blue">
+    show preview
+  </button>
+  <cluster-quill-editor
+    (editorChangeEmitter)="editorChangeEmitter($event)"
+  ></cluster-quill-editor>
+  <section
+    *ngIf="viewPreview"
+    class="absolute top-0 left-0 w-screen h-screen overflow-y-auto bg-black bg-opacity-50"
+  >
+    <div class="m-20 bg-white shadow-md">
+      <button
+        (click)="viewPreview = !viewPreview"
+        class="btn btn-sm btn-red absolute top-10 right-20"
+      >
+        close
+      </button>
+      <div
+        class="ql-container ql-snow"
+        style="font-family: 'Open Sans', sans-serif"
+      >
+        <div class="ql-editor" [innerHTML]="htmlString"></div>
+      </div>
+    </div>
+  </section>
+</div>
