@@ -4,6 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ManageArticlesComponent } from './components/manage-articles/manage-articles.component';
+import { ManageQuickSnippetComponent } from './components/manage-quick-snippet/manage-quick-snippet.component';
+import { ManageTagsComponent } from './components/manage-tags/manage-tags.component';
 
 const routes: Routes = [
   {
@@ -12,6 +15,9 @@ const routes: Routes = [
     children: [
       { path: 'auth', component: AuthComponent },
       { path: 'dashboard', component: DashboardComponent },
+      { path: 'articles', component: ManageArticlesComponent },
+      { path: 'quick-snippet', component: ManageQuickSnippetComponent },
+      { path: 'tags', component: ManageTagsComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },

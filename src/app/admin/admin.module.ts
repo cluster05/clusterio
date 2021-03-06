@@ -14,6 +14,7 @@ import { BuilderArticlesComponent } from './components/manage-articles/builder-a
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.
     AdminRoutingModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ]
 })
 export class AdminModule { }
