@@ -1,0 +1,23 @@
+.manage-tag {
+  @apply p-3 m-2 border flex items-center justify-between text-gray-700 rounded-sm;
+  span {
+    @apply font-medium text-lg;
+  }
+  .manage-tag-icon {
+    @apply text-xl text-gray-500;
+    fa-icon {
+      @apply px-2 py-1 m-1 rounded;
+      &:nth-child(2) {
+        @apply px-3;
+        &:hover {
+          @apply bg-red-400 text-red-50;
+        }
+      }
+      &:first-child {
+        &:hover {
+          @apply bg-green-400 text-green-50;
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,7 @@
-<p>builder-tag works!</p>
+<div class="manage-tag">
+  <span>{{ tag.name }} </span>
+  <div class="manage-tag-icon">
+    <fa-icon [icon]="editIcon" (click)="edit(tag.id)"></fa-icon>
+    <fa-icon [icon]="deleteIcon" (click)="delete(tag.id)"></fa-icon>
+  </div>
+</div>

@@ -1,1 +1,24 @@
-<p>manage-tags works!</p>
+<div class="m-3 form-group">
+  <label for="addtag">Add New Tag</label>
+  <input
+    type="text"
+    id="addtag"
+    maxLength="20"
+    minlength="1"
+    #addTagText
+    (keyup.enter)="addTag(addTagText)"
+  />
+  <button class="btn btn-sm btn-blue" (click)="addTag(addTagText)">
+    add tag
+  </button>
+</div>
+
+<ul class="grid grid-cols-3">
+  <div *ngFor="let tag of tags">
+    <cluster-builder-tag
+      [tag]="tag"
+      (deleteTag)="deleteTag($event)"
+      (editTag)="editTag($event)"
+    ></cluster-builder-tag>
+  </div>
+</ul>

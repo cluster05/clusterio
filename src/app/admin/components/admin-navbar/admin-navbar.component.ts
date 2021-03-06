@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminNavbarComponent implements OnInit {
 
+
+  username = 'ajay';
+
   constructor() { }
 
   ngOnInit(): void {
