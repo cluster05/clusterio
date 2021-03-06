@@ -16,11 +16,16 @@ export class AdminGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     const decodeToken = this.tokenService.getDecodedToken();
-    if (this.tokenService.isAuthaticated() && decodeToken.role === 'ADMIN') {
-      return true;
+    if (this.tokenService.isAuthaticated()) {
+      if (decodeToken.role === 'ADMIN') {
+        return true;
+      } else {
+        alert('Route authorized for admin only')
+        this.router.navigate(['/']);
+        return false;
+      }
     }
-    alert('routes authorized to admin only.')
-    this.router.navigate(['/']);
+    this.router.navigate(['cryptic/auth']);
     return false;
   }
 

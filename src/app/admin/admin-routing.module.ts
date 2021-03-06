@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from '../shared/guards/auth.guard';
 
 import { AdminComponent } from './admin.component';
 import { AuthComponent } from './components/auth/auth.component';
@@ -20,11 +19,11 @@ const routes: Routes = [
     path: '',
     component: AdminComponent,
     children: [
-      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard, AdminGuard] },
+      { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
       {
         path: 'articles',
         component: ManageArticlesComponent,
-        canActivate: [AuthGuard, AdminGuard],
+        canActivate: [AdminGuard],
         children: [
           { path: 'create', component: BuildArticleComponent },
           { path: 'update/:articleId', component: BuildArticleComponent },
@@ -34,7 +33,7 @@ const routes: Routes = [
       {
         path: 'quick-snippet',
         component: ManageQuickSnippetComponent,
-        canActivate: [AuthGuard, AdminGuard],
+        canActivate: [AdminGuard],
         children: [
           { path: 'create', component: BuildQuickSnippetComponent },
           { path: 'update/:snippetId', component: BuildQuickSnippetComponent },
@@ -42,7 +41,7 @@ const routes: Routes = [
           { path: '', redirectTo: 'snippets', pathMatch: 'full' }
         ]
       },
-      { path: 'tags', component: ManageTagsComponent, canActivate: [AuthGuard, AdminGuard] },
+      { path: 'tags', component: ManageTagsComponent, canActivate: [AdminGuard] },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },

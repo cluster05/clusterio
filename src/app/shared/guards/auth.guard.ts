@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     if (!this.tokenService.isAuthaticated()) {
-      this.router.navigate(['/cryptic/auth']);
+      this.router.navigate(['cryptic/auth']);
       return false;
     }
     return true;
