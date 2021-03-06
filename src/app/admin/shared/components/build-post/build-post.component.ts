@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Tag } from 'src/app/constant/interface/tag.inteface';
 
 @Component({
   selector: 'cluster-build-post',
@@ -13,13 +14,7 @@ export class BuildPostComponent implements OnInit {
   htmlString = '';
   viewPreview = false;
 
-  tags = [
-    { name: 'angular', id: '1234567890' },
-    { name: 'react', id: '1234567891' },
-    { name: 'vue', id: '1234567892' },
-  ];
-
-  snippetTags: any[] = [];
+  snippetTags: Tag[] = [];
 
   constructor() {
   }
@@ -27,9 +22,8 @@ export class BuildPostComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addTag(tagId: string): void {
-    const tag = this.tags.find(t => t.id === tagId);
-    const isTagAlreadyPresent = this.snippetTags.find((t: any) => t.id === tag?.id);
+  addTag(tag: Tag): void {
+    const isTagAlreadyPresent = this.snippetTags.find((t => t.id === tag?.id));
     if (isTagAlreadyPresent) {
       alert('Given tag already present');
     } else {
