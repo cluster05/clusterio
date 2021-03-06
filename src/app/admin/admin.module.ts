@@ -10,7 +10,6 @@ import { ManageTagsComponent } from './components/manage-tags/manage-tags.compon
 import { ManageQuickSnippetComponent } from './components/manage-quick-snippet/manage-quick-snippet.component';
 import { ManageArticlesComponent } from './components/manage-articles/manage-articles.component';
 import { BuilderTagComponent } from './components/manage-tags/builder-tag/builder-tag.component';
-import { BuilderArticlesComponent } from './components/manage-articles/builder-articles/builder-articles.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
@@ -34,7 +33,6 @@ import { BuildArticleComponent } from './components/manage-articles/build-articl
     ManageQuickSnippetComponent,
     ManageArticlesComponent,
     BuilderTagComponent,
-    BuilderArticlesComponent,
     AdminNavbarComponent,
     AdminSidebarComponent,
     BuildQuickSnippetComponent,
