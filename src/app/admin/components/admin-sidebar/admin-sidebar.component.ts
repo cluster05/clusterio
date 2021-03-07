@@ -12,7 +12,7 @@ export class AdminSidebarComponent implements OnInit {
 
   links = [
     { link: 'dashboard', title: 'dashboard', icon: faDashcube },
-    { link: 'post', title: 'post', icon: faBlog },
+    { link: 'posts', title: 'posts', icon: faBlog },
     { link: 'tags', title: 'tags', icon: faTag },
   ];
   faSignOutAlt = faSignOutAlt;

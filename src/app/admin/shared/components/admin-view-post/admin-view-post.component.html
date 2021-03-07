@@ -1,17 +1,22 @@
 <div>
-  <button class="btn btn-sm btn-blue">edi this post</button>
-  <article>
-    <h1>{{ post.title }}</h1>
-    <p>{{ post.description }}</p>
-    <div class="mt-2">
+  <button class="btn btn-sm btn-blue">edit this post</button>
+  <article class="m-10">
+    <div
+      class="text-center text-5xl font-bold"
+      style="color: #12181b; font-family: 'Open Sans', sans-serif"
+    >
+      <h1>{{ post.title }}</h1>
+    </div>
+    <div class="my-5 border-b-4 border-gray-200 border-dashed"></div>
+    <div class="text-lg" style="color: #454e56">
+      <p>{{ post.description }}</p>
+    </div>
+    <div class="my-4">
       <span class="tag btn-red" *ngFor="let tag of post.tags">
         #{{ tag.name }}
       </span>
     </div>
-    <div
-      class="ql-container ql-snow"
-      style="font-family: 'Open Sans', sans-serif"
-    >
+    <div class="ql-container ql-snow">
       <div class="ql-editor" [innerHTML]="post.content"></div>
     </div>
   </article>
