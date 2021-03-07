@@ -20,6 +20,9 @@ import { BuildArticleComponent } from './components/manage-articles/build-articl
 import { QuillEditorComponent } from './shared/components/quill-editor/quill-editor.component';
 import { QuillModule } from 'ngx-quill';
 import { HttpClientModule } from '@angular/common/http';
+import { SingleArticleComponent } from './shared/components/single-article/single-article.component';
+import { SingleSnippetComponent } from './shared/components/single-snippet/single-snippet.component';
+import { AdminViewPostComponent } from './shared/components/admin-view-post/admin-view-post.component';
 
 
 @NgModule({
@@ -36,7 +39,10 @@ import { HttpClientModule } from '@angular/common/http';
     BuildPostManageTagsComponent,
     AllArticlesComponent,
     BuildArticleComponent,
-    QuillEditorComponent
+    QuillEditorComponent,
+    SingleArticleComponent,
+    SingleSnippetComponent,
+    AdminViewPostComponent
   ],
   imports: [
     CommonModule,

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ViewPostComponent } from '../shared/components/view-post/view-post.component';
 
 import { AdminComponent } from './admin.component';
 import { AuthComponent } from './components/auth/auth.component';
@@ -9,6 +8,7 @@ import { AllArticlesComponent } from './components/manage-articles/all-articles/
 import { BuildArticleComponent } from './components/manage-articles/build-article/build-article.component';
 import { ManageArticlesComponent } from './components/manage-articles/manage-articles.component';
 import { ManageTagsComponent } from './components/manage-tags/manage-tags.component';
+import { AdminViewPostComponent } from './shared/components/admin-view-post/admin-view-post.component';
 import { AdminGuard } from './shared/guards/admin.guard';
 
 const routes: Routes = [
@@ -25,7 +25,7 @@ const routes: Routes = [
         children: [
           { path: 'create', component: BuildArticleComponent },
           { path: 'update/:postId', component: BuildArticleComponent },
-          { path: 'view/:postId', component: ViewPostComponent },
+          { path: 'view/:postId', component: AdminViewPostComponent },
           { path: '', component: AllArticlesComponent },
         ]
       },
