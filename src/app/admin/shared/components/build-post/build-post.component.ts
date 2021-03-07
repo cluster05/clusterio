@@ -9,7 +9,6 @@ import { Tag } from 'src/app/constant/interface/tag.inteface';
 })
 export class BuildPostComponent implements OnInit {
 
-  @Input() buildType = 'article';
   @Output() outputPost = new EventEmitter<any>();
 
   htmlString = '';
@@ -43,9 +42,9 @@ export class BuildPostComponent implements OnInit {
     }
   }
 
-  postPost(postTitle: string): void {
+  postPost(postTitle: string, postType: string): void {
     const buildPost: Article = {
-      type: this.buildType,
+      type: postType,
       title: postTitle,
       content: this.htmlString,
       tags: this.snippetTags,

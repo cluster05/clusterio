@@ -12,7 +12,7 @@
     </p>
   </div>
   <select (change)="addTag(selectedTag.value)" #selectedTag>
-    <option selected disabled>select snippet tag</option>
+    <option selected disabled>select {{ buildType }} tag</option>
     <option *ngFor="let tag of tags" [value]="tag.id">{{ tag.name }}</option>
   </select>
 </div>

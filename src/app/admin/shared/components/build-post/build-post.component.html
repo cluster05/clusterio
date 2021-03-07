@@ -3,23 +3,33 @@
     <button (click)="viewPreview = !viewPreview" class="btn btn-sm btn-blue">
       show preview
     </button>
-    <button class="btn btn-sm btn-green" (click)="postPost(postTitle.value)">
-      post {{ buildType }}
+    <button
+      class="btn btn-sm btn-green"
+      (click)="postPost(postTitle.value, postType.value)"
+    >
+      post {{ postType.value }}
     </button>
   </div>
 
   <div class="form-group">
-    <label for="post-title">{{ buildType }} title</label>
+    <label for="post-type">post type</label>
+    <select id="post-type" #postType>
+      <option value="article" selected>article</option>
+      <option value="snippet">snippet</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="post-title">{{ postType.value }} title</label>
     <input type="text" id="post-title" #postTitle />
   </div>
   <cluster-build-post-manage-tags
-    [buildType]="buildType"
+    [buildType]="postType.value"
     [snippetTags]="snippetTags"
     (addTagEmitter)="addTag($event)"
     (removeTagEmitter)="removeTag($event)"
   ></cluster-build-post-manage-tags>
   <div class="form-group">
-    <label for="post">{{ buildType }}</label>
+    <label for="post">{{ postType.value }} content </label>
   </div>
 
   <cluster-quill-editor

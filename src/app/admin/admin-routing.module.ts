@@ -7,9 +7,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AllArticlesComponent } from './components/manage-articles/all-articles/all-articles.component';
 import { BuildArticleComponent } from './components/manage-articles/build-article/build-article.component';
 import { ManageArticlesComponent } from './components/manage-articles/manage-articles.component';
-import { AllQuickSnippetComponent } from './components/manage-quick-snippet/all-quick-snippet/all-quick-snippet.component';
-import { BuildQuickSnippetComponent } from './components/manage-quick-snippet/build-quick-snippet/build-quick-snippet.component';
-import { ManageQuickSnippetComponent } from './components/manage-quick-snippet/manage-quick-snippet.component';
 import { ManageTagsComponent } from './components/manage-tags/manage-tags.component';
 import { AdminGuard } from './shared/guards/admin.guard';
 
@@ -21,24 +18,13 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
       {
-        path: 'articles',
+        path: 'post',
         component: ManageArticlesComponent,
         canActivate: [AdminGuard],
         children: [
           { path: 'create', component: BuildArticleComponent },
           { path: 'update/:articleId', component: BuildArticleComponent },
           { path: '', component: AllArticlesComponent },
-        ]
-      },
-      {
-        path: 'quick-snippet',
-        component: ManageQuickSnippetComponent,
-        canActivate: [AdminGuard],
-        children: [
-          { path: 'create', component: BuildQuickSnippetComponent },
-          { path: 'update/:snippetId', component: BuildQuickSnippetComponent },
-          { path: 'snippets', component: AllQuickSnippetComponent },
-          { path: '', redirectTo: 'snippets', pathMatch: 'full' }
         ]
       },
       { path: 'tags', component: ManageTagsComponent, canActivate: [AdminGuard] },

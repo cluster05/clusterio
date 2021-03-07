@@ -11,8 +11,6 @@ import { ArticlesService } from 'src/app/shared/services/articles.service';
 })
 export class BuildArticleComponent implements OnInit, OnDestroy {
 
-  buildType = 'article';
-
   subscription: Subscription = new Subscription()
 
   constructor(
@@ -26,7 +24,7 @@ export class BuildArticleComponent implements OnInit, OnDestroy {
 
   outputPost(article: Article): void {
     this.subscription = this.articleService.createArticle(article).subscribe(
-      response => this.router.navigate(['../',], { relativeTo: this.route }),
+      response => this.router.navigate(['../'], { relativeTo: this.route }),
       error => alert(error.error.message)
     )
   }

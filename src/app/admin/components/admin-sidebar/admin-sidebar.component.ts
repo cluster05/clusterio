@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faTag, faBlog, faArchive, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTag, faBlog, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import { faDashcube } from '@fortawesome/free-brands-svg-icons';
 import { Router } from '@angular/router';
 import { LocalstorageService } from 'src/app/shared/services/localstorage.service';
@@ -12,8 +12,7 @@ export class AdminSidebarComponent implements OnInit {
 
   links = [
     { link: 'dashboard', title: 'dashboard', icon: faDashcube },
-    { link: 'articles', title: 'articles', icon: faBlog },
-    { link: 'quick-snippet', title: 'quick snippet', icon: faArchive },
+    { link: 'post', title: 'post', icon: faBlog },
     { link: 'tags', title: 'tags', icon: faTag },
   ];
   faSignOutAlt = faSignOutAlt;

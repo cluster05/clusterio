@@ -7,15 +7,12 @@ import { SharedModule } from '../shared/shared.module';
 import { AuthComponent } from './components/auth/auth.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ManageTagsComponent } from './components/manage-tags/manage-tags.component';
-import { ManageQuickSnippetComponent } from './components/manage-quick-snippet/manage-quick-snippet.component';
 import { ManageArticlesComponent } from './components/manage-articles/manage-articles.component';
 import { BuilderTagComponent } from './components/manage-tags/builder-tag/builder-tag.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { BuildQuickSnippetComponent } from './components/manage-quick-snippet/build-quick-snippet/build-quick-snippet.component';
-import { AllQuickSnippetComponent } from './components/manage-quick-snippet/all-quick-snippet/all-quick-snippet.component';
 import { BuildPostComponent } from './shared/components/build-post/build-post.component';
 import { BuildPostManageTagsComponent } from './shared/components/build-post/build-post-manage-tags/build-post-manage-tags.component';
 import { AllArticlesComponent } from './components/manage-articles/all-articles/all-articles.component';
@@ -31,13 +28,10 @@ import { HttpClientModule } from '@angular/common/http';
     AuthComponent,
     DashboardComponent,
     ManageTagsComponent,
-    ManageQuickSnippetComponent,
     ManageArticlesComponent,
     BuilderTagComponent,
     AdminNavbarComponent,
     AdminSidebarComponent,
-    BuildQuickSnippetComponent,
-    AllQuickSnippetComponent,
     BuildPostComponent,
     BuildPostManageTagsComponent,
     AllArticlesComponent,
