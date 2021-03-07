@@ -1,1 +1,18 @@
-<p>admin-view-post works!</p>
+<div>
+  <button class="btn btn-sm btn-blue">edi this post</button>
+  <article>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.description }}</p>
+    <div class="mt-2">
+      <span class="tag btn-red" *ngFor="let tag of post.tags">
+        #{{ tag.name }}
+      </span>
+    </div>
+    <div
+      class="ql-container ql-snow"
+      style="font-family: 'Open Sans', sans-serif"
+    >
+      <div class="ql-editor" [innerHTML]="post.content"></div>
+    </div>
+  </article>
+</div>

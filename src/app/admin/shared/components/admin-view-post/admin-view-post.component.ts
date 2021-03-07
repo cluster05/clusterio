@@ -14,11 +14,13 @@ export class AdminViewPostComponent implements OnInit {
 
   post: Article = {
     type: 'article',
-    title: 'article title is loading ...',
+    title: '',
     description: '',
     tags: [],
     content: '',
   };
+
+  isContentRetriving = true;
   subscription: Subscription = new Subscription();
 
   constructor(private articleService: ArticlesService, private route: ActivatedRoute) { }
@@ -30,7 +32,9 @@ export class AdminViewPostComponent implements OnInit {
     this.subscription = this.articleService.readArticle(postId)
       .subscribe(
         response => {
-          console.log(response);
+          // console.log(response);
+          this.isContentRetriving = false;
+          this.post = response;
         },
         error => alert(error.error.message)
       );
