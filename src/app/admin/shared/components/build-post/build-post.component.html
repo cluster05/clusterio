@@ -5,7 +5,7 @@
     </button>
     <button
       class="btn btn-sm btn-green"
-      (click)="postPost(postTitle.value, postType.value)"
+      (click)="postPost(postTitle.value, postType.value, postDescription.value)"
     >
       post {{ postType.value }}
     </button>
@@ -21,6 +21,15 @@
   <div class="form-group">
     <label for="post-title">{{ postType.value }} title</label>
     <input type="text" id="post-title" #postTitle />
+  </div>
+  <div class="form-group">
+    <label for="post-description">{{ postType.value }} description</label>
+    <textarea
+      name=""
+      id="post-description"
+      rows="3"
+      #postDescription
+    ></textarea>
   </div>
   <cluster-build-post-manage-tags
     [buildType]="postType.value"

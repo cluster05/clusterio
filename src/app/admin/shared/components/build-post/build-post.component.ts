@@ -42,10 +42,11 @@ export class BuildPostComponent implements OnInit {
     }
   }
 
-  postPost(postTitle: string, postType: string): void {
+  postPost(postTitle: string, postType: string, postDescription: string): void {
     const buildPost: Article = {
       type: postType,
       title: postTitle,
+      description: postDescription,
       content: this.htmlString,
       tags: this.snippetTags,
     };
