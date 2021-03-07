@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ViewPostComponent } from '../shared/components/view-post/view-post.component';
 
 import { AdminComponent } from './admin.component';
 import { AuthComponent } from './components/auth/auth.component';
@@ -18,12 +19,13 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
       {
-        path: 'post',
+        path: 'posts',
         component: ManageArticlesComponent,
         canActivate: [AdminGuard],
         children: [
           { path: 'create', component: BuildArticleComponent },
-          { path: 'update/:articleId', component: BuildArticleComponent },
+          { path: 'update/:postId', component: BuildArticleComponent },
+          { path: 'view/:postId', component: ViewPostComponent },
           { path: '', component: AllArticlesComponent },
         ]
       },

@@ -23,6 +23,12 @@ export class AllArticlesComponent implements OnInit, OnDestroy {
         error => alert(error.error.message)
       );
   }
+
+  getOtherPostType(postType: string) {
+    console.log(postType);
+
+  }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
