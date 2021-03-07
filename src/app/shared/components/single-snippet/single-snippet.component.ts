@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Article } from 'src/app/constant/interface/post.interface';
 
 @Component({
   selector: 'cluster-single-snippet',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleSnippetComponent implements OnInit {
 
-  constructor() { }
+  @Input() snippet: Article;
+
+  constructor() {
+    this.snippet = {
+      content: '',
+      tags: [],
+      title: '',
+      type: ''
+    };
+  }
 
   ngOnInit(): void {
   }

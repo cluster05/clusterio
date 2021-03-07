@@ -9,15 +9,16 @@ import { ViewPostComponent } from './components/view-post/view-post.component';
 
 const components = [
   PageNotFoundComponent,
+  SinglePostComponent,
+  SingleSnippetComponent,
+  SingleArticleComponent,
+  ViewPostComponent,
 ];
 
 @NgModule({
   declarations: [
     components,
-    SinglePostComponent,
-    SingleSnippetComponent,
-    SingleArticleComponent,
-    ViewPostComponent,
+
   ],
   imports: [
     CommonModule,

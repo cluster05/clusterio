@@ -10,12 +10,12 @@ export class ArticlesService {
 
   constructor(private http: HttpClient) { }
 
-  read(articleId: string) {
-    return this.http.get<Article[]>(environment.backendBaseURL + '/articles/' + articleId);
+  readArticle(articleId: string) {
+    return this.http.get<Article>(environment.backendBaseURL + '/articles/' + articleId);
   }
 
   readAllArticle() {
-    return this.http.get<Article>(environment.backendBaseURL + '/articles');
+    return this.http.get<Article[]>(environment.backendBaseURL + '/articles');
   }
 
   createArticle(payload: Article) {
