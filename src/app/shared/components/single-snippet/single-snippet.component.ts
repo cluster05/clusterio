@@ -12,10 +12,11 @@ export class SingleSnippetComponent implements OnInit {
 
   constructor() {
     this.snippet = {
-      content: '',
-      tags: [],
+      type: '',
+      description: '',
       title: '',
-      type: ''
+      tags: [],
+      content: '',
     };
   }
 

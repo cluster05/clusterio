@@ -1,3 +1,10 @@
 <button class="btn btn-sm btn-blue" routerLink="./create">
   create new post
 </button>
+
+<div class="flex flex-col items-center">
+  <cluster-single-snippet
+    *ngFor="let snippet of snippets"
+    [snippet]="snippet"
+  ></cluster-single-snippet>
+</div>
