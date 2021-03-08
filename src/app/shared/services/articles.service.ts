@@ -29,4 +29,8 @@ export class ArticlesService {
   deleteArticle(articleId: string) {
     return this.http.delete<Article>(environment.backendBaseURL + '/articles/' + articleId);
   }
+
+  uploadArticleImage(image: FormData) {
+    return this.http.post(environment.backendBaseURL + '/articles/image/upload/', image);
+  }
 }

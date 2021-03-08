@@ -2,4 +2,6 @@
   [modules]="modules"
   [(ngModel)]="htmlString"
   (onEditorChanged)="onEditorChanged($event)"
+  (onEditorCreated)="getEditorInstance($event)"
 ></quill-editor>
+<input type="file" style="display: none" id="fileInputField" />
