@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { ArticlesService } from 'src/app/shared/services/articles.service';
 })
 export class QuillEditorComponent implements OnInit {
 
-  htmlString = '';
+  @Input() htmlString = '';
   quillEditorRef: any;
   maxUploadFileSize = 10000000;
   modules = {
@@ -55,8 +55,9 @@ export class QuillEditorComponent implements OnInit {
   }
 
   imageHandler = (image: string, callback: () => {}) => {
-    const input = <HTMLInputElement>document.getElementById('fileInputField');
-    document.getElementById('fileInputField').onchange = async () => {
+    let input: any;
+    input = <HTMLInputElement>document.getElementById('fileInputField');
+    input.onchange = async () => {
       let file: File;
       file = input.files[0];
       if (/^image\//.test(file.type)) {
@@ -85,7 +86,4 @@ export class QuillEditorComponent implements OnInit {
     const result: any = await this.articleService.uploadArticleImage(uploadData).toPromise();
     return result.imageURL;
   }
-
-
-
 }

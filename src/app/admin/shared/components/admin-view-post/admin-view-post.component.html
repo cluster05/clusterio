@@ -1,5 +1,7 @@
 <div>
-  <button class="btn btn-sm btn-blue">edit this post</button>
+  <button class="btn btn-sm btn-blue" [routerLink]="['../../update/', post.id]">
+    edit this post
+  </button>
   <article class="m-10">
     <div
       class="text-center text-5xl font-bold"

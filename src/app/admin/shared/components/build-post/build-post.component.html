@@ -3,45 +3,47 @@
     <button (click)="viewPreview = !viewPreview" class="btn btn-sm btn-blue">
       show preview
     </button>
-    <button
-      class="btn btn-sm btn-green"
-      (click)="postPost(postTitle.value, postType.value, postDescription.value)"
-    >
-      post {{ postType.value }}
+    <button class="btn btn-sm btn-green" (click)="postPost()">
+      <ng-container *ngIf="postUpdatingMode; else updateModeFalse">
+        update
+      </ng-container>
+      <ng-template #updateModeFalse> post </ng-template>
+      {{ postBuilder.type }}
     </button>
   </div>
 
   <div class="form-group">
     <label for="post-type">post type</label>
-    <select id="post-type" #postType>
+    <select id="post-type" [(ngModel)]="postBuilder.type">
       <option value="article" selected>article</option>
       <option value="snippet">snippet</option>
     </select>
   </div>
   <div class="form-group">
-    <label for="post-title">{{ postType.value }} title</label>
-    <input type="text" id="post-title" #postTitle />
+    <label for="post-title">{{ postBuilder.type }} title</label>
+    <input type="text" id="post-title" [(ngModel)]="postBuilder.title" />
   </div>
   <div class="form-group">
-    <label for="post-description">{{ postType.value }} description</label>
+    <label for="post-description">{{ postBuilder.type }} description</label>
     <textarea
       name=""
       id="post-description"
       rows="3"
-      #postDescription
+      [(ngModel)]="postBuilder.description"
     ></textarea>
   </div>
   <cluster-build-post-manage-tags
-    [buildType]="postType.value"
-    [snippetTags]="snippetTags"
+    [buildType]="postBuilder.type"
+    [snippetTags]="postBuilder.tags"
     (addTagEmitter)="addTag($event)"
     (removeTagEmitter)="removeTag($event)"
   ></cluster-build-post-manage-tags>
   <div class="form-group">
-    <label for="post">{{ postType.value }} content </label>
+    <label for="post">{{ postBuilder.type }} content </label>
   </div>
 
   <cluster-quill-editor
+    [htmlString]="postBuilder.content"
     (editorChangeEmitter)="editorChangeEmitter($event)"
   ></cluster-quill-editor>
   <section
@@ -59,7 +61,7 @@
         class="ql-container ql-snow"
         style="font-family: 'Open Sans', sans-serif"
       >
-        <div class="ql-editor" [innerHTML]="htmlString"></div>
+        <div class="ql-editor" [innerHTML]="postBuilder.content"></div>
       </div>
     </div>
   </section>

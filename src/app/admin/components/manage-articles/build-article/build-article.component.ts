@@ -11,7 +11,7 @@ import { ArticlesService } from 'src/app/shared/services/articles.service';
 })
 export class BuildArticleComponent implements OnInit, OnDestroy {
 
-  subscription: Subscription = new Subscription()
+  subscription: Subscription = new Subscription();
 
   constructor(
     private articleService: ArticlesService,
@@ -20,6 +20,7 @@ export class BuildArticleComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
+
   }
 
   outputPost(article: Article): void {
