@@ -83,7 +83,7 @@ export class QuillEditorComponent implements OnInit {
   async uplaodImage(file: File) {
     const uploadData = new FormData();
     uploadData.append('image', file);
-    const result: any = await this.articleService.uploadArticleImage(uploadData).toPromise();
+    const result: { imageURL: string } = await this.articleService.uploadArticleImage(uploadData).toPromise();
     return result.imageURL;
   }
 }

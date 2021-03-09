@@ -24,10 +24,23 @@ export class BuildArticleComponent implements OnInit, OnDestroy {
   }
 
   outputPost(article: Article): void {
-    this.subscription = this.articleService.createArticle(article).subscribe(
-      response => this.router.navigate(['../'], { relativeTo: this.route }),
-      error => alert(error.error.message)
-    )
+
+    const postId = this.route.snapshot.paramMap.get('postId') as string;
+
+    if (postId) {
+
+      this.articleService.updateArticle(postId, article).subscribe(
+        response => this.router.navigate(['/cryptic/posts/']),
+        error => alert(error.error.message)
+      );
+    } else {
+      this.subscription = this.articleService.createArticle(article).subscribe(
+        response => this.router.navigate(['../'], { relativeTo: this.route }),
+        error => alert(error.error.message)
+      );
+    }
+
+
   }
 
   ngOnDestroy(): void {
