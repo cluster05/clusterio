@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Article } from 'src/app/constant/interface/post.interface';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
@@ -23,7 +23,9 @@ export class AdminViewPostComponent implements OnInit {
   isContentRetriving = true;
   subscription: Subscription = new Subscription();
 
-  constructor(private articleService: ArticlesService, private route: ActivatedRoute) { }
+  constructor(private articleService: ArticlesService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
 
@@ -38,6 +40,14 @@ export class AdminViewPostComponent implements OnInit {
         },
         error => alert(error.error.message)
       );
+  }
+
+  deletePost(postId: string) {
+    this.articleService.deleteArticle(postId).subscribe(
+      res => this.router.navigate(['/cryptic/posts']),
+      error => alert(error.error.message)
+    );
+
   }
 
   ngOnDestroy(): void {
