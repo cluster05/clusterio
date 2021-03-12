@@ -42,8 +42,11 @@ export class AdminViewPostComponent implements OnInit {
       );
   }
 
-  deletePost(postId: string) {
-    this.articleService.deleteArticle(postId).subscribe(
+  deletePost(postId: string | undefined) {
+
+    const deletePostId = postId as string;
+
+    this.articleService.deleteArticle(deletePostId).subscribe(
       res => this.router.navigate(['/cryptic/posts']),
       error => alert(error.error.message)
     );

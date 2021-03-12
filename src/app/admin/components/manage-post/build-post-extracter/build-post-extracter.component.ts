@@ -5,11 +5,11 @@ import { Article } from 'src/app/constant/interface/post.interface';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
 
 @Component({
-  selector: 'cluster-build-article',
-  templateUrl: './build-article.component.html',
-  styleUrls: ['./build-article.component.scss']
+  selector: 'cluster-build-post-extracter',
+  templateUrl: './build-post-extracter.component.html',
+  styleUrls: ['./build-post-extracter.component.scss']
 })
-export class BuildArticleComponent implements OnInit, OnDestroy {
+export class BuildPostExtracterComponent implements OnInit, OnDestroy {
 
   subscription: Subscription = new Subscription();
 

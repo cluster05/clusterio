@@ -12,7 +12,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { BuildPostComponent } from './shared/components/build-post/build-post.component';
 import { BuildPostManageTagsComponent } from './shared/components/build-post/build-post-manage-tags/build-post-manage-tags.component';
 import { QuillEditorComponent } from './shared/components/quill-editor/quill-editor.component';
 import { QuillModule } from 'ngx-quill';
@@ -22,6 +21,8 @@ import { SingleSnippetComponent } from './shared/components/single-snippet/singl
 import { AdminViewPostComponent } from './shared/components/admin-view-post/admin-view-post.component';
 import { ManagePostsComponent } from './components/manage-post/manage-post.component';
 import { AllPostComponent } from './components/manage-post/all-post/all-post.component';
+import { BuildPostComponent } from './shared/components/build-post/build-post.component';
+import { BuildPostExtracterComponent } from './components/manage-post/build-post-extracter/build-post-extracter.component';
 
 
 @NgModule({
@@ -34,10 +35,10 @@ import { AllPostComponent } from './components/manage-post/all-post/all-post.com
     BuilderTagComponent,
     AdminNavbarComponent,
     AdminSidebarComponent,
-    BuildPostComponent,
     BuildPostManageTagsComponent,
     AllPostComponent,
     BuildPostComponent,
+    BuildPostExtracterComponent,
     QuillEditorComponent,
     SingleArticleComponent,
     SingleSnippetComponent,
