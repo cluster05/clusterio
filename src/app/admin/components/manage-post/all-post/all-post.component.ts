@@ -4,11 +4,11 @@ import { Article } from 'src/app/constant/interface/post.interface';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
 
 @Component({
-  selector: 'cluster-all-articles',
-  templateUrl: './all-articles.component.html',
-  styleUrls: ['./all-articles.component.scss']
+  selector: 'cluster-all-post',
+  templateUrl: './all-post.component.html',
+  styleUrls: ['./all-post.component.scss']
 })
-export class AllArticlesComponent implements OnInit, OnDestroy {
+export class AllPostComponent implements OnInit, OnDestroy {
 
   snippets: Article[] = [];
   subscription: Subscription = new Subscription();

@@ -4,11 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { AllArticlesComponent } from './components/manage-articles/all-articles/all-articles.component';
-import { BuildArticleComponent } from './components/manage-articles/build-article/build-article.component';
-import { ManageArticlesComponent } from './components/manage-articles/manage-articles.component';
+import { AllPostComponent } from './components/manage-post/all-post/all-post.component';
+import { ManagePostsComponent } from './components/manage-post/manage-post.component';
 import { ManageTagsComponent } from './components/manage-tags/manage-tags.component';
 import { AdminViewPostComponent } from './shared/components/admin-view-post/admin-view-post.component';
+import { BuildPostComponent } from './shared/components/build-post/build-post.component';
 import { AdminGuard } from './shared/guards/admin.guard';
 
 const routes: Routes = [
@@ -20,13 +20,13 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent, canActivate: [AdminGuard] },
       {
         path: 'posts',
-        component: ManageArticlesComponent,
+        component: ManagePostsComponent,
         canActivate: [AdminGuard],
         children: [
-          { path: 'create', component: BuildArticleComponent },
-          { path: 'update/:postId', component: BuildArticleComponent },
+          { path: 'create', component: BuildPostComponent },
+          { path: 'update/:postId', component: BuildPostComponent },
           { path: 'view/:postId', component: AdminViewPostComponent },
-          { path: '', component: AllArticlesComponent },
+          { path: '', component: AllPostComponent },
         ]
       },
       { path: 'tags', component: ManageTagsComponent, canActivate: [AdminGuard] },
