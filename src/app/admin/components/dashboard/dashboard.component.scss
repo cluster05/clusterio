@@ -1,0 +1,18 @@
+.dashboard {
+  @apply grid grid-cols-2;
+  .main-count {
+    @apply grid grid-cols-2 gap-5;
+    .main-count-tab {
+      @apply py-5 shadow border rounded text-center;
+      p {
+        @apply my-4 font-bold capitalize;
+      }
+      p:first-child {
+        @apply text-2xl text-gray-700;
+      }
+      p:last-child {
+        @apply text-5xl text-gray-800;
+      }
+    }
+  }
+}
