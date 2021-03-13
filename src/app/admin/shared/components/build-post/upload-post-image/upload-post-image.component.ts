@@ -8,7 +8,6 @@ import { ArticlesService } from 'src/app/shared/services/articles.service';
 })
 export class UploadPostImageComponent implements OnInit {
 
-  @Input() postType = 'article';
   @Input() imageFromUpload = '';
   isImageUploaded = false;
   imageSrc = '';
@@ -17,6 +16,7 @@ export class UploadPostImageComponent implements OnInit {
   constructor(private articleService: ArticlesService) { }
 
   ngOnInit(): void {
+
     if (this.imageFromUpload) {
       this.isImageUploaded = true;
       this.imageSrc = this.imageFromUpload;

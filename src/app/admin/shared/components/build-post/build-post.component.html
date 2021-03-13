@@ -24,10 +24,15 @@
     <input type="text" id="post-title" [(ngModel)]="postBuilder.title" />
   </div>
   <cluster-upload-post-image
-    [imageFromUpload]="postBuilder.postImageUrl"
-    [postType]="postBuilder.type"
+    *ngIf="postBuilder.type === 'article' && !postUpdatingMode"
+    [imageFromUpload]="postImageURL"
     (postImageLinkUrl)="setPostImageURL($event)"
   ></cluster-upload-post-image>
+  <img
+    *ngIf="postBuilder.type === 'article' && postUpdatingMode"
+    [src]="postImageURL"
+    alt=""
+  />
   <div class="form-group">
     <label for="post-description">{{ postBuilder.type }} description</label>
     <textarea

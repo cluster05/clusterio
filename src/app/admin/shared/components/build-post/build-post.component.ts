@@ -32,7 +32,7 @@ export class BuildPostComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    const postId = this.route.snapshot.paramMap.get('postId') as string
+    const postId = this.route.snapshot.paramMap.get('postId') as string;
 
     if (postId) {
       this.subscription = this.articleService.readArticle(postId)
@@ -40,6 +40,7 @@ export class BuildPostComponent implements OnInit, OnDestroy {
           response => {
             this.postBuilder = response;
             this.postUpdatingMode = true;
+            this.postImageURL = this.postBuilder.postImageUrl as string;
           },
           error => alert(error.error.message)
         );
