@@ -23,6 +23,7 @@ import { ManagePostsComponent } from './components/manage-post/manage-post.compo
 import { AllPostComponent } from './components/manage-post/all-post/all-post.component';
 import { BuildPostComponent } from './shared/components/build-post/build-post.component';
 import { BuildPostExtracterComponent } from './components/manage-post/build-post-extracter/build-post-extracter.component';
+import { BuildPostPreviewComponent } from './shared/components/build-post/build-post-preview/build-post-preview.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { BuildPostExtracterComponent } from './components/manage-post/build-post
     QuillEditorComponent,
     SingleArticleComponent,
     SingleSnippetComponent,
-    AdminViewPostComponent
+    AdminViewPostComponent,
+    BuildPostPreviewComponent
   ],
   imports: [
     CommonModule,
