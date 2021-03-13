@@ -38,6 +38,14 @@
         #{{ tag.name }}
       </span>
     </div>
+    <div class="my-4 italic">
+      <span class="tag btn-green">
+        Created At : {{ post.created_at | date: "MMM d, y, h:mm a" }}
+      </span>
+      <span class="tag btn-red">
+        Updated At : {{ post.updated_at | date: "MMM d, y, h:mm a" }}
+      </span>
+    </div>
     <style></style>
     <div class="ql-container ql-snow">
       <div class="ql-editor" [innerHTML]="post.content"></div>

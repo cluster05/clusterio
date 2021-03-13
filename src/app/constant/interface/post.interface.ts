@@ -9,4 +9,6 @@ export interface Article {
     content: string;
     tags: Tag[];
     comments?: Comment[];
+    created_at?: number;
+    updated_at?: number;
 }
