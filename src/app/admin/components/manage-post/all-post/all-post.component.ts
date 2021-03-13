@@ -11,6 +11,7 @@ import { ArticlesService } from 'src/app/shared/services/articles.service';
 export class AllPostComponent implements OnInit, OnDestroy {
 
   snippets: Article[] = [];
+  articles: Article[] = [];
   subscription: Subscription = new Subscription();
 
   constructor(private articleService: ArticlesService) { }
@@ -19,12 +20,15 @@ export class AllPostComponent implements OnInit, OnDestroy {
 
     this.subscription = this.articleService.readAllArticle()
       .subscribe(
-        response => { this.snippets = response; },
+        response => {
+          this.snippets = response;
+          this.articles = response;
+        },
         error => alert(error.error.message)
       );
   }
 
-  getOtherPostType(postType: string) {
+  getOtherPostType(postType: string): void {
     console.log(postType);
 
   }

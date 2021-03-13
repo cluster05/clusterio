@@ -1,17 +1,25 @@
-<button class="btn btn-sm btn-blue" routerLink="./create">
-  create new post
-</button>
-<div class="form-group w-52">
-  <label for="post-type">post type</label>
-  <select id="post-type" #postType (change)="getOtherPostType(postType.value)">
+<div class="flex justify-between items-center">
+  <button class="btn btn-sm btn-blue" routerLink="./create">
+    create new post
+  </button>
+  <select
+    id="post-type"
+    class="btn btn-sm btn-gray px-4"
+    #postType
+    (change)="getOtherPostType(postType.value)"
+  >
     <option value="article" selected>article</option>
     <option value="snippet">snippet</option>
   </select>
 </div>
 
-<div class="grid grid-cols-3 gap-4">
+<!-- <div class="grid grid-cols-3 gap-4">
   <cluster-single-snippet
     *ngFor="let snippet of snippets"
     [snippet]="snippet"
   ></cluster-single-snippet>
+</div> -->
+<div class="grid grid-cols-3 gap-4">
+  <cluster-single-article *ngFor="let article of articles" [article]="article">
+  </cluster-single-article>
 </div>
