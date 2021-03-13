@@ -24,7 +24,13 @@
       <h1>{{ post.title }}</h1>
     </div>
     <div class="my-5 border-b-4 border-gray-200 border-dashed"></div>
-    <div class="text-base tracking-wide font-medium">
+    <img
+      *ngIf="post.type === 'article'"
+      class="w-full rounded"
+      [src]="post.postImageUrl"
+      [alt]="post.title"
+    />
+    <div class="mt-5 text-base tracking-wide font-medium">
       <p>{{ post.description }}</p>
     </div>
     <div class="my-4">

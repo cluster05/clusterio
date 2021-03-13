@@ -3,9 +3,10 @@
   class="pb-1 rounded shadow tracking-wide cursor-pointer"
 >
   <img
+    *ngIf="article.type === 'article'"
     class="w-full rounded-tl rounded-tr"
-    src="http://www.imgworlds.com/wp-content/uploads/2016/04/img-worlds-of-adventure-new-low.jpg"
-    alt="title"
+    [src]="article.postImageUrl"
+    [alt]="article.title"
   />
   <div class="my-3 px-2">
     <h3 class="font-semibold text-xl">{{ article.title }}</h3>

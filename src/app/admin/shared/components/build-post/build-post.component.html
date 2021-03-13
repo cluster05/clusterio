@@ -24,6 +24,7 @@
     <input type="text" id="post-title" [(ngModel)]="postBuilder.title" />
   </div>
   <cluster-upload-post-image
+    [imageFromUpload]="postBuilder.postImageUrl"
     [postType]="postBuilder.type"
     (postImageLinkUrl)="setPostImageURL($event)"
   ></cluster-upload-post-image>
