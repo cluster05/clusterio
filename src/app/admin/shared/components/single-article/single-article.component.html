@@ -1,1 +1,20 @@
-<p>single-article works!</p>
+<article
+  (click)="navigateTo(article)"
+  class="pb-1 rounded shadow tracking-wide cursor-pointer"
+>
+  <img
+    *ngIf="article.type === 'article'"
+    class="w-full rounded-tl rounded-tr"
+    [src]="article.postImageUrl"
+    [alt]="article.title"
+  />
+  <div class="my-3 px-2">
+    <h3 class="font-semibold text-xl">{{ article.title }}</h3>
+    <p class="text-sm">{{ article.description }}</p>
+    <div class="mt-2">
+      <span class="tag btn-gray" *ngFor="let tag of article.tags">
+        #{{ tag.name }}
+      </span>
+    </div>
+  </div>
+</article>

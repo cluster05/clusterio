@@ -1,0 +1,6 @@
+.nav-title {
+  @apply p-3 w-full text-gray-900 font-extrabold text-xl;
+  span {
+    @apply capitalize;
+  }
+}

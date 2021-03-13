@@ -1,6 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { TokenService } from 'src/app/shared/services/token.service';
 
 @Component({
   selector: 'cluster-admin-navbar',
@@ -9,19 +7,15 @@ import { TokenService } from 'src/app/shared/services/token.service';
 })
 export class AdminNavbarComponent implements OnInit, OnDestroy {
 
-  username = 'user';
-  subscription: Subscription = new Subscription()
 
 
-  constructor(private tokenService: TokenService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    const decodedToken = this.tokenService.getDecodedToken();
-    this.username = decodedToken.username;
+
 
   }
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 
 

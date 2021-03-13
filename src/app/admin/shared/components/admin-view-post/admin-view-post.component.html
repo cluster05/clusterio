@@ -16,20 +16,34 @@
     </button>
   </div>
 
-  <article class="m-10">
-    <div
-      class="text-center text-5xl font-bold"
-      style="color: #12181b; font-family: 'Open Sans', sans-serif"
-    >
+  <article
+    class="m-10"
+    style="color: #12181b; font-family: 'Open Sans', sans-serif"
+  >
+    <div class="text-center text-5xl font-bold">
       <h1>{{ post.title }}</h1>
     </div>
     <div class="my-5 border-b-4 border-gray-200 border-dashed"></div>
-    <div class="text-lg" style="color: #454e56">
+    <img
+      *ngIf="post.type === 'article'"
+      class="w-full rounded"
+      [src]="post.postImageUrl"
+      [alt]="post.title"
+    />
+    <div class="mt-5 text-base tracking-wide font-medium">
       <p>{{ post.description }}</p>
     </div>
     <div class="my-4">
-      <span class="tag btn-red" *ngFor="let tag of post.tags">
+      <span class="tag btn-gray" *ngFor="let tag of post.tags">
         #{{ tag.name }}
+      </span>
+    </div>
+    <div class="my-4 italic">
+      <span class="tag btn-green">
+        Created At : {{ post.created_at | date: "MMM d, y, h:mm a" }}
+      </span>
+      <span class="tag btn-red">
+        Updated At : {{ post.updated_at | date: "MMM d, y, h:mm a" }}
       </span>
     </div>
     <style></style>

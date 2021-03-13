@@ -15,6 +15,8 @@ export class BuildPostComponent implements OnInit, OnDestroy {
   @Output() outputPost = new EventEmitter<any>();
   subscription: Subscription = new Subscription();
 
+  postImageURL = '';
+
   postUpdatingMode = false;
   postBuilder: Article = {
     content: '',
@@ -30,7 +32,7 @@ export class BuildPostComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    const postId = this.route.snapshot.paramMap.get('postId') as string
+    const postId = this.route.snapshot.paramMap.get('postId') as string;
 
     if (postId) {
       this.subscription = this.articleService.readArticle(postId)
@@ -38,6 +40,7 @@ export class BuildPostComponent implements OnInit, OnDestroy {
           response => {
             this.postBuilder = response;
             this.postUpdatingMode = true;
+            this.postImageURL = this.postBuilder.postImageUrl as string;
           },
           error => alert(error.error.message)
         );
@@ -64,6 +67,10 @@ export class BuildPostComponent implements OnInit, OnDestroy {
     }
   }
 
+  setPostImageURL(imageURL: string): void {
+    this.postImageURL = imageURL;
+  }
+
   postPost(): void {
     const buildPost: Article = {
       type: this.postBuilder.type,
@@ -71,6 +78,7 @@ export class BuildPostComponent implements OnInit, OnDestroy {
       description: this.postBuilder.description,
       content: this.postBuilder.content,
       tags: this.postBuilder.tags,
+      postImageUrl: this.postImageURL
     };
     this.outputPost.emit(buildPost);
   }

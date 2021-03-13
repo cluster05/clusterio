@@ -1,7 +1,7 @@
 <quill-editor
   [modules]="modules"
   [(ngModel)]="htmlString"
-  (onEditorChanged)="onEditorChanged($event)"
+  (onContentChanged)="onEditorChanged($event)"
   (onEditorCreated)="getEditorInstance($event)"
 ></quill-editor>
 <input type="file" style="display: none" id="fileInputField" />
