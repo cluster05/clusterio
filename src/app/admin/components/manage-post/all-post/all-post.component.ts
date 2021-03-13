@@ -21,8 +21,8 @@ export class AllPostComponent implements OnInit, OnDestroy {
     this.subscription = this.articleService.readAllArticle()
       .subscribe(
         response => {
-          this.snippets = response;
-          this.articles = response;
+          this.snippets = response.filter(f => f.type === 'snippet');
+          this.articles = response.filter(f => f.type === 'article');
         },
         error => alert(error.error.message)
       );
