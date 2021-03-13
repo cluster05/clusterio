@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Article } from 'src/app/constant/interface/post.interface';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
+import { LocalstorageService } from 'src/app/shared/services/localstorage.service';
 
 @Component({
   selector: 'cluster-all-post',
@@ -13,10 +14,16 @@ export class AllPostComponent implements OnInit, OnDestroy {
   snippets: Article[] = [];
   articles: Article[] = [];
   subscription: Subscription = new Subscription();
+  postType = 'article';
 
-  constructor(private articleService: ArticlesService) { }
+  constructor(private articleService: ArticlesService, private localStorageService: LocalstorageService) { }
 
   ngOnInit(): void {
+
+    const serve = this.localStorageService.getItemFromLocalstorage('serve');
+    if (serve) {
+      this.postType = serve;
+    }
 
     this.subscription = this.articleService.readAllArticle()
       .subscribe(
@@ -28,10 +35,11 @@ export class AllPostComponent implements OnInit, OnDestroy {
       );
   }
 
-  getOtherPostType(postType: string): void {
-    console.log(postType);
-
+  getOtherPostType(): void {
+    this.localStorageService.setItemToLocalstorage('serve', this.postType);
   }
+
+
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();

@@ -5,21 +5,21 @@
   <select
     id="post-type"
     class="btn btn-sm btn-gray px-4"
-    #postType
-    (change)="getOtherPostType(postType.value)"
+    [(ngModel)]="postType"
+    (change)="getOtherPostType()"
   >
     <option value="article" selected>article</option>
     <option value="snippet">snippet</option>
   </select>
 </div>
 
-<div class="grid grid-cols-3 gap-4" *ngIf="postType.value === 'snippet'">
+<div class="grid grid-cols-3 gap-4" *ngIf="postType === 'snippet'">
   <cluster-single-snippet
     *ngFor="let snippet of snippets"
     [snippet]="snippet"
   ></cluster-single-snippet>
 </div>
-<div class="grid grid-cols-3 gap-4" *ngIf="postType.value === 'article'">
+<div class="grid grid-cols-3 gap-4" *ngIf="postType === 'article'">
   <cluster-single-article *ngFor="let article of articles" [article]="article">
   </cluster-single-article>
 </div>
