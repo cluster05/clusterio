@@ -1,0 +1,9 @@
+<div class="form-group" *ngIf="postType === 'article' && !isImageUploaded">
+  <label for="post-poster"> article poster</label>
+  <input type="file" id="post-poster" (change)="onFileChanged($event)" />
+</div>
+<img
+  *ngIf="postType === 'article' && isImageUploaded"
+  [src]="imageSrc"
+  alt=""
+/>

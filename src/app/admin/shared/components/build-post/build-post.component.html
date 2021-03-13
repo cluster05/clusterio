@@ -23,12 +23,16 @@
     <label for="post-title">{{ postBuilder.type }} title</label>
     <input type="text" id="post-title" [(ngModel)]="postBuilder.title" />
   </div>
+  <cluster-upload-post-image
+    [postType]="postBuilder.type"
+    (postImageLinkUrl)="setPostImageURL($event)"
+  ></cluster-upload-post-image>
   <div class="form-group">
     <label for="post-description">{{ postBuilder.type }} description</label>
     <textarea
       name=""
       id="post-description"
-      rows="3"
+      rows="2"
       [(ngModel)]="postBuilder.description"
     ></textarea>
   </div>

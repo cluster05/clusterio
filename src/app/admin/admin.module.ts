@@ -24,6 +24,7 @@ import { AllPostComponent } from './components/manage-post/all-post/all-post.com
 import { BuildPostComponent } from './shared/components/build-post/build-post.component';
 import { BuildPostExtracterComponent } from './components/manage-post/build-post-extracter/build-post-extracter.component';
 import { BuildPostPreviewComponent } from './shared/components/build-post/build-post-preview/build-post-preview.component';
+import { UploadPostImageComponent } from './shared/components/build-post/upload-post-image/upload-post-image.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { BuildPostPreviewComponent } from './shared/components/build-post/build-
     SingleArticleComponent,
     SingleSnippetComponent,
     AdminViewPostComponent,
-    BuildPostPreviewComponent
+    BuildPostPreviewComponent,
+    UploadPostImageComponent
   ],
   imports: [
     CommonModule,
