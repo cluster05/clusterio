@@ -42,7 +42,7 @@
   @apply bg-pink-500 text-pink-50;
 }
 .btn-gray {
-  @apply bg-gray-500 text-gray-50;
+  @apply bg-gray-300 text-gray-800;
 }
 
 // ouline buttons
@@ -61,6 +61,6 @@
 .btn-outline-pink {
   @apply bg-transparent border-pink-400 border text-pink-400;
 }
-.btn-outline-black {
-  @apply bg-transparent border-gray-400 border text-gray-400;
+.btn-outline-gray {
+  @apply bg-transparent border-gray-800 border text-gray-800;
 }
