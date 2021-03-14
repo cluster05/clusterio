@@ -21,7 +21,7 @@ const routes: Routes = [
       { path: 'articles', component: ArticlesComponent },
       { path: 'snippets', component: SnippetsComponent },
       { path: 'tags', component: TagsComponent },
-      { path: 'user', component: UserComponent },
+      { path: 'account', component: UserComponent },
     ]
   }
 ];

@@ -18,6 +18,7 @@ import { SingleSnippetComponent } from './shared/components/single-snippet/singl
 import { CommentsComponent } from './shared/components/comments/comments.component';
 import { TagsComponent } from './components/tags/tags.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ClusterRoutingModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ]
 })
 export class ClusterModule { }
