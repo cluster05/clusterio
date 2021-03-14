@@ -1,9 +1,11 @@
-<quill-editor
-  [modules]="modules"
-  [(ngModel)]="htmlString"
-  [disabled]="!viewToolbar"
-  [styles]="{ 'min-height': '250px' }"
-  (onContentChanged)="onEditorChanged($event)"
-  (onEditorCreated)="getEditorInstance($event)"
-></quill-editor>
-<input type="file" style="display: none" id="fileInputField" />
+<div [class.border]="viewToolbar">
+  <quill-editor
+    [modules]="modules"
+    [(ngModel)]="htmlString"
+    [disabled]="!viewToolbar"
+    [styles]="{ 'min-height': '250px' }"
+    (onContentChanged)="onEditorChanged($event)"
+    (onEditorCreated)="getEditorInstance($event)"
+  ></quill-editor>
+  <input type="file" style="display: none" id="fileInputField" />
+</div>
