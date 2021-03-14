@@ -17,6 +17,7 @@ import { SingleArticleComponent } from './shared/components/single-article/singl
 import { SingleSnippetComponent } from './shared/components/single-snippet/single-snippet.component';
 import { CommentsComponent } from './shared/components/comments/comments.component';
 import { TagsComponent } from './components/tags/tags.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -39,7 +40,9 @@ import { TagsComponent } from './components/tags/tags.component';
   imports: [
     CommonModule,
     ClusterRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ClusterModule { }

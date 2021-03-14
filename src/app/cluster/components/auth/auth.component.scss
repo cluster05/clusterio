@@ -1,0 +1,26 @@
+#authantication {
+  font-family: "Open Sans", sans-serif monospace;
+  @apply w-screen h-screen flex justify-center items-center;
+
+  form {
+    @apply w-96 px-10 py-10 border shadow;
+    legend {
+      @apply text-2xl font-extrabold;
+    }
+    .login-button-layout {
+      @apply text-right;
+    }
+    button {
+      @apply mt-8 px-5;
+    }
+    .tip-text {
+      @apply mt-5 text-sm capitalize font-medium cursor-pointer;
+
+      span {
+        span {
+          @apply text-blue-400;
+        }
+      }
+    }
+  }
+}

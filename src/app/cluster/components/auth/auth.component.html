@@ -1,1 +1,46 @@
-<p>auth works!</p>
+<section id="authantication">
+  <form [formGroup]="authForm" (ngSubmit)="login()">
+    <legend>
+      {{ authState === AuthState.LOGIN ? "Log in" : "Register" }}
+    </legend>
+    <div class="form-group" *ngIf="authState === AuthState.REGISTER">
+      <label for="username"> Username </label>
+      <input type="text" id="username" formControlName="username" />
+    </div>
+    <div class="form-group">
+      <label for="email"> Eamil </label>
+      <input type="email" id="email" formControlName="email" />
+    </div>
+    <div class="form-group">
+      <label for="password"> Password </label>
+      <input type="password" id="password" formControlName="password" />
+    </div>
+    <div class="login-button-layout">
+      <button
+        class="btn btn-sm"
+        type="submit"
+        [class]="authState === AuthState.LOGIN ? 'btn-blue' : 'btn-green'"
+        [disabled]="authForm.invalid"
+        [class.btn-gray]="authForm.invalid"
+      >
+        {{ authState === AuthState.LOGIN ? "Log in" : "Register" }}
+      </button>
+    </div>
+    <div class="tip-text">
+      <ng-container
+        *ngIf="authState === AuthState.LOGIN; else registerElseBlock"
+      >
+        <span (click)="authState = AuthState.REGISTER">
+          new here ?
+          <span>create new account.</span></span
+        >
+      </ng-container>
+      <ng-template #registerElseBlock>
+        <span (click)="authState = AuthState.LOGIN">
+          already have account ?
+          <span> log in </span></span
+        >
+      </ng-template>
+    </div>
+  </form>
+</section>
