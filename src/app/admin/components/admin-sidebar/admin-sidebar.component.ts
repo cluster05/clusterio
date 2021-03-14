@@ -24,9 +24,11 @@ export class AdminSidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  logout() {
-    this.localStorageservice.removeItemFromLocalStorage('access_token');
-    this.router.navigate(['cryptic/auth'],);
+  logout(): void {
+    if (window.confirm('Are you sure ? you want to log out ?')) {
+      this.localStorageservice.removeItemFromLocalStorage('access_token');
+      this.router.navigate(['cryptic/auth']);
+    }
   }
 
 }

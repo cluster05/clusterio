@@ -46,9 +46,9 @@
         Updated At : {{ post.updated_at | date: "MMM d, y, h:mm a" }}
       </span>
     </div>
-    <style></style>
-    <div class="ql-container ql-snow">
-      <div class="ql-editor" [innerHTML]="post.content"></div>
-    </div>
+    <cluster-quill-editor
+      [viewToolbar]="false"
+      [htmlString]="post.content"
+    ></cluster-quill-editor>
   </article>
 </div>

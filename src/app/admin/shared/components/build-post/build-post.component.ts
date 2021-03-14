@@ -23,7 +23,7 @@ export class BuildPostComponent implements OnInit, OnDestroy {
     description: '',
     tags: [],
     title: '',
-    type: 'article',
+    type: 'article'
   };
 
   viewPreview = false;
@@ -35,11 +35,11 @@ export class BuildPostComponent implements OnInit, OnDestroy {
     const postId = this.route.snapshot.paramMap.get('postId') as string;
 
     if (postId) {
+      this.postUpdatingMode = true;
       this.subscription = this.articleService.readArticle(postId)
         .subscribe(
           response => {
             this.postBuilder = response;
-            this.postUpdatingMode = true;
             this.postImageURL = this.postBuilder.postImageUrl as string;
           },
           error => alert(error.error.message)

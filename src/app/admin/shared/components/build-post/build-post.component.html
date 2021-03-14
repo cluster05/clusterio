@@ -14,25 +14,33 @@
 
   <div class="form-group">
     <label for="post-type">post type</label>
-    <select id="post-type" [(ngModel)]="postBuilder.type">
+    <select
+      id="post-type"
+      [(ngModel)]="postBuilder.type"
+      [disabled]="postUpdatingMode"
+    >
       <option value="article" selected>article</option>
       <option value="snippet">snippet</option>
     </select>
   </div>
+
   <div class="form-group">
     <label for="post-title">{{ postBuilder.type }} title</label>
     <input type="text" id="post-title" [(ngModel)]="postBuilder.title" />
   </div>
+
   <cluster-upload-post-image
     *ngIf="postBuilder.type === 'article' && !postUpdatingMode"
     [imageFromUpload]="postImageURL"
     (postImageLinkUrl)="setPostImageURL($event)"
   ></cluster-upload-post-image>
+
   <img
     *ngIf="postBuilder.type === 'article' && postUpdatingMode"
     [src]="postImageURL"
     alt=""
   />
+
   <div class="form-group">
     <label for="post-description">{{ postBuilder.type }} description</label>
     <textarea
@@ -42,20 +50,34 @@
       [(ngModel)]="postBuilder.description"
     ></textarea>
   </div>
+
   <cluster-build-post-manage-tags
     [buildType]="postBuilder.type"
     [snippetTags]="postBuilder.tags"
     (addTagEmitter)="addTag($event)"
     (removeTagEmitter)="removeTag($event)"
   ></cluster-build-post-manage-tags>
+
   <div class="form-group">
     <label for="post">{{ postBuilder.type }} content </label>
   </div>
 
-  <cluster-quill-editor
-    [htmlString]="postBuilder.content"
-    (editorChangeEmitter)="editorChangeEmitter($event)"
-  ></cluster-quill-editor>
+  <ng-container *ngIf="postUpdatingMode; else elsePostUpdatingMode">
+    <cluster-quill-editor
+      *ngIf="postBuilder.content"
+      [htmlString]="postBuilder.content"
+      (editorChangeEmitter)="editorChangeEmitter($event)"
+      [viewToolbar]="true"
+    ></cluster-quill-editor>
+  </ng-container>
+  <ng-template #elsePostUpdatingMode>
+    <cluster-quill-editor
+      [htmlString]="postBuilder.content"
+      (editorChangeEmitter)="editorChangeEmitter($event)"
+      [viewToolbar]="true"
+    ></cluster-quill-editor>
+  </ng-template>
+
   <cluster-build-post-preview
     *ngIf="viewPreview"
     [postBuilder]="postBuilder"

@@ -9,30 +9,42 @@ import { ArticlesService } from 'src/app/shared/services/articles.service';
 export class QuillEditorComponent implements OnInit {
 
   @Input() htmlString = '';
+  @Input() viewToolbar = true;
   quillEditorRef: any;
   maxUploadFileSize = 10000000;
-  modules = {
-    syntax: true,
-    toolbar: [
-      ['bold', 'italic', 'underline'],        // toggled buttons
-      ['blockquote', 'code-block'],
-      [{ list: 'ordered' }, { list: 'bullet' }],
-      [{ script: 'sub' }, { script: 'super' }],      // superscript/subscript
-      [{ indent: '-1' }, { indent: '+1' }],          // outdent/indent
-      [{ direction: 'rtl' }],                         // text direction
-      [{ header: [1, 2, 3, false] }],
-      [{ color: [] }, { background: [] }],          // dropdown with defaults from theme
-      [{ font: [] }],
-      [{ align: [] }],
-      ['link', 'image', 'video']                         // link and image, video
-    ]
-  };
+
+  modules: any;
 
   @Output() editorChangeEmitter = new EventEmitter<any>();
 
   constructor(private articleService: ArticlesService) { }
 
   ngOnInit(): void {
+
+    if (this.viewToolbar) {
+      this.modules = {
+        syntax: true,
+        toolbar: [
+          ['bold', 'italic', 'underline'],        // toggled buttons
+          ['blockquote', 'code-block'],
+          [{ list: 'ordered' }, { list: 'bullet' }],
+          [{ script: 'sub' }, { script: 'super' }],      // superscript/subscript
+          [{ indent: '-1' }, { indent: '+1' }],          // outdent/indent
+          [{ direction: 'rtl' }],                         // text direction
+          [{ header: [1, 2, 3, false] }],
+          [{ color: [] }, { background: [] }],          // dropdown with defaults from theme
+          [{ font: [] }],
+          [{ align: [] }],
+          ['link', 'image', 'video']                         // link and image, video
+        ]
+      }
+    } else {
+      this.modules = {
+        syntax: true,
+        toolbar: false
+      }
+    }
+
   }
 
   onEditorChanged(event: any): void {
@@ -40,9 +52,11 @@ export class QuillEditorComponent implements OnInit {
   }
 
   getEditorInstance(editorInstance: any) {
-    this.quillEditorRef = editorInstance;
-    const toolbar = editorInstance.getModule('toolbar');
-    toolbar.addHandler('image', this.imageHandler);
+    if (this.viewToolbar) {
+      this.quillEditorRef = editorInstance;
+      const toolbar = editorInstance.getModule('toolbar');
+      toolbar.addHandler('image', this.imageHandler);
+    }
   }
 
   imageHandler = (image: string, callback: () => {}) => {

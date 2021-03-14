@@ -8,6 +8,16 @@ pre {
   padding: 1rem;
 }
 
+.ql-container.ql-snow {
+  border: none;
+
+  iframe {
+    width: 892px;
+    height: 502px;
+    align-self: center;
+  }
+}
+
 .ql-snow {
   .ql-editor {
     font-family: "Open Sans", sans-serif;
