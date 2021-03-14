@@ -16,6 +16,7 @@ import { ViewPostComponent } from './shared/components/view-post/view-post.compo
 import { SingleArticleComponent } from './shared/components/single-article/single-article.component';
 import { SingleSnippetComponent } from './shared/components/single-snippet/single-snippet.component';
 import { CommentsComponent } from './shared/components/comments/comments.component';
+import { TagsComponent } from './components/tags/tags.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { CommentsComponent } from './shared/components/comments/comments.compone
     ViewPostComponent,
     SingleArticleComponent,
     SingleSnippetComponent,
-    CommentsComponent
+    CommentsComponent,
+    TagsComponent
   ],
   imports: [
     CommonModule,
