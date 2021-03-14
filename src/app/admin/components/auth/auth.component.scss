@@ -5,5 +5,11 @@
     legend {
       @apply text-2xl font-extrabold;
     }
+    .login-button-layout {
+      @apply text-right;
+    }
+    button {
+      @apply mt-8;
+    }
   }
 }

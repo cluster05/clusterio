@@ -1,5 +1,8 @@
-li {
-  @apply p-4 text-2xl text-blue-300;
+.cluster-sidebar {
+  @apply w-full h-screen bg-white shadow;
+  li {
+    @apply p-4 text-2xl text-blue-300;
+  }
 }
 
 .active {
