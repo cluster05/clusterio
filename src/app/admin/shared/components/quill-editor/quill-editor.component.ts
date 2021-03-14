@@ -32,8 +32,10 @@ export class QuillEditorComponent implements OnInit {
           [{ indent: '-1' }, { indent: '+1' }],          // outdent/indent
           [{ direction: 'rtl' }],                         // text direction
           [{ header: [1, 2, 3, false] }],
-          [{ color: [] }, { background: [] }],          // dropdown with defaults from theme
-          [{ font: [] }],
+          [
+            { color: ['#F87171', '#FBBF24', '#34D399', '#9CA3AF', '#60A5FA', '#818CF8', '#A78BFA', '#F472B6'] },
+            { background: ['#F87171', '#FBBF24', '#34D399', '#9CA3AF', '#60A5FA', '#818CF8', '#A78BFA', '#F472B6'] }
+          ],          // dropdown with defaults from theme
           [{ align: [] }],
           ['link', 'image', 'video']                         // link and image, video
         ]
