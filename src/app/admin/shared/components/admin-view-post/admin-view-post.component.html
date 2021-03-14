@@ -1,5 +1,5 @@
 <div>
-  <div class="flex justify-between">
+  <div class="view-post-top-buttons">
     <div>
       <button
         class="btn btn-sm btn-blue"
@@ -16,42 +16,37 @@
     </button>
   </div>
 
-  <article style="color: #12181b; font-family: 'Open Sans', sans-serif">
-    <div class="text-center text-5xl font-bold">
+  <article>
+    <div class="title">
       <h1>{{ post.title }}</h1>
     </div>
-    <div class="my-5 border-b-4 border-gray-200 border-dashed"></div>
+    <div class="dotted-line"></div>
 
-    <section class="m-4 w-9/12">
+    <section class="content w-9/12">
       <img
         *ngIf="post.type === 'article'"
-        class="w-full"
+        class="content-img"
         [src]="post.postImageUrl"
         [alt]="post.title"
       />
-      <div class="shadow-md border my-4 py-2 px-6">
-        <div class="mt-5 text-sm tracking-wide font-medium w-2/3">
+      <div class="content-box">
+        <div class="description w-2/3">
           <p>{{ post.description }}</p>
         </div>
         <a
-          class="my-2 flex items-center"
+          class="auther"
           href="https://twitter.com/_ajay_kumbhar"
           target="_blank"
         >
           <img
             src="https://pbs.twimg.com/profile_images/1283074895291641856/uEVxzrki_bigger.jpg"
             alt="ajay kumbhar"
-            class="rounded-full w-10 h-10"
           />
-          <div
-            class="ml-3 text-blue-400 text-sm capitalize font-semibold cursor-pointer"
-          >
-            <span class="text-gray-700">by</span> ajay kumbhar
-          </div>
+          <div class="auther-name"><span>by</span> ajay kumbhar</div>
         </a>
-        <div class="my-3 flex justify-between items-end">
-          <div class="font-semibold capitalize flex flex-col">
-            <p class="ml-2 text-xs">created {{ post.created_at | date }}</p>
+        <div class="content-info">
+          <div class="dates">
+            <p class="created">created {{ post.created_at | date }}</p>
             <p class="tag btn-gray">
               last updated {{ post.updated_at | date }}
             </p>
@@ -64,7 +59,7 @@
         </div>
       </div>
 
-      <div class="shadow-lg border my-4 px-5 pt-10 pb-20">
+      <div class="content-content">
         <cluster-quill-editor
           [viewToolbar]="false"
           [htmlString]="post.content"
