@@ -1,25 +1,17 @@
-<section
-  class="absolute top-0 left-0 w-screen h-screen overflow-y-auto bg-black bg-opacity-50"
->
-  <div
-    class="m-20 p-5 bg-white shadow-md"
-    style="color: #12181b; font-family: 'Open Sans', sans-serif"
-  >
-    <button
-      (click)="toggleViewPreview()"
-      class="btn btn-sm btn-red absolute top-10 right-20"
-    >
+<section>
+  <div class="preview">
+    <button (click)="toggleViewPreview()" class="btn btn-sm btn-red close">
       close
     </button>
     <button class="tag btn-red">{{ postBuilder.type }}</button>
-    <div class="text-center text-5xl font-bold">
+    <div class="title">
       <h1>{{ postBuilder.title }}</h1>
     </div>
-    <div class="my-5 border-b-4 border-gray-200 border-dashed"></div>
-    <div class="text-base tracking-wide font-medium">
+    <div class="dashed-line"></div>
+    <div class="description">
       <p>{{ postBuilder.description }}</p>
     </div>
-    <div class="mt-2">
+    <div class="selected-tags">
       <span class="tag btn-red" *ngFor="let tag of postBuilder.tags">
         #{{ tag.name }}
       </span>
