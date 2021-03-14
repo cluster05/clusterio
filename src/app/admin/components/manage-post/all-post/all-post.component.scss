@@ -1,0 +1,10 @@
+.all-post-top-buttons {
+  @apply flex justify-between items-center;
+  select {
+    @apply px-4;
+  }
+}
+
+.posts {
+  @apply grid grid-cols-3 gap-4;
+}

@@ -1,10 +1,10 @@
-<div class="flex justify-between items-center">
+<div class="all-post-top-buttons">
   <button class="btn btn-sm btn-blue" routerLink="./create">
     create new post
   </button>
   <select
     id="post-type"
-    class="btn btn-sm btn-gray px-4"
+    class="btn btn-sm btn-gray"
     [(ngModel)]="postType"
     (change)="getOtherPostType()"
   >
@@ -13,13 +13,13 @@
   </select>
 </div>
 
-<div class="grid grid-cols-3 gap-4" *ngIf="postType === 'snippet'">
+<div class="posts" *ngIf="postType === 'snippet'">
   <cluster-single-snippet
     *ngFor="let snippet of snippets"
     [snippet]="snippet"
   ></cluster-single-snippet>
 </div>
-<div class="grid grid-cols-3 gap-4" *ngIf="postType === 'article'">
+<div class="posts" *ngIf="postType === 'article'">
   <cluster-single-article *ngFor="let article of articles" [article]="article">
   </cluster-single-article>
 </div>
