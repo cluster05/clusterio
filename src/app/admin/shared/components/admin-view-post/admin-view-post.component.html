@@ -17,7 +17,7 @@
   </div>
 
   <article
-    class="m-10"
+    class="w-9/12"
     style="color: #12181b; font-family: 'Open Sans', sans-serif"
   >
     <div class="text-center text-5xl font-bold">
@@ -30,25 +30,44 @@
       [src]="post.postImageUrl"
       [alt]="post.title"
     />
-    <div class="mt-5 text-base tracking-wide font-medium">
-      <p>{{ post.description }}</p>
+    <div class="shadow-md border my-4 py-2 px-6">
+      <div class="mt-5 text-sm tracking-wide font-medium w-2/3">
+        <p>{{ post.description }}</p>
+      </div>
+      <a
+        class="my-2 flex items-center"
+        href="https://twitter.com/_ajay_kumbhar"
+        target="_blank"
+      >
+        <img
+          src="https://pbs.twimg.com/profile_images/1283074895291641856/uEVxzrki_bigger.jpg"
+          alt="ajay kumbhar"
+          class="rounded-full w-10 h-10"
+        />
+        <div
+          class="ml-3 text-blue-400 text-sm capitalize font-semibold cursor-pointer"
+        >
+          <span class="text-gray-700">by</span> ajay kumbhar
+        </div>
+      </a>
+      <div class="my-3 flex justify-between items-end">
+        <div class="font-semibold capitalize flex flex-col">
+          <p class="ml-2 text-xs">created {{ post.created_at | date }}</p>
+          <p class="tag btn-gray">last updated {{ post.updated_at | date }}</p>
+        </div>
+        <div class="">
+          <span class="tag btn-gray" *ngFor="let tag of post.tags">
+            #{{ tag.name }}
+          </span>
+        </div>
+      </div>
     </div>
-    <div class="my-4">
-      <span class="tag btn-gray" *ngFor="let tag of post.tags">
-        #{{ tag.name }}
-      </span>
+
+    <div class="my-4 px-5 pt-10 pb-20">
+      <cluster-quill-editor
+        [viewToolbar]="false"
+        [htmlString]="post.content"
+      ></cluster-quill-editor>
     </div>
-    <div class="my-4 italic">
-      <span class="tag btn-green">
-        Created At : {{ post.created_at | date: "MMM d, y, h:mm a" }}
-      </span>
-      <span class="tag btn-red">
-        Updated At : {{ post.updated_at | date: "MMM d, y, h:mm a" }}
-      </span>
-    </div>
-    <cluster-quill-editor
-      [viewToolbar]="false"
-      [htmlString]="post.content"
-    ></cluster-quill-editor>
   </article>
 </div>
