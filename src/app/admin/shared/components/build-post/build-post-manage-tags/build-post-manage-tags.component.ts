@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
+import { PostType } from 'src/app/constant/enum/post.enum';
 import { Tag } from 'src/app/constant/interface/tag.inteface';
 import { TagsService } from 'src/app/shared/services/tags.service';
 
@@ -11,7 +12,7 @@ import { TagsService } from 'src/app/shared/services/tags.service';
 })
 export class BuildPostManageTagsComponent implements OnInit, OnDestroy {
 
-  @Input() buildType = 'article';
+  @Input() buildType = PostType.ARTICLE;
   @Input() snippetTags: any[] = [];
   @Output() addTagEmitter = new EventEmitter<Tag>();
   @Output() removeTagEmitter = new EventEmitter<string>();

@@ -1,6 +1,6 @@
 <article (click)="navigateTo(article)">
   <img
-    *ngIf="article.type === 'article'"
+    *ngIf="article.type === PostType.ARTICLE"
     [src]="article.postImageUrl"
     [alt]="article.title"
   />

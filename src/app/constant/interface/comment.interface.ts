@@ -1,7 +1,7 @@
-import { CommentUser } from "./comment-user.interface";
+import { CommentUser } from './comment-user.interface';
 
 export interface Comment {
-    user: CommentUser
+    user: CommentUser;
     comment: string;
     comment_on: number;
 }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PostType } from 'src/app/constant/enum/post.enum';
 import { Article } from 'src/app/constant/interface/post.interface';
 
 @Component({
@@ -9,8 +10,10 @@ import { Article } from 'src/app/constant/interface/post.interface';
 })
 export class SingleArticleComponent implements OnInit {
 
+  PostType = PostType;
+
   @Input() article: Article = {
-    type: '',
+    type: PostType.ARTICLE,
     description: '',
     title: '',
     tags: [],
@@ -23,7 +26,7 @@ export class SingleArticleComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navigateTo(article: Article) {
+  navigateTo(article: Article): void {
     this.router.navigate(['./view/', article.id], { relativeTo: this.route });
   }
 

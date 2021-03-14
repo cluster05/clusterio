@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PostType } from 'src/app/constant/enum/post.enum';
 import { Article } from 'src/app/constant/interface/post.interface';
 
 @Component({
@@ -10,7 +11,7 @@ import { Article } from 'src/app/constant/interface/post.interface';
 export class SingleSnippetComponent implements OnInit {
 
   @Input() snippet: Article = {
-    type: '',
+    type: PostType.SNIPPET,
     description: '',
     title: '',
     tags: [],

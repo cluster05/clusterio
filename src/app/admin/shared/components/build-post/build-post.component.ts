@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { PostType } from 'src/app/constant/enum/post.enum';
 import { Article } from 'src/app/constant/interface/post.interface';
 import { Tag } from 'src/app/constant/interface/tag.inteface';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
@@ -14,6 +15,7 @@ export class BuildPostComponent implements OnInit, OnDestroy {
 
   @Output() outputPost = new EventEmitter<any>();
   subscription: Subscription = new Subscription();
+  PostType = PostType;
 
   postImageURL = '';
 
@@ -23,7 +25,7 @@ export class BuildPostComponent implements OnInit, OnDestroy {
     description: '',
     tags: [],
     title: '',
-    type: 'article'
+    type: PostType.ARTICLE
   };
 
   viewPreview = false;

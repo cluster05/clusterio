@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { PostType } from 'src/app/constant/enum/post.enum';
 import { Article } from 'src/app/constant/interface/post.interface';
 
 @Component({
@@ -8,8 +9,10 @@ import { Article } from 'src/app/constant/interface/post.interface';
 })
 export class BuildPostPreviewComponent implements OnInit {
 
+  PostType = PostType;
+
   @Input() postBuilder: Article = {
-    type: '',
+    type: PostType.ARTICLE,
     title: '',
     content: '',
     description: '',

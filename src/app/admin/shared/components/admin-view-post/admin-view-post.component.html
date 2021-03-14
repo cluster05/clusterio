@@ -24,7 +24,7 @@
 
     <section class="content w-9/12">
       <img
-        *ngIf="post.type === 'article'"
+        *ngIf="post.type === PostType.ARTICLE"
         class="content-img"
         [src]="post.postImageUrl"
         [alt]="post.title"

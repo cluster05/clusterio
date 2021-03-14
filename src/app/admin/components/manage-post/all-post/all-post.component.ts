@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { PostType } from 'src/app/constant/enum/post.enum';
 import { Article } from 'src/app/constant/interface/post.interface';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
 import { LocalstorageService } from 'src/app/shared/services/localstorage.service';
@@ -14,13 +15,14 @@ export class AllPostComponent implements OnInit, OnDestroy {
   snippets: Article[] = [];
   articles: Article[] = [];
   subscription: Subscription = new Subscription();
-  postType = 'article';
+  postType = PostType.ARTICLE;
+  PostType = PostType;
 
   constructor(private articleService: ArticlesService, private localStorageService: LocalstorageService) { }
 
   ngOnInit(): void {
 
-    const serve = this.localStorageService.getItemFromLocalstorage('serve');
+    const serve: PostType = this.localStorageService.getItemFromLocalstorage('serve') as PostType;
     if (serve) {
       this.postType = serve;
     }
@@ -28,8 +30,8 @@ export class AllPostComponent implements OnInit, OnDestroy {
     this.subscription = this.articleService.readAllArticle()
       .subscribe(
         response => {
-          this.snippets = response.filter(f => f.type === 'snippet');
-          this.articles = response.filter(f => f.type === 'article');
+          this.snippets = response.filter(f => f.type === PostType.SNIPPET);
+          this.articles = response.filter(f => f.type === PostType.ARTICLE);
         },
         error => alert(error.error.message)
       );

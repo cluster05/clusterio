@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { PostType } from 'src/app/constant/enum/post.enum';
 import { Article } from 'src/app/constant/interface/post.interface';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
 
@@ -9,11 +10,13 @@ import { ArticlesService } from 'src/app/shared/services/articles.service';
   templateUrl: './admin-view-post.component.html',
   styleUrls: ['./admin-view-post.component.scss']
 })
-export class AdminViewPostComponent implements OnInit {
+export class AdminViewPostComponent implements OnInit, OnDestroy {
+
+  PostType = PostType;
 
 
   post: Article = {
-    type: 'article',
+    type: PostType.ARTICLE,
     title: '',
     description: '',
     tags: [],
@@ -23,18 +26,18 @@ export class AdminViewPostComponent implements OnInit {
   isContentRetriving = true;
   subscription: Subscription = new Subscription();
 
-  constructor(private articleService: ArticlesService,
+  constructor(
+    private articleService: ArticlesService,
     private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit(): void {
 
-    const postId = this.route.snapshot.paramMap.get('postId') as string
+    const postId = this.route.snapshot.paramMap.get('postId') as string;
 
     this.subscription = this.articleService.readArticle(postId)
       .subscribe(
         response => {
-          // console.log(response);
           this.isContentRetriving = false;
           this.post = response;
         },
@@ -42,7 +45,7 @@ export class AdminViewPostComponent implements OnInit {
       );
   }
 
-  deletePost(postId: string | undefined) {
+  deletePost(postId: string | undefined): void {
 
     const deletePostId = postId as string;
 

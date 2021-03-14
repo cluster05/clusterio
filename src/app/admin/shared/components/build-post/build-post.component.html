@@ -30,13 +30,13 @@
   </div>
 
   <cluster-upload-post-image
-    *ngIf="postBuilder.type === 'article' && !postUpdatingMode"
+    *ngIf="postBuilder.type === PostType.ARTICLE"
     [imageFromUpload]="postImageURL"
     (postImageLinkUrl)="setPostImageURL($event)"
   ></cluster-upload-post-image>
 
   <img
-    *ngIf="postBuilder.type === 'article' && postUpdatingMode"
+    *ngIf="postBuilder.type === PostType.ARTICLE && postUpdatingMode"
     [src]="postImageURL"
     alt=""
   />
