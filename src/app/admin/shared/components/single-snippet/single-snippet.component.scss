@@ -1,0 +1,15 @@
+article {
+  @apply px-4 py-4 bg-gray-100 w-full cursor-pointer text-gray-700;
+  h1 {
+    @apply font-semibold text-xl;
+  }
+  .br {
+    @apply my-3;
+  }
+  p {
+    @apply text-sm text-gray-600;
+  }
+  .tags {
+    @apply mt-2;
+  }
+}

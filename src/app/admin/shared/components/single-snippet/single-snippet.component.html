@@ -1,11 +1,8 @@
-<article
-  class="px-4 py-4 bg-gray-100 w-full cursor-pointer text-gray-700"
-  (click)="navigateTo(snippet)"
->
-  <h1 class="font-semibold text-xl">{{ snippet.title }}</h1>
-  <div class="my-3"></div>
-  <p class="text-sm text-gray-600">{{ snippet.description }}</p>
-  <div class="mt-2">
+<article (click)="navigateTo(snippet)">
+  <h1>{{ snippet.title }}</h1>
+  <div class="br"></div>
+  <p>{{ snippet.description }}</p>
+  <div class="tags">
     <span class="tag btn-gray" *ngFor="let tag of snippet.tags">
       #{{ tag.name }}
     </span>

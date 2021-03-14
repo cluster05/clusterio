@@ -1,0 +1,18 @@
+article {
+  @apply pb-1 rounded-sm shadow tracking-wide cursor-pointer;
+  img {
+    @apply w-full rounded-tl-sm rounded-tr-sm;
+  }
+  .content {
+    @apply my-3 px-2;
+    h2 {
+      @apply font-semibold text-xl;
+    }
+    p {
+      @apply text-sm;
+    }
+    .tags {
+      @apply mt-2;
+    }
+  }
+}
