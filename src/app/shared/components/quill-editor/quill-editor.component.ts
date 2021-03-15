@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ArticlesService } from 'src/app/shared/services/articles.service';
+import { ArticlesService } from '../../services/articles.service';
 
 @Component({
   selector: 'cluster-quill-editor',
