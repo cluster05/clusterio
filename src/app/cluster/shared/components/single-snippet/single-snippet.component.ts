@@ -26,7 +26,9 @@ export class SingleSnippetComponent implements OnInit {
   }
 
   navigateTo(snippet: Article): void {
-    this.router.navigate(['./', snippet.id], { relativeTo: this.route });
+    const regex = /\ /gi;
+    const buildTitle = snippet.title.replace(regex, '-');
+    this.router.navigate(['./', snippet.id], { relativeTo: this.route, queryParams: { title: buildTitle } });
   }
 
 }
