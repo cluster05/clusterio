@@ -4,6 +4,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { FormsModule } from '@angular/forms';
 import { ViewPostComponent } from './components/view-post/view-post.component';
 import { QuillEditorComponent } from './components/quill-editor/quill-editor.component';
+import { QuillModule } from 'ngx-quill';
 
 const components = [
   PageNotFoundComponent,
@@ -19,6 +20,8 @@ const components = [
   imports: [
     CommonModule,
     FormsModule,
+    QuillModule,
+
   ],
   exports: [
     components
