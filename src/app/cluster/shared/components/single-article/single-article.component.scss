@@ -4,12 +4,12 @@ article {
     @apply rounded-tl rounded-tr;
   }
   .article-content {
-    @apply p-5 mb-4;
+    @apply p-4 mb-4;
     title {
-      @apply my-4 block text-sm font-bold text-gray-700;
+      @apply my-3 block text-sm font-bold text-gray-700;
     }
     p {
-      @apply my-4 text-xs text-gray-600;
+      @apply my-3 text-xs text-gray-600;
     }
   }
   &:hover {
