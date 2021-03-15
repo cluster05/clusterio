@@ -34,4 +34,8 @@ export class ArticlesService {
   uploadArticleImage(image: FormData): Observable<{ imageURL: string }> {
     return this.http.post<{ imageURL: string }>(environment.backendBaseURL + '/articles/image/upload/', image);
   }
+
+  searchArticlesByTagName(tagName: string): Observable<Article[]> {
+    return this.http.get<Article[]>(environment.backendBaseURL + 'find/bytag/' + tagName);
+  }
 }
