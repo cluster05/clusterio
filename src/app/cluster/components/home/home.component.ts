@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'cluster-home',
@@ -7,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  skills = ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Angular', 'React', 'Flutter', 'MongoDB', 'Node', 'Express'];
+  skills = ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Angular', 'React', 'Flutter', 'Node', 'Express', 'MySQL', 'MongoDB'];
   skill = '';
   studentCount = 100;
 
   constructor() { }
+
 
   ngOnInit(): void {
 
@@ -40,4 +41,9 @@ export class HomeComponent implements OnInit {
 
     }, 200);
   }
+
+  ngOnDestroy(): void {
+    window.clearInterval();
+  }
+
 }
