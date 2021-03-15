@@ -22,7 +22,7 @@ export class ArticlesComponent implements OnInit, OnDestroy {
     this.subscription = this.articleService.readAllArticle()
       .subscribe(
         response => {
-          this.articles = response.filter(f => f.type === PostType.SNIPPET);
+          this.articles = response.filter(f => f.type === PostType.ARTICLE);
         },
         error => alert(error.error.message)
       );

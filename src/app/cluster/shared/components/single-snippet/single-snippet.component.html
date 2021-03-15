@@ -1,11 +1,11 @@
 <article (click)="navigateTo(snippet)">
   <div class="article-content">
-    <title>Stripe Payments Master Course</title>
-    <p>Build a fullstack payment solution with Node.js and React.</p>
+    <title>{{ snippet.title }}</title>
+    <p>{{ snippet.description }}</p>
     <div>
-      <span class="tag btn-gray">#angular</span>
-      <span class="tag btn-gray">#firebase</span>
-      <span class="tag btn-gray">#tailwindCSS</span>
+      <span class="tag btn-gray" *ngFor="let tag of snippet.tags"
+        >#{{ tag.name }}</span
+      >
     </div>
   </div>
 </article>

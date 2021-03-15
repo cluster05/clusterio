@@ -26,7 +26,7 @@ export class SingleSnippetComponent implements OnInit {
   }
 
   navigateTo(snippet: Article): void {
-    this.router.navigate(['./snippets/', snippet.id], { relativeTo: this.route });
+    this.router.navigate(['./', snippet.id], { relativeTo: this.route });
   }
 
 }

@@ -1,12 +1,12 @@
 <article (click)="navigateTo(article)">
-  <img src="https://fireship.io/courses/stripe-js/img/featured.jpg" alt="" />
+  <img [src]="article.postImageUrl" [alt]="article.title" />
   <div class="article-content">
-    <title>Stripe Payments Master Course</title>
-    <p>Build a fullstack payment solution with Node.js and React.</p>
+    <title>{{ article.title }}</title>
+    <p>{{ article.description }}</p>
     <div>
-      <span class="tag btn-gray">#angular</span>
-      <span class="tag btn-gray">#firebase</span>
-      <span class="tag btn-gray">#tailwindCSS</span>
+      <span class="tag btn-gray" *ngFor="let tag of article.tags"
+        >#{{ tag.name }}</span
+      >
     </div>
   </div>
 </article>

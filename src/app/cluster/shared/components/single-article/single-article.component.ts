@@ -28,6 +28,6 @@ export class SingleArticleComponent implements OnInit {
   }
 
   navigateTo(article: Article): void {
-    this.router.navigate(['./articles/', article.id], { relativeTo: this.route });
+    this.router.navigate(['./', article.id], { relativeTo: this.route });
   }
 }
