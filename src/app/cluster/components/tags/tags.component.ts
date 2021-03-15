@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TagsComponent implements OnInit {
 
+  tags = ['angular', 'firebase', 'github', 'react', 'vuew', 'html', 'css', 'javascript'];
+
   constructor() { }
 
   ngOnInit(): void {

@@ -1,0 +1,46 @@
+article {
+  color: #12181b;
+  font-family: "Open Sans", sans-serif;
+  .title {
+    @apply text-center text-5xl font-bold;
+  }
+  .dotted-line {
+    @apply my-5 border-b-4 border-gray-200 border-dashed;
+  }
+  .content {
+    @apply m-4;
+    .content-img {
+      @apply w-full;
+    }
+    .content-box {
+      @apply shadow-md border my-4 py-2 px-6;
+      .description {
+        @apply mt-5 text-sm tracking-wide font-medium;
+      }
+      .auther {
+        @apply my-2 flex items-center;
+        img {
+          @apply rounded-full w-10 h-10;
+        }
+        .auther-name {
+          @apply ml-3 text-blue-400 text-sm capitalize font-semibold cursor-pointer;
+          span {
+            @apply text-gray-700;
+          }
+        }
+      }
+      .content-info {
+        @apply my-3 flex justify-between items-end;
+        .dates {
+          @apply font-semibold capitalize flex flex-col;
+          .created {
+            @apply ml-2 text-xs;
+          }
+        }
+      }
+    }
+    .content-content {
+      @apply shadow-lg border my-4 px-5 pt-10 pb-20;
+    }
+  }
+}
