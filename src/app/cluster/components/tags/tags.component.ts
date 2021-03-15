@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Tag } from 'src/app/constant/interface/tag.inteface';
+import { TagsService } from 'src/app/shared/services/tags.service';
 
 @Component({
   selector: 'cluster-tags',
@@ -7,11 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TagsComponent implements OnInit {
 
-  tags = ['angular', 'firebase', 'github', 'react', 'vuew', 'html', 'css', 'javascript'];
+  subscriptions: Subscription = new Subscription();
 
-  constructor() { }
+  tags: Tag[] = [];
+
+  constructor(private tagService: TagsService) { }
 
   ngOnInit(): void {
+    this.subscriptions.add(this.tagService.readAllTag().subscribe(tags => this.tags = tags));
   }
 
 }
