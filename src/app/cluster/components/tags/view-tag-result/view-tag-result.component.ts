@@ -26,7 +26,8 @@ export class ViewTagResultComponent implements OnInit {
   navigateTo(article: Article): void {
     const regex = /\ /gi;
     const buildTitle = article.title.replace(regex, '-');
-    this.router.navigate(['./', article.id], { relativeTo: this.route, queryParams: { title: buildTitle } });
+    const postType = article.type;
+    this.router.navigate(['/' + postType + 's/', article.id], { queryParams: { title: buildTitle } });
   }
 
 }

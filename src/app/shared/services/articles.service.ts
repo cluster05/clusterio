@@ -36,6 +36,6 @@ export class ArticlesService {
   }
 
   searchArticlesByTagName(tagName: string): Observable<Article[]> {
-    return this.http.get<Article[]>(environment.backendBaseURL + 'find/bytag/' + tagName);
+    return this.http.get<Article[]>(environment.backendBaseURL + '/articles/find/bytag/' + tagName);
   }
 }

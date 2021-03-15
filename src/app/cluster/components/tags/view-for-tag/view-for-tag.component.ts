@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Article } from 'src/app/constant/interface/post.interface';
+import { ArticlesService } from 'src/app/shared/services/articles.service';
 
 @Component({
   selector: 'cluster-view-for-tag',
@@ -12,13 +13,18 @@ export class ViewForTagComponent implements OnInit {
   searchTag = '';
   results: Article[] = [];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private articlesService: ArticlesService) { }
 
   ngOnInit(): void {
     this.searchTag = this.route.snapshot.paramMap.get('tagName') as string;
 
     if (this.searchTag) {
-      //API call for search tag
+      console.log('called');
+
+      this.articlesService.searchArticlesByTagName(this.searchTag)
+        .subscribe(
+          response => this.results = response,
+          error => alert(error.error.message));
     }
   }
 
