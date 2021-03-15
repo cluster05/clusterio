@@ -19,7 +19,7 @@
 
     span {
       display: none;
-      @apply px-2 py-1 tracking-wider text-sm capitalize  absolute left-16  bg-gray-400 text-gray-50 whitespace-nowrap font-medium rounded-sm;
+      @apply px-2 py-1 tracking-wider text-sm capitalize  absolute left-16  bg-gray-400 text-gray-50 whitespace-nowrap font-medium rounded-sm z-30;
     }
 
     &:first-child {
