@@ -1,15 +1,3 @@
-// article {
-//   @apply p-4 shadow-md rounded border tracking-wide;
-//   .article-content {
-//     @apply text-center;
-//     title {
-//       @apply my-4 block font-bold text-gray-700;
-//     }
-//     p {
-//       @apply my-4 text-sm text-gray-600;
-//     }
-//   }
-// }
 article {
   @apply shadow rounded border tracking-wide cursor-pointer;
   img {
