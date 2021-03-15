@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ViewPostComponent } from '../shared/components/view-post/view-post.component';
 
 import { ClusterComponent } from './cluster.component';
 import { ArticlesComponent } from './components/articles/articles.component';
@@ -10,6 +9,7 @@ import { SearchComponent } from './components/search/search.component';
 import { SnippetsComponent } from './components/snippets/snippets.component';
 import { TagsComponent } from './components/tags/tags.component';
 import { UserComponent } from './components/user/user.component';
+import { ViewPostComponent } from './shared/components/view-post/view-post.component';
 
 const routes: Routes = [
   { path: 'auth', component: AuthComponent },

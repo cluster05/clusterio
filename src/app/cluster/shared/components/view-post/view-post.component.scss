@@ -2,7 +2,7 @@ article {
   color: #12181b;
   font-family: "Open Sans", sans-serif;
   .title {
-    @apply text-center text-5xl font-bold;
+    @apply block text-center text-5xl font-bold;
   }
   .dotted-line {
     @apply my-5 border-b-4 border-gray-200 border-dashed;
