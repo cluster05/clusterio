@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ViewPostComponent } from '../shared/components/view-post/view-post.component';
 
 import { ClusterComponent } from './cluster.component';
 import { ArticlesComponent } from './components/articles/articles.component';
@@ -18,7 +19,9 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent },
       { path: 'search', component: SearchComponent },
+      { path: 'articles/:postId', component: ViewPostComponent },
       { path: 'articles', component: ArticlesComponent },
+      { path: 'snippets/:postId', component: ViewPostComponent },
       { path: 'snippets', component: SnippetsComponent },
       { path: 'tags', component: TagsComponent },
       { path: 'account', component: UserComponent },
