@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PostType } from 'src/app/constant/enum/post.enum';
+import { Article } from 'src/app/constant/interface/post.interface';
 
 @Component({
   selector: 'cluster-view-tag-result',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewTagResultComponent implements OnInit {
 
-  constructor() { }
+  @Input() result: Article = {
+    type: PostType.ARTICLE,
+    title: '',
+    description: '',
+    tags: [],
+    content: '',
+  };
+
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+  }
+
+  navigateTo(article: Article): void {
+    const regex = /\ /gi;
+    const buildTitle = article.title.replace(regex, '-');
+    this.router.navigate(['./', article.id], { relativeTo: this.route, queryParams: { title: buildTitle } });
   }
 
 }

@@ -1,5 +1,6 @@
 <div class="text-5xl font-bold">{{ searchTag }}</div>
 <div class="dotted-line"></div>
 <div class="grid grid-cols-3 gap-4">
-  <cluster-view-tag-result></cluster-view-tag-result>
+  <cluster-view-tag-result *ngFor="let result of results" [result]="result">
+  </cluster-view-tag-result>
 </div>
