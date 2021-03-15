@@ -29,12 +29,39 @@
       }
     }
   }
-  #new-articles {
+  #new-launched {
+    @apply mb-20;
     .title {
-      @apply my-10 text-xl text-gray-700 font-bold text-center;
+      @apply my-5 text-xl text-gray-700 font-bold text-center;
     }
     .articles {
-      @apply grid grid-cols-3 gap-4;
+      @apply grid grid-cols-2 gap-4;
+      article {
+        @apply p-4 shadow-md rounded border tracking-wide;
+        .article-content {
+          @apply text-center;
+          title {
+            @apply my-4 block font-bold text-gray-700;
+          }
+          p {
+            @apply my-4 text-sm text-gray-600;
+          }
+        }
+        button {
+          @apply w-full;
+        }
+      }
+    }
+  }
+  #auther {
+    .auther {
+      @apply my-2 flex items-center;
+      img {
+        @apply rounded-full w-10 h-10;
+      }
+      .auther-name {
+        @apply ml-3 text-blue-400 text-sm capitalize font-semibold cursor-pointer;
+      }
     }
   }
 }
