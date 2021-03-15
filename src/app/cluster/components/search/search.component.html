@@ -1,2 +1,13 @@
 <div class="text-5xl font-bold">Search</div>
 <div class="dotted-line"></div>
+<div class="form-group">
+  <input type="text" placeholder="Type here ..." class="text-6xl font-bold" />
+  <button class="float-right btn btn-sm btn-green">search</button>
+</div>
+<div class="mt-5" *ngIf="searches.length > 0">
+  <h3 class="font-bold text-xl">Search Results :</h3>
+  <cluster-snippet
+    *ngFor="let search of searches"
+    [snippet]="search"
+  ></cluster-snippet>
+</div>
