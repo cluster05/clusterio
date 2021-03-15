@@ -1,7 +1,11 @@
 <div class="text-5xl font-bold">Tags</div>
 <div class="dotted-line"></div>
 <div class="tags tracking-wide">
-  <div class="btn btn-gray lowercase mx-2" *ngFor="let tag of tags">
+  <div
+    class="btn btn-gray lowercase mx-2"
+    *ngFor="let tag of tags"
+    [routerLink]="['./' + tag.name]"
+  >
     #{{ tag.name }}
   </div>
 </div>

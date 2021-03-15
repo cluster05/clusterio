@@ -20,6 +20,7 @@ import { TagsComponent } from './components/tags/tags.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ViewForTagComponent } from './components/tags/view-for-tag/view-for-tag.component';
+import { ViewTagResultComponent } from './components/tags/view-tag-result/view-tag-result.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { ViewForTagComponent } from './components/tags/view-for-tag/view-for-tag
     SingleSnippetComponent,
     CommentsComponent,
     TagsComponent,
-    ViewForTagComponent
+    ViewForTagComponent,
+    ViewTagResultComponent
   ],
   imports: [
     CommonModule,

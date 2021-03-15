@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { SnippetsComponent } from './components/snippets/snippets.component';
 import { TagsComponent } from './components/tags/tags.component';
+import { ViewForTagComponent } from './components/tags/view-for-tag/view-for-tag.component';
 import { UserComponent } from './components/user/user.component';
 import { ViewPostComponent } from './shared/components/view-post/view-post.component';
 
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'articles', component: ArticlesComponent },
       { path: 'snippets/:postId', component: ViewPostComponent },
       { path: 'snippets', component: SnippetsComponent },
+      { path: 'tags/:tagName', component: ViewForTagComponent },
       { path: 'tags', component: TagsComponent },
       { path: 'account', component: UserComponent },
     ]

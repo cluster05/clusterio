@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'cluster-view-for-tag',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewForTagComponent implements OnInit {
 
-  constructor() { }
+  searchTag = '';
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.searchTag = this.route.snapshot.paramMap.get('tagName') as string;
   }
 
 }
