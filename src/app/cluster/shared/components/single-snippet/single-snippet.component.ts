@@ -4,7 +4,7 @@ import { PostType } from 'src/app/constant/enum/post.enum';
 import { Article } from 'src/app/constant/interface/post.interface';
 
 @Component({
-  selector: 'cluster-single-snippet',
+  selector: 'cluster-snippet',
   templateUrl: './single-snippet.component.html',
   styleUrls: ['./single-snippet.component.scss']
 })

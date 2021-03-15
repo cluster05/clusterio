@@ -1,7 +1,8 @@
 <div class="text-5xl font-bold">Articles</div>
 <div class="dotted-line"></div>
 <div class="articles">
-  <cluster-single-article
-    *ngFor="let item of [1, 2, 3, 4]"
-  ></cluster-single-article>
+  <cluster-article
+    *ngFor="let article of articles"
+    [article]="article"
+  ></cluster-article>
 </div>

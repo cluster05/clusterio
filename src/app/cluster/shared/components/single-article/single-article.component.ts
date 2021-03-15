@@ -4,7 +4,7 @@ import { PostType } from 'src/app/constant/enum/post.enum';
 import { Article } from 'src/app/constant/interface/post.interface';
 
 @Component({
-  selector: 'cluster-single-article',
+  selector: 'cluster-article',
   templateUrl: './single-article.component.html',
   styleUrls: ['./single-article.component.scss']
 })

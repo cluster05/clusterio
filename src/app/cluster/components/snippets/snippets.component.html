@@ -1,7 +1,8 @@
 <div class="text-5xl font-bold">Snippets</div>
 <div class="dotted-line"></div>
 <div class="snippets">
-  <cluster-single-snippet
-    *ngFor="let item of [1, 2, 3, 4]"
-  ></cluster-single-snippet>
+  <cluster-snippet
+    *ngFor="let snippet of snippets"
+    [snippet]="snippet"
+  ></cluster-snippet>
 </div>
