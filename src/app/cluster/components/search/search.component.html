@@ -18,9 +18,10 @@
   />
   <span
     *ngIf="!searchState.isSearching && searchState.resultFound === 0"
-    class="mt-5 text-xl font-bold"
-    >no search found</span
-  >
+    class="mt-5 text-3xl font-bold"
+    >Sorry ! We did not found anything for
+    <span class="underline">{{ searchWord.value }}</span>
+  </span>
 </div>
 
 <div class="mt-5" *ngIf="searches.length > 0">
