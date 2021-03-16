@@ -10,6 +10,19 @@
   <button class="float-right btn btn-sm btn-green">search</button>
 </div>
 
+<div *ngIf="searchWord.value.length > 0" class="flex justify-center">
+  <img
+    *ngIf="searchState.isSearching"
+    src="./../../../../assets/loading.svg"
+    alt="searching..."
+  />
+  <span
+    *ngIf="!searchState.isSearching && searchState.resultFound === 0"
+    class="mt-5 text-xl font-bold"
+    >no search found</span
+  >
+</div>
+
 <div class="mt-5" *ngIf="searches.length > 0">
   <h3 class="font-bold text-xl">Search Results :</h3>
   <div class="grid grid-cols-1 gap-2">
