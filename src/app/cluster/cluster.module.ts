@@ -21,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ViewForTagComponent } from './components/tags/view-for-tag/view-for-tag.component';
 import { ViewTagResultComponent } from './components/tags/view-tag-result/view-tag-result.component';
+import { ViewTagsComponent } from './shared/components/view-tags/view-tags.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { ViewTagResultComponent } from './components/tags/view-tag-result/view-t
     CommentsComponent,
     TagsComponent,
     ViewForTagComponent,
-    ViewTagResultComponent
+    ViewTagResultComponent,
+    ViewTagsComponent
   ],
   imports: [
     CommonModule,

@@ -2,10 +2,6 @@
   <div class="article-content">
     <title>{{ result.title }}</title>
     <p>{{ result.description }}</p>
-    <div>
-      <span class="tag btn-gray" *ngFor="let tag of result.tags"
-        >#{{ tag.name }}</span
-      >
-    </div>
+    <cluster-view-tags [tags]="result.tags"></cluster-view-tags>
   </div>
 </article>

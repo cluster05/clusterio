@@ -29,11 +29,7 @@
           <p class="created">created {{ post.created_at | date }}</p>
           <p class="tag btn-gray">last updated {{ post.updated_at | date }}</p>
         </div>
-        <div class="">
-          <span class="tag btn-gray" *ngFor="let tag of post.tags">
-            #{{ tag.name }}
-          </span>
-        </div>
+        <cluster-view-tags [tags]="post.tags"></cluster-view-tags>
       </div>
     </div>
 
