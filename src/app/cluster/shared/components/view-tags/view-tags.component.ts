@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Tag } from 'src/app/constant/interface/tag.inteface';
 
 @Component({
@@ -10,9 +11,14 @@ export class ViewTagsComponent implements OnInit {
 
   @Input() tags: Tag[] = [];
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  searchTag(tagName: string, event: Event): void {
+    event.stopPropagation();
+    this.router.navigate(['/tags/' + tagName]);
   }
 
 }
