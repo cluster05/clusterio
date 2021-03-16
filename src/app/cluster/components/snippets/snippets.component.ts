@@ -19,10 +19,10 @@ export class SnippetsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.subscription = this.articleService.readAllArticle()
+    this.subscription = this.articleService.readAllArticle(PostType.SNIPPET)
       .subscribe(
         response => {
-          this.snippets = response.filter(f => f.type === PostType.SNIPPET);
+          this.snippets = response;
         },
         error => alert(error.error.message)
       );

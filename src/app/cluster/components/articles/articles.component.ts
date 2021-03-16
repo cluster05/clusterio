@@ -19,10 +19,10 @@ export class ArticlesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.subscription = this.articleService.readAllArticle()
+    this.subscription = this.articleService.readAllArticle(PostType.ARTICLE)
       .subscribe(
         response => {
-          this.articles = response.filter(f => f.type === PostType.ARTICLE);
+          this.articles = response;
         },
         error => alert(error.error.message)
       );

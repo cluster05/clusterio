@@ -15,8 +15,8 @@ export class ArticlesService {
     return this.http.get<Article>(environment.backendBaseURL + '/articles/' + articleId);
   }
 
-  readAllArticle(): Observable<Article[]> {
-    return this.http.get<Article[]>(environment.backendBaseURL + '/articles');
+  readAllArticle(type: string): Observable<Article[]> {
+    return this.http.get<Article[]>(environment.backendBaseURL + '/articles?type=' + type);
   }
 
   createArticle(payload: Article): Observable<Article> {
