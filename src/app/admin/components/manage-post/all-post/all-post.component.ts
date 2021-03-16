@@ -26,6 +26,10 @@ export class AllPostComponent implements OnInit, OnDestroy {
       this.postType = serve;
     }
 
+    this.getOtherPostType();
+  }
+
+  getPostByType(): void {
     this.subscription = this.articleService.readAllArticle(this.postType)
       .subscribe(
         response => {
@@ -37,6 +41,7 @@ export class AllPostComponent implements OnInit, OnDestroy {
 
   getOtherPostType(): void {
     this.localStorageService.setItemToLocalstorage('serve', this.postType);
+    this.getPostByType();
   }
 
 
