@@ -38,4 +38,8 @@ export class ArticlesService {
   searchArticlesByTagName(tagName: string): Observable<Article[]> {
     return this.http.get<Article[]>(environment.backendBaseURL + '/articles/find/bytag/' + tagName);
   }
+
+  searchArticlesByKeyWord(word: string): Observable<Article[]> {
+    return this.http.get<Article[]>(environment.backendBaseURL + '/articles/find/byword/' + word);
+  }
 }
