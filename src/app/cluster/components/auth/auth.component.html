@@ -1,4 +1,8 @@
 <section id="authantication">
+  <div class="btn btn-sm btn-green home" routerLink="/">
+    <fa-icon [icon]="backButtonIcon"></fa-icon>
+    <span class="ml-2">back to home</span>
+  </div>
   <form [formGroup]="authForm" (ngSubmit)="login()">
     <legend>
       {{ authState === AuthState.LOGIN ? "Log in" : "Register" }}

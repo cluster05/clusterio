@@ -1,7 +1,8 @@
 #authantication {
-  font-family: "Open Sans", sans-serif monospace;
   @apply w-screen h-screen flex justify-center items-center;
-
+  .home {
+    @apply absolute top-2 left-2;
+  }
   form {
     @apply w-96 px-10 py-10 border shadow;
     legend {

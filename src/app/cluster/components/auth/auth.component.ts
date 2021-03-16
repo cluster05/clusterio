@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { AuthState } from 'src/app/constant/enum/authstate.enum';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { TokenService } from 'src/app/shared/services/token.service';
-
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'cluster-auth',
   templateUrl: './auth.component.html',
@@ -15,6 +15,7 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   authState: AuthState = AuthState.LOGIN;
   AuthState = AuthState;
+  backButtonIcon = faAngleLeft;
 
   authForm = this.formBuilder.group({
     username: [''],
