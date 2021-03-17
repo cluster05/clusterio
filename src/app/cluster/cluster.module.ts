@@ -22,6 +22,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ViewForTagComponent } from './components/tags/view-for-tag/view-for-tag.component';
 import { ViewTagResultComponent } from './components/tags/view-tag-result/view-tag-result.component';
 import { ViewTagsComponent } from './shared/components/view-tags/view-tags.component';
+import { CoursesComponent } from './components/courses/courses.component';
+import { ViewCourseComponent } from './shared/components/view-course/view-course.component';
 
 
 @NgModule({
@@ -42,7 +44,9 @@ import { ViewTagsComponent } from './shared/components/view-tags/view-tags.compo
     TagsComponent,
     ViewForTagComponent,
     ViewTagResultComponent,
-    ViewTagsComponent
+    ViewTagsComponent,
+    CoursesComponent,
+    ViewCourseComponent
   ],
   imports: [
     CommonModule,
