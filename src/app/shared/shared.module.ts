@@ -5,8 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { ViewPostComponent } from './components/view-post/view-post.component';
 import { QuillEditorComponent } from './components/quill-editor/quill-editor.component';
 import { QuillModule } from 'ngx-quill';
+import { WordlimitPipe } from './pipe/wordlimit.pipe';
 
 const components = [
+  WordlimitPipe,
   PageNotFoundComponent,
   ViewPostComponent,
   QuillEditorComponent
