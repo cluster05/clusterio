@@ -45,14 +45,14 @@
       [disabled]="courseUpdatingMode"
     ></textarea>
   </div>
-  <div class="form-group">
+  <div class="form-group" *ngIf="courseUpdatingMode">
     <label for="post-description">select type of post you want to add :</label>
     <select [(ngModel)]="typeOfPostWantToAdd" (change)="getPostOfType()">
       <option value="article">article</option>
       <option value="snippet">snippet</option>
     </select>
   </div>
-  <div class="form-group">
+  <div class="form-group" *ngIf="courseUpdatingMode">
     <label for="post-description">course articles</label>
     <select (change)="addArticleToCourse(postID.value)" #postID>
       <option value="" selected disabled>select from here</option>
@@ -61,7 +61,7 @@
       </option>
     </select>
   </div>
-  <div class="dotted-line"></div>
+  <div class="dotted-line" *ngIf="courseUpdatingMode"></div>
   <div
     *ngFor="let post of userAddedArticle"
     class="border shadow"
