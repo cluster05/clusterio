@@ -26,7 +26,6 @@ import { UploadPostImageComponent } from './shared/components/build-post/upload-
 import { ManageCourseComponent } from './components/manage-course/manage-course.component';
 import { AllCoursesComponent } from './components/manage-course/all-courses/all-courses.component';
 import { CreateCourseComponent } from './components/manage-course/create-course/create-course.component';
-import { ManageCourseArticlesComponent } from './components/manage-course/manage-course-articles/manage-course-articles.component';
 
 
 @NgModule({
@@ -51,7 +50,6 @@ import { ManageCourseArticlesComponent } from './components/manage-course/manage
     ManageCourseComponent,
     AllCoursesComponent,
     CreateCourseComponent,
-    ManageCourseArticlesComponent
   ],
   imports: [
     CommonModule,

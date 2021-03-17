@@ -6,7 +6,6 @@ import { AuthComponent } from './components/auth/auth.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AllCoursesComponent } from './components/manage-course/all-courses/all-courses.component';
 import { CreateCourseComponent } from './components/manage-course/create-course/create-course.component';
-import { ManageCourseArticlesComponent } from './components/manage-course/manage-course-articles/manage-course-articles.component';
 import { ManageCourseComponent } from './components/manage-course/manage-course.component';
 import { AllPostComponent } from './components/manage-post/all-post/all-post.component';
 import { BuildPostExtracterComponent } from './components/manage-post/build-post-extracter/build-post-extracter.component';
@@ -41,7 +40,6 @@ const routes: Routes = [
         children: [
           { path: 'create', component: CreateCourseComponent },
           { path: 'update/:courseId', component: CreateCourseComponent },
-          { path: 'view/:couseId', component: ManageCourseArticlesComponent },
           { path: '', component: AllCoursesComponent },
         ]
 

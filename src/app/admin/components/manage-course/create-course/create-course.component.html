@@ -38,4 +38,41 @@
       [(ngModel)]="courseBuilder.description"
     ></textarea>
   </div>
+  <div class="form-group">
+    <label for="post-description">select type of post you want to add :</label>
+    <select [(ngModel)]="typeOfPostWantToAdd" (change)="getPostOfType()">
+      <option value="article">article</option>
+      <option value="snippet">snippet</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="post-description">course articles</label>
+    <select (change)="addArticleToCourse(postID.value)" #postID>
+      <option value="" selected disabled>select from here</option>
+      <option *ngFor="let post of posts" [value]="post.id">
+        {{ post.title }}
+      </option>
+    </select>
+  </div>
+  <div class="dotted-line"></div>
+  <div
+    *ngFor="let post of userAddedArticle"
+    class="border shadow"
+    style="padding: 1rem; margin: 1rem 0"
+  >
+    <div class="flex justify-between items-end">
+      <div>
+        <p class="text-sm font-bold">{{ post.title }}</p>
+        <p class="text-xs">{{ post.description }}</p>
+      </div>
+      <div>
+        <button
+          class="btn btn-sm btn-red"
+          (click)="removeArticleFromCourse(post.id)"
+        >
+          remove
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
