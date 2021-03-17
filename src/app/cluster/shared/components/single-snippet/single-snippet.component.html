@@ -1,0 +1,7 @@
+<article (click)="navigateTo(snippet)">
+  <div class="article-content">
+    <title>{{ snippet.title }}</title>
+    <p>{{ snippet.description }}</p>
+    <cluster-view-tags [tags]="snippet.tags"></cluster-view-tags>
+  </div>
+</article>

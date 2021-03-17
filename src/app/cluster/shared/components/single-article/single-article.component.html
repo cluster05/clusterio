@@ -1,0 +1,8 @@
+<article (click)="navigateTo(article)">
+  <img [src]="article.postImageUrl" [alt]="article.title" />
+  <div class="article-content">
+    <title>{{ article.title }}</title>
+    <p>{{ article.description }}</p>
+    <cluster-view-tags [tags]="article.tags"></cluster-view-tags>
+  </div>
+</article>

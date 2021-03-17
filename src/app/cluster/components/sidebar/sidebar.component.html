@@ -1,0 +1,16 @@
+<div class="sidebar">
+  <ul>
+    <li routerLink="/" routerLinkActive="active">
+      <img src="./../../../../assets/home.gif" alt="cluster.io icon" />
+      <span> home </span>
+    </li>
+    <li
+      *ngFor="let link of links"
+      [routerLink]="link.link"
+      routerLinkActive="active"
+    >
+      <fa-icon [icon]="link.icon"></fa-icon>
+      <span class=""> {{ link.title }} </span>
+    </li>
+  </ul>
+</div>

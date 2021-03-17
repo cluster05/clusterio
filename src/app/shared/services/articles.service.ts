@@ -15,8 +15,8 @@ export class ArticlesService {
     return this.http.get<Article>(environment.backendBaseURL + '/articles/' + articleId);
   }
 
-  readAllArticle(): Observable<Article[]> {
-    return this.http.get<Article[]>(environment.backendBaseURL + '/articles');
+  readAllArticle(type: string): Observable<Article[]> {
+    return this.http.get<Article[]>(environment.backendBaseURL + '/articles?type=' + type);
   }
 
   createArticle(payload: Article): Observable<Article> {
@@ -33,5 +33,13 @@ export class ArticlesService {
 
   uploadArticleImage(image: FormData): Observable<{ imageURL: string }> {
     return this.http.post<{ imageURL: string }>(environment.backendBaseURL + '/articles/image/upload/', image);
+  }
+
+  searchArticlesByTagName(tagName: string): Observable<Article[]> {
+    return this.http.get<Article[]>(environment.backendBaseURL + '/articles/find/bytag/' + tagName);
+  }
+
+  searchArticlesByKeyWord(word: string): Observable<Article[]> {
+    return this.http.get<Article[]>(environment.backendBaseURL + '/articles/find/byword/' + word);
   }
 }

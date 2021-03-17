@@ -1,0 +1,16 @@
+article {
+  @apply shadow rounded border tracking-wide cursor-pointer;
+  .article-content {
+    @apply p-4 mb-4;
+    title {
+      @apply my-3 block text-sm font-bold text-gray-700;
+    }
+    p {
+      @apply my-3 text-xs text-gray-600;
+    }
+  }
+  &:hover {
+    transition: all 300ms;
+    transform: translateY(-3px);
+  }
+}

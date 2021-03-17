@@ -15,11 +15,11 @@
 
 <div class="posts" *ngIf="postType === PostType.SNIPPET">
   <cluster-single-snippet
-    *ngFor="let snippet of snippets"
+    *ngFor="let snippet of posts"
     [snippet]="snippet"
   ></cluster-single-snippet>
 </div>
 <div class="posts" *ngIf="postType === PostType.ARTICLE">
-  <cluster-single-article *ngFor="let article of articles" [article]="article">
+  <cluster-single-article *ngFor="let article of posts" [article]="article">
   </cluster-single-article>
 </div>

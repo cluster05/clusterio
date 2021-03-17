@@ -1,0 +1,54 @@
+<div id="home">
+  <section id="introduction">
+    <div class="w-1/2 block1">
+      <div class="gradient1"></div>
+      <div class="gradient2"></div>
+      <img src="../../../../assets/home.gif" alt="cluster.io intro video" />
+    </div>
+    <div class="w-1/2 block2">
+      <h1>
+        Let's <br />
+        Learn {{ skill }}
+      </h1>
+      <p>
+        Start your journey to become a web developer today. Join our community
+        to explore more in web developement.
+      </p>
+      <button class="btn btn-outline-red">Get Stated</button>
+    </div>
+  </section>
+  <div class="mt-20"></div>
+  <div class="dotted-line"></div>
+  <section id="new-launched">
+    <h1 class="title">New Courses</h1>
+    <div class="articles">
+      <article *ngFor="let item of [1, 2, 3, 4]">
+        <img
+          src="https://fireship.io/courses/stripe-js/img/featured.jpg"
+          alt=""
+        />
+        <div class="article-content">
+          <title>Stripe Payments Master Course</title>
+          <p>Build a fullstack payment solution with Node.js and React.</p>
+        </div>
+        <button class="btn btn-sm btn-green">start</button>
+      </article>
+    </div>
+  </section>
+  <div class="dotted-line"></div>
+  <section id="new-launched">
+    <h1 class="title">New Articles</h1>
+    <div class="articles">
+      <article *ngFor="let item of [1, 2, 3, 4]">
+        <img
+          src="https://fireship.io/courses/stripe-js/img/featured.jpg"
+          alt=""
+        />
+        <div class="article-content">
+          <title>Stripe Payments Master Course</title>
+          <p>Build a fullstack payment solution with Node.js and React.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+</div>

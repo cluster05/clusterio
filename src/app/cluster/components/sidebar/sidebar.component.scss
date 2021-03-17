@@ -1,0 +1,38 @@
+.sidebar {
+  box-shadow: 4px 0 10px -3px #c1c1c1;
+  @apply w-full h-screen bg-white;
+  li {
+    @apply p-4 text-2xl text-gray-500 relative flex items-center;
+
+    img {
+      @apply w-full h-14;
+    }
+
+    @keyframes zoop-in {
+      from {
+        transform: translateX(-20px);
+      }
+      to {
+        transform: translateX(0px);
+      }
+    }
+
+    span {
+      display: none;
+      @apply px-2 py-1 tracking-wider text-sm capitalize  absolute left-16  bg-gray-400 text-gray-50 whitespace-nowrap font-medium rounded-sm z-30;
+    }
+
+    &:first-child {
+      @apply p-0;
+    }
+
+    &:hover span {
+      animation-name: zoop-in;
+      animation-duration: 500ms;
+      display: block;
+    }
+  }
+  .active {
+    @apply text-gray-700;
+  }
+}

@@ -3,3 +3,6 @@
 @import "./app/shared/styles/index.scss";
 @import "tailwindcss/utilities";
 @import "./qleditor.scss";
+* {
+  font-family: "Open Sans", sans-serif;
+}

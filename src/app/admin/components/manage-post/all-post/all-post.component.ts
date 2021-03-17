@@ -12,8 +12,7 @@ import { LocalstorageService } from 'src/app/shared/services/localstorage.servic
 })
 export class AllPostComponent implements OnInit, OnDestroy {
 
-  snippets: Article[] = [];
-  articles: Article[] = [];
+  posts: Article[] = [];
   subscription: Subscription = new Subscription();
   postType = PostType.ARTICLE;
   PostType = PostType;
@@ -27,11 +26,14 @@ export class AllPostComponent implements OnInit, OnDestroy {
       this.postType = serve;
     }
 
-    this.subscription = this.articleService.readAllArticle()
+    this.getOtherPostType();
+  }
+
+  getPostByType(): void {
+    this.subscription = this.articleService.readAllArticle(this.postType)
       .subscribe(
         response => {
-          this.snippets = response.filter(f => f.type === PostType.SNIPPET);
-          this.articles = response.filter(f => f.type === PostType.ARTICLE);
+          this.posts = response;
         },
         error => alert(error.error.message)
       );
@@ -39,6 +41,7 @@ export class AllPostComponent implements OnInit, OnDestroy {
 
   getOtherPostType(): void {
     this.localStorageService.setItemToLocalstorage('serve', this.postType);
+    this.getPostByType();
   }
 
 

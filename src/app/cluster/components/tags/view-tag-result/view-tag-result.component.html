@@ -1,0 +1,7 @@
+<article (click)="navigateTo(result)">
+  <div class="article-content">
+    <title>{{ result.title }}</title>
+    <p>{{ result.description }}</p>
+    <cluster-view-tags [tags]="result.tags"></cluster-view-tags>
+  </div>
+</article>

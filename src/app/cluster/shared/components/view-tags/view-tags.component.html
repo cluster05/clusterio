@@ -1,0 +1,10 @@
+<div class="">
+  <span
+    class="tag btn-gray"
+    [class]="'tag-' + tag.name"
+    (click)="searchTag(tag.name, $event)"
+    *ngFor="let tag of tags"
+  >
+    #{{ tag.name }}
+  </span>
+</div>
