@@ -11,6 +11,7 @@ import { SnippetsComponent } from './components/snippets/snippets.component';
 import { TagsComponent } from './components/tags/tags.component';
 import { ViewForTagComponent } from './components/tags/view-for-tag/view-for-tag.component';
 import { UserComponent } from './components/user/user.component';
+import { ViewCourseComponent } from './shared/components/view-course/view-course.component';
 import { ViewPostComponent } from './shared/components/view-post/view-post.component';
 
 const routes: Routes = [
@@ -21,6 +22,8 @@ const routes: Routes = [
     children: [
       { path: '', component: HomeComponent },
       { path: 'search', component: SearchComponent },
+      // { path: 'courses/:courseId/lesson/:lessonId', component: CoursesComponent },
+      { path: 'courses/:courseId', component: ViewCourseComponent },
       { path: 'courses', component: CoursesComponent },
       { path: 'articles/:postId', component: ViewPostComponent },
       { path: 'articles', component: ArticlesComponent },
