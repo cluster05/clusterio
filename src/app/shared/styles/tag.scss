@@ -10,7 +10,10 @@
 
 .tag-html {
   background-color: #f87e2c;
-  @apply text-gray-700;
+  @apply text-white;
+}
+.tag-css {
+  @apply bg-blue-600 text-white;
 }
 
 .tag-scss {
@@ -18,11 +21,11 @@
 }
 
 .tag-javascript {
-  @apply bg-yellow-400 text-gray-700;
+  @apply bg-yellow-400 text-white;
 }
 
 .tag-typescript {
-  @apply bg-blue-600 text-white;
+  @apply bg-blue-300 text-gray-700;
 }
 
 .tag-bootstrap {
@@ -47,6 +50,10 @@
 
 .tag-mongodb {
   @apply bg-green-500 text-white;
+}
+
+.tag-node {
+  @apply bg-green-700 text-white;
 }
 
 .tag-mysql {
