@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/app/constant/interface/course.interface';
 import { Article } from 'src/app/constant/interface/post.interface';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
+import { CourseService } from 'src/app/shared/services/course.service';
 
 @Component({
   selector: 'cluster-create-course',
@@ -23,7 +24,11 @@ export class CreateCourseComponent implements OnInit {
   courseUpdatingMode = false;
   typeOfPostWantToAdd = 'article';
 
-  constructor(private articleService: ArticlesService, private route: ActivatedRoute) { }
+  constructor(
+    private courseService: CourseService,
+    private articleService: ArticlesService,
+    private route: ActivatedRoute,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.getPostOfType();
@@ -42,17 +47,14 @@ export class CreateCourseComponent implements OnInit {
     const file = event.target.files[0];
     const uploadData = new FormData();
     uploadData.append('image', file);
-    // api call to save image
-    // this.articleService.uploadArticleImage(uploadData)
-    //   .subscribe(
-    //     res => {
-    //       alert('Uplaod Image Successfully.');
-    //       this.isImageUploaded = true;
-    //       this.imageSrc = res.imageURL;
-    //       this.postImageLinkUrl.emit(this.imageSrc);
-    //     },
-    //     error => alert(error.error.message)
-    //   );
+    this.courseService.uploadCourseImage(uploadData)
+      .subscribe(
+        res => {
+          alert('Uplaod Image Successfully.');
+          this.courseBuilder.courseImageUrl = res.imageURL;
+        },
+        error => alert(error.error.message)
+      );
   }
 
   getPostOfType(): void {
@@ -80,7 +82,20 @@ export class CreateCourseComponent implements OnInit {
 
 
   postCourse(): void {
-    // create new course update
+
+    const content: string[] = this.userAddedArticle.map(article => article.id) as string[];
+    this.courseBuilder.content = content;
+
+    this.courseService.createCourse(this.courseBuilder)
+      .subscribe(response => {
+        this.router.navigate(['/cryptic/courses']);
+      },
+        error => alert(error.error.message)
+      );
+
+
+
+
   }
 
 }

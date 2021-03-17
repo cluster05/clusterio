@@ -1,11 +1,11 @@
 <div>
   <div class="build-post-top-buttons">
-    <button class="btn btn-sm btn-green" (click)="postCourse()">
-      <ng-container *ngIf="courseUpdatingMode; else updateModeFalse">
-        update
-      </ng-container>
-      <ng-template #updateModeFalse> post </ng-template>
-      course
+    <button
+      class="btn btn-sm btn-green"
+      *ngIf="!courseUpdatingMode"
+      (click)="postCourse()"
+    >
+      post course
     </button>
   </div>
 
@@ -24,7 +24,7 @@
     <input
       type="file"
       id="post-poster"
-      *ngIf="!courseUpdatingMode"
+      *ngIf="!courseUpdatingMode && !courseBuilder.courseImageUrl"
       (change)="onFileChanged($event)"
       [disabled]="courseUpdatingMode"
     />
