@@ -3,6 +3,7 @@
 <div class="tags tracking-wide">
   <div
     class="btn btn-gray lowercase mx-2"
+    [class]="'tag-' + tag.name"
     *ngFor="let tag of tags"
     [routerLink]="['./' + tag.name]"
   >

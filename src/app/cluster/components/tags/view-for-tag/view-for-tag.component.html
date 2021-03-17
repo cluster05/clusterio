@@ -1,4 +1,9 @@
-<div class="text-5xl font-bold">{{ searchTag }}</div>
+<div
+  class="text-5xl font-bold btn btn-gray lowercase"
+  [class]="'tag-' + searchTag"
+>
+  #{{ searchTag }}
+</div>
 <div class="dotted-line"></div>
 <span *ngIf="results.length === 0" class="mt-5 text-3xl font-bold"
   >Sorry ! We did not found anything for

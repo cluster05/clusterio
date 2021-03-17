@@ -7,3 +7,49 @@
   padding: 0.2rem 0.5rem 0.3rem;
   font-size: 0.7rem;
 }
+
+.tag-html {
+  background-color: #f87e2c;
+  @apply text-gray-700;
+}
+
+.tag-scss {
+  @apply bg-pink-500 text-white;
+}
+
+.tag-javascript {
+  @apply bg-yellow-400 text-gray-700;
+}
+
+.tag-typescript {
+  @apply bg-blue-600 text-white;
+}
+
+.tag-bootstrap {
+  @apply bg-purple-600 text-white;
+}
+
+.tag-tailwind {
+  @apply bg-indigo-300 text-gray-700;
+}
+
+.tag-angular {
+  @apply bg-red-500 text-white;
+}
+
+.tag-react {
+  @apply bg-gray-700 text-blue-400;
+}
+
+.tag-nest {
+  @apply bg-gray-700 text-red-500;
+}
+
+.tag-mongodb {
+  @apply bg-green-500 text-white;
+}
+
+.tag-mysql {
+  color: #f87e2c;
+  @apply bg-blue-200;
+}

@@ -8,7 +8,11 @@
     <h3>{{ article.title }}</h3>
     <p class="text-sm">{{ article.description }}</p>
     <div class="tags">
-      <span class="tag btn-gray" *ngFor="let tag of article.tags">
+      <span
+        class="tag btn-gray"
+        [class]="'tag-' + tag.name"
+        *ngFor="let tag of article.tags"
+      >
         #{{ tag.name }}
       </span>
     </div>
