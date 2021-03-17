@@ -1,3 +1,21 @@
 .all-post-top-buttons {
   @apply flex justify-between items-center;
 }
+.articles {
+  @apply grid grid-cols-2 gap-4;
+  article {
+    @apply p-4 shadow-md rounded border tracking-wide;
+    .article-content {
+      @apply text-center;
+      title {
+        @apply my-4 block font-bold text-gray-700;
+      }
+      p {
+        @apply my-4 text-sm text-gray-600;
+      }
+    }
+    button {
+      @apply w-full;
+    }
+  }
+}

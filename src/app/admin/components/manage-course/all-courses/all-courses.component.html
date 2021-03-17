@@ -3,3 +3,18 @@
     create new course
   </button>
 </div>
+<div class="articles">
+  <article *ngFor="let course of courses">
+    <img [src]="course.courseImageUrl" [alt]="course.title" />
+    <div class="article-content">
+      <title>{{ course.title }}</title>
+      <p>{{ course.description }}</p>
+    </div>
+    <button
+      class="btn btn-sm btn-orange"
+      [routerLink]="'./update/' + course.id"
+    >
+      edit
+    </button>
+  </article>
+</div>
