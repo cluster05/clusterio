@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Course } from 'src/app/constant/interface/course.interface';
+import { Article } from 'src/app/constant/interface/post.interface';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -31,8 +32,8 @@ export class CourseService {
     return this.http.post<{ imageURL: string }>(environment.backendBaseURL + '/courses/image/upload/', image);
   }
 
-  readCourseArticle(courseId: string, articleId: string): Observable<Course> {
-    return this.http.get<Course>(environment.backendBaseURL + '/courses/' + courseId + '/article/' + articleId);
+  readCourseArticle(courseId: string, articleId: string): Observable<Article> {
+    return this.http.get<Article>(environment.backendBaseURL + '/courses/' + courseId + '/article/' + articleId);
   }
 
   createCourseArticle(courseId: string, articleId: string): Observable<Course> {

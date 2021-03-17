@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { PostType } from 'src/app/constant/enum/post.enum';
 import { Article } from 'src/app/constant/interface/post.interface';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
+import { CourseService } from 'src/app/shared/services/course.service';
 
 @Component({
   selector: 'cluster-view-post',
@@ -27,21 +28,39 @@ export class ViewPostComponent implements OnInit, OnDestroy {
 
   constructor(
     private articleService: ArticlesService,
+    private courseService: CourseService,
     private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit(): void {
 
     const postId = this.route.snapshot.paramMap.get('postId') as string;
+    const courseId = this.route.snapshot.paramMap.get('courseId') as string;
 
-    this.subscription = this.articleService.readArticle(postId)
-      .subscribe(
-        response => {
-          this.isContentRetriving = false;
-          this.post = response;
-        },
-        error => alert(error.error.message)
-      );
+    if (courseId) {
+
+      this.subscription = this.courseService.readCourseArticle(courseId, postId)
+        .subscribe(
+          response => {
+            this.isContentRetriving = false;
+            this.post = response;
+          },
+          error => alert(error.error.message)
+        );
+
+
+    } else {
+      this.subscription = this.articleService.readArticle(postId)
+        .subscribe(
+          response => {
+            this.isContentRetriving = false;
+            this.post = response;
+          },
+          error => alert(error.error.message)
+        );
+    }
+
+
   }
 
 
