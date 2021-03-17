@@ -40,7 +40,8 @@ const routes: Routes = [
         canActivate: [AdminGuard],
         children: [
           { path: 'create', component: CreateCourseComponent },
-          { path: 'manage', component: ManageCourseArticlesComponent },
+          { path: 'update/:courseId', component: CreateCourseComponent },
+          { path: 'view/:couseId', component: ManageCourseArticlesComponent },
           { path: '', component: AllCoursesComponent },
         ]
 

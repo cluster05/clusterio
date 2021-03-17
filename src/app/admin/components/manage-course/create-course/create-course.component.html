@@ -14,12 +14,20 @@
     <input type="text" id="post-title" [(ngModel)]="courseBuilder.title" />
   </div>
 
-  <cluster-upload-post-image
-    [imageFromUpload]="courseImageUrl"
-    (postImageLinkUrl)="setPostImageURL($event)"
-  ></cluster-upload-post-image>
-
-  <img *ngIf="courseUpdatingMode" [src]="courseImageUrl" alt="" />
+  <div class="form-group">
+    <label for="post-poster"> course poster</label>
+    <input
+      type="file"
+      id="post-poster"
+      *ngIf="!courseUpdatingMode"
+      (change)="onFileChanged($event)"
+    />
+    <img
+      *ngIf="courseUpdatingMode || courseBuilder.courseImageUrl"
+      [src]="courseBuilder.courseImageUrl"
+      alt=""
+    />
+  </div>
 
   <div class="form-group">
     <label for="post-description">course description</label>

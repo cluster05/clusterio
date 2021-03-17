@@ -22,7 +22,22 @@ export class CreateCourseComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  setPostImageURL(imageURL: string) { }
+  onFileChanged(event: any): void {
+    const file = event.target.files[0];
+    const uploadData = new FormData();
+    uploadData.append('image', file);
+    // this.articleService.uploadArticleImage(uploadData)
+    //   .subscribe(
+    //     res => {
+    //       alert('Uplaod Image Successfully.');
+    //       this.isImageUploaded = true;
+    //       this.imageSrc = res.imageURL;
+    //       this.postImageLinkUrl.emit(this.imageSrc);
+    //     },
+    //     error => alert(error.error.message)
+    //   );
+  }
+
 
   postCourse(): void { }
 
