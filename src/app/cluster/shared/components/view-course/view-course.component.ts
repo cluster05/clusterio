@@ -21,7 +21,8 @@ export class ViewCourseComponent implements OnInit {
   articles: Article[] = [];
   constructor(
     private courseSerive: CourseService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -35,6 +36,13 @@ export class ViewCourseComponent implements OnInit {
         error => alert(error.error.message)
       );
     }
+  }
+
+  navigateTolesson(post: Article): void {
+    const articleId = post.id as string;
+    const regex = /\ /gi;
+    const buildTitle = post.title.replace(regex, '-');
+    this.router.navigate(['./lesson/', articleId], { relativeTo: this.route, queryParams: { title: buildTitle } });
 
   }
 

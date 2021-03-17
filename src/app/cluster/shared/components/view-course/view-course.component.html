@@ -39,7 +39,7 @@
         <div
           class="lesson-article"
           *ngFor="let article of articles"
-          [routerLink]="'./lesson/' + article.id"
+          (click)="navigateTolesson(article)"
         >
           <title>{{ article.title }}</title>
           <p>
