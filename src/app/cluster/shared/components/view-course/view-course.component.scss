@@ -1,0 +1,63 @@
+article {
+  color: #12181b;
+  font-family: "Open Sans", sans-serif;
+  .title {
+    @apply block text-center text-5xl font-bold;
+  }
+  .dotted-line {
+    @apply my-5 border-b-4 border-gray-200 border-dashed;
+  }
+  .content {
+    @apply m-4;
+    .content-img {
+      @apply w-full;
+    }
+    .content-box {
+      @apply shadow-md border my-4 py-2 px-6;
+      .description {
+        @apply mt-5 text-sm tracking-wide font-medium;
+      }
+      .auther {
+        @apply my-2 flex items-center;
+        img {
+          @apply rounded-full w-10 h-10;
+        }
+        .auther-name {
+          @apply ml-3 text-blue-400 text-sm capitalize font-semibold cursor-pointer;
+          span {
+            @apply text-gray-700;
+          }
+        }
+      }
+      .content-info {
+        @apply my-3 flex justify-between items-end;
+        .dates {
+          @apply font-semibold capitalize flex flex-col;
+          .created {
+            @apply ml-2 text-xs;
+          }
+        }
+      }
+    }
+    .what-you-will-learn {
+      @apply mt-10;
+      h2 {
+        @apply text-lg font-semibold;
+      }
+      .lesson-article {
+        transition: box-shadow 0.5s ease;
+        @apply my-2 p-4 shadow border cursor-pointer;
+        title {
+          @apply block text-sm font-bold;
+        }
+        p {
+          @apply my-2 text-xs;
+        }
+        &:hover {
+          box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2),
+            0 1px 10px 0 rgba(0, 0, 0, 0.19);
+        }
+      }
+    }
+  }
+}

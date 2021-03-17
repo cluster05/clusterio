@@ -1,1 +1,60 @@
-<p>view-course works!</p>
+<article>
+  <title class="title">{{ course.title }}</title>
+  <div class="dotted-line"></div>
+
+  <section class="content">
+    <img
+      class="content-img"
+      [src]="course.courseImageUrl"
+      [alt]="course.title"
+    />
+    <div class="content-box">
+      <div class="description w-2/3">
+        <p>{{ course.description }}</p>
+      </div>
+      <a
+        class="auther"
+        href="https://twitter.com/_ajay_kumbhar"
+        target="_blank"
+      >
+        <img
+          src="https://pbs.twimg.com/profile_images/1283074895291641856/uEVxzrki_bigger.jpg"
+          alt="ajay kumbhar"
+        />
+        <div class="auther-name"><span>by</span> ajay kumbhar</div>
+      </a>
+      <div class="content-info">
+        <div class="dates">
+          <p class="created">created {{ course.created_at | date }}</p>
+          <p class="tag btn-gray">
+            last updated {{ course.updated_at | date }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="what-you-will-learn">
+      <div>
+        <h2>What you will learn</h2>
+        <div
+          class="lesson-article"
+          *ngFor="let article of [1, 2, 3, 4]"
+          [routerLink]="'./lesson/12345678909876543'"
+        >
+          <title>Origins and Discovery</title>
+          <p>
+            Lorem ipsum began as scrambled, nonsensical Latin derived from
+            Cicero's 1st-century BC text De Finibus Bonorum et Malorum.
+          </p>
+          <cluster-view-tags
+            [tags]="[
+              { id: '1', name: 'html' },
+              { id: '2', name: 'css' },
+              { id: '3', name: 'javascript' }
+            ]"
+          ></cluster-view-tags>
+        </div>
+      </div>
+    </div>
+  </section>
+</article>

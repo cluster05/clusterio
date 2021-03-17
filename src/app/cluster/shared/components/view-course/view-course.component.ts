@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Course } from 'src/app/constant/interface/course.interface';
+import { Article } from 'src/app/constant/interface/post.interface';
+import { CourseService } from 'src/app/shared/services/course.service';
 
 @Component({
   selector: 'cluster-view-course',
@@ -7,9 +11,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewCourseComponent implements OnInit {
 
-  constructor() { }
+  course: Course = {
+    title: '',
+    description: '',
+    courseImageUrl: '',
+    content: [],
+  };
+
+  articles: Article[] = [];
+  constructor(
+    private courseSerive: CourseService,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    const courseId = this.route.snapshot.paramMap.get('courseId') as string;
+    if (courseId) {
+      this.courseSerive.readCourse(courseId).subscribe(
+        response => {
+          this.course = response;
+          this.articles = this.course.content as Article[];
+        },
+        error => alert(error.error.message)
+      );
+    }
+
   }
 
 }
