@@ -24,6 +24,16 @@ export class AllCoursesComponent implements OnInit {
       );
   }
 
+  deleteCourse(courseIdType: any): void {
+    const courseId = courseIdType as string;
+    this.courseService.deleteCourse(courseId).subscribe(
+      response => {
+        this.courses = this.courses.filter(cid => cid.id !== courseId);
+      },
+      error => alert(error.errro.message)
+    );
+  }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
