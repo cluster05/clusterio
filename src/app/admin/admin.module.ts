@@ -24,6 +24,9 @@ import { BuildPostExtracterComponent } from './components/manage-post/build-post
 import { BuildPostPreviewComponent } from './shared/components/build-post/build-post-preview/build-post-preview.component';
 import { UploadPostImageComponent } from './shared/components/build-post/upload-post-image/upload-post-image.component';
 import { ManageCourseComponent } from './components/manage-course/manage-course.component';
+import { AllCoursesComponent } from './components/manage-course/all-courses/all-courses.component';
+import { CreateCourseComponent } from './components/manage-course/create-course/create-course.component';
+import { ManageCourseArticlesComponent } from './components/manage-course/manage-course-articles/manage-course-articles.component';
 
 
 @NgModule({
@@ -45,7 +48,10 @@ import { ManageCourseComponent } from './components/manage-course/manage-course.
     AdminViewPostComponent,
     BuildPostPreviewComponent,
     UploadPostImageComponent,
-    ManageCourseComponent
+    ManageCourseComponent,
+    AllCoursesComponent,
+    CreateCourseComponent,
+    ManageCourseArticlesComponent
   ],
   imports: [
     CommonModule,

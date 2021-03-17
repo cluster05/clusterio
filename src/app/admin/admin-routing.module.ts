@@ -4,6 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AllCoursesComponent } from './components/manage-course/all-courses/all-courses.component';
+import { CreateCourseComponent } from './components/manage-course/create-course/create-course.component';
+import { ManageCourseArticlesComponent } from './components/manage-course/manage-course-articles/manage-course-articles.component';
+import { ManageCourseComponent } from './components/manage-course/manage-course.component';
 import { AllPostComponent } from './components/manage-post/all-post/all-post.component';
 import { BuildPostExtracterComponent } from './components/manage-post/build-post-extracter/build-post-extracter.component';
 import { ManagePostsComponent } from './components/manage-post/manage-post.component';
@@ -30,6 +34,17 @@ const routes: Routes = [
         ]
       },
       { path: 'tags', component: ManageTagsComponent, canActivate: [AdminGuard] },
+      {
+        path: 'courses',
+        component: ManageCourseComponent,
+        canActivate: [AdminGuard],
+        children: [
+          { path: 'create', component: CreateCourseComponent },
+          { path: 'manage', component: ManageCourseArticlesComponent },
+          { path: '', component: AllCoursesComponent },
+        ]
+
+      },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },
