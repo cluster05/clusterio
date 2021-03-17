@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'cluster-all-courses',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllCoursesComponent implements OnInit {
 
-  constructor() { }
+  subscription: Subscription = new Subscription();
 
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
 }
