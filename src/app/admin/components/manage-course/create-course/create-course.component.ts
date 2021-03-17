@@ -36,11 +36,14 @@ export class CreateCourseComponent implements OnInit {
     const courseId = this.route.snapshot.paramMap.get('courseId') as string;
     if (courseId) {
       this.courseUpdatingMode = true;
+      this.courseService.readCourse(courseId).subscribe(
+        response => {
+          this.courseBuilder = response;
+          this.userAddedArticle = response.content as Article[];
+        },
+        error => alert(error.error.message)
+      );
     }
-    // const postId = this.route.snapshot.paramMap.get('postId') as string;
-
-    // api call to get course content
-    //  _> api call to get course aritlce
   }
 
   onFileChanged(event: any): void {
@@ -68,16 +71,30 @@ export class CreateCourseComponent implements OnInit {
   addArticleToCourse(postId: string): void {
     const isArticleAlradyPresent = this.userAddedArticle.find(post => postId === post.id);
     if (isArticleAlradyPresent) {
-      alert('post alrady present')
+      alert('post alrady present');
     } else {
+      const courseId = this.courseBuilder.id as string;
       const article = this.posts.filter(post => postId === post.id);
-      this.userAddedArticle = [...this.userAddedArticle, ...article];
+      // article add must required course id ;
+      this.courseService.createCourseArticle(courseId, postId).subscribe(
+        response => {
+          this.userAddedArticle = [...this.userAddedArticle, ...article];
+        },
+        error => alert(error.error.message)
+      );
     }
   }
 
   removeArticleFromCourse(postIdType: any): void {
     const postId = postIdType as string;
-    this.userAddedArticle = this.userAddedArticle.filter(post => postId !== post.id);
+    const courseId = this.courseBuilder.id as string;
+    this.courseService.deleteCourseArticle(courseId, postId)
+      .subscribe(
+        response => {
+          this.userAddedArticle = this.userAddedArticle.filter(post => postId !== post.id);
+        }
+        , error => alert(error.error.message)
+      );
   }
 
 

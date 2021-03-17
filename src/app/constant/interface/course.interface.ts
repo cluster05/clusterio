@@ -1,3 +1,5 @@
+import { Article } from './post.interface';
+
 export interface Course {
     id?: string;
     title: string;
@@ -5,5 +7,5 @@ export interface Course {
     description: string;
     created_at?: number;
     updated_at?: number;
-    content: string[];
+    content: string[] | Article[];
 }
