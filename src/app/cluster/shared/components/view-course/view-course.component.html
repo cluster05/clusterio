@@ -38,21 +38,14 @@
         <h2>What you will learn</h2>
         <div
           class="lesson-article"
-          *ngFor="let article of [1, 2, 3, 4]"
-          [routerLink]="'./lesson/12345678909876543'"
+          *ngFor="let article of articles"
+          [routerLink]="'./lesson/' + article.id"
         >
-          <title>Origins and Discovery</title>
+          <title>{{ article.title }}</title>
           <p>
-            Lorem ipsum began as scrambled, nonsensical Latin derived from
-            Cicero's 1st-century BC text De Finibus Bonorum et Malorum.
+            {{ article.description }}
           </p>
-          <cluster-view-tags
-            [tags]="[
-              { id: '1', name: 'html' },
-              { id: '2', name: 'css' },
-              { id: '3', name: 'javascript' }
-            ]"
-          ></cluster-view-tags>
+          <cluster-view-tags [tags]="article.tags"></cluster-view-tags>
         </div>
       </div>
     </div>
