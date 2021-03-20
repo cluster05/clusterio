@@ -18,8 +18,8 @@
     </div>
   </section>
   <div class="mt-20"></div>
-  <div class="dotted-line"></div>
-  <section id="new-launched">
+  <div class="dotted-line" *ngIf="courses.length > 0"></div>
+  <section id="new-launched" *ngIf="courses.length > 0">
     <h1 class="title">New Courses</h1>
     <div class="articles">
       <article *ngFor="let course of courses">
@@ -37,8 +37,8 @@
       </article>
     </div>
   </section>
-  <div class="dotted-line"></div>
-  <section id="new-launched">
+  <div class="dotted-line" *ngIf="articles.length > 0"></div>
+  <section id="new-launched" *ngIf="articles.length > 0">
     <h1 class="title">New Articles</h1>
     <div class="articles">
       <article
@@ -53,7 +53,8 @@
       </article>
     </div>
   </section>
-  <section id="new-launched">
+  <div class="dotted-line" *ngIf="snippets.length > 0"></div>
+  <section id="new-launched" *ngIf="snippets.length > 0">
     <h1 class="title">New Snippets</h1>
     <div class="articles">
       <article
