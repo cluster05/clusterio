@@ -10,14 +10,16 @@
       <title>{{ course.title }}</title>
       <p>{{ course.description }}</p>
     </div>
-    <button
-      class="btn btn-sm btn-orange"
-      [routerLink]="'./update/' + course.id"
-    >
-      manage course articles
-    </button>
-    <button class="btn btn-sm btn-red" (click)="deleteCourse(course.id)">
-      delete course
-    </button>
+    <div class="flex justify-between w-full">
+      <button
+        class="btn btn-sm btn-orange"
+        [routerLink]="'./update/' + course.id"
+      >
+        manage course articles
+      </button>
+      <button class="btn btn-sm btn-red" (click)="deleteCourse(course.id)">
+        delete course
+      </button>
+    </div>
   </article>
 </div>
