@@ -60,7 +60,6 @@
         *ngFor="let snippet of snippets"
         (click)="navigateToSnippet(snippet)"
       >
-        <img [src]="snippet.postImageUrl" [alt]="snippet.title" />
         <div class="article-content">
           <title>{{ snippet.title }}</title>
           <p>{{ snippet.description }}</p>
