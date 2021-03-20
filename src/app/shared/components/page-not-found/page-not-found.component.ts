@@ -21,7 +21,11 @@ export class PageNotFoundComponent implements OnInit {
   }
 
   redirectToHome() {
-    this.router.navigate([this.gobackto]);
+    if (this.gobackto) {
+      this.router.navigate([this.gobackto]);
+    } else {
+      this.router.navigate(['/']);
+    }
   }
 
 }
