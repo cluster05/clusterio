@@ -1,5 +1,5 @@
 article {
-  @apply my-1 border tracking-wide cursor-pointer bg-gray-100;
+  @apply h-full my-1 border tracking-wide cursor-pointer bg-gray-100;
   .article-content {
     @apply px-5 py-2;
     title {
