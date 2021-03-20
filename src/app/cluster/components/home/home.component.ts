@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PostType } from 'src/app/constant/enum/post.enum';
 import { Course } from 'src/app/constant/interface/course.interface';
@@ -23,6 +24,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   courses: Course[] = [];
 
   constructor(
+    private router: Router,
+    private route: ActivatedRoute,
     private articlesService: ArticlesService,
     private courseService: CourseService) { }
 
@@ -71,6 +74,23 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     }, 200);
 
+  }
+
+  navigateToCourse(courseIdType: any): void {
+    const courseId = courseIdType as string;
+    this.router.navigate(['/courses/', courseId]);
+  }
+
+  navigateToArticle(article: Article): void {
+    const regex = /\ /gi;
+    const buildTitle = article.title.replace(regex, '-');
+    this.router.navigate(['/articles/', article.id], { queryParams: { title: buildTitle } });
+  }
+
+  navigateToSnippet(snippet: Article): void {
+    const regex = /\ /gi;
+    const buildTitle = snippet.title.replace(regex, '-');
+    this.router.navigate(['/snippets/', snippet.id], { queryParams: { title: buildTitle } });
   }
 
   ngOnDestroy(): void {

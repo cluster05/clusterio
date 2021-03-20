@@ -28,7 +28,12 @@
           <title>{{ course.title }}</title>
           <p>{{ course.description }}</p>
         </div>
-        <button class="btn btn-sm btn-green">start</button>
+        <button
+          class="btn btn-sm btn-green"
+          (click)="navigateToCourse(course.id)"
+        >
+          start
+        </button>
       </article>
     </div>
   </section>
@@ -36,11 +41,29 @@
   <section id="new-launched">
     <h1 class="title">New Articles</h1>
     <div class="articles">
-      <article *ngFor="let article of articles">
+      <article
+        *ngFor="let article of articles"
+        (click)="navigateToArticle(article)"
+      >
         <img [src]="article.postImageUrl" [alt]="article.title" />
         <div class="article-content">
           <title>{{ article.title }}</title>
           <p>{{ article.description }}</p>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section id="new-launched">
+    <h1 class="title">New Snippets</h1>
+    <div class="articles">
+      <article
+        *ngFor="let snippet of snippets"
+        (click)="navigateToSnippet(snippet)"
+      >
+        <img [src]="snippet.postImageUrl" [alt]="snippet.title" />
+        <div class="article-content">
+          <title>{{ snippet.title }}</title>
+          <p>{{ snippet.description }}</p>
         </div>
       </article>
     </div>

@@ -20,7 +20,7 @@ export class ArticlesService {
   }
 
   readNewArticle(type: string): Observable<Article[]> {
-    return this.http.get<Article[]>(environment.backendBaseURL + '/articles/new?type=' + type);
+    return this.http.get<Article[]>(environment.backendBaseURL + '/articles/new-articles?type=' + type);
   }
 
   createArticle(payload: Article): Observable<Article> {
