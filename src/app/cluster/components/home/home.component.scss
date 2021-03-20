@@ -1,5 +1,5 @@
 #home {
-  @apply w-full h-full pb-20;
+  @apply w-full h-full;
   #introduction {
     @apply flex flex-row-reverse justify-evenly items-center;
     .block1 {
@@ -29,9 +29,6 @@
       }
       p {
         @apply mt-3 font-medium;
-      }
-      button {
-        @apply mt-3 px-10 capitalize font-medium;
       }
     }
   }
