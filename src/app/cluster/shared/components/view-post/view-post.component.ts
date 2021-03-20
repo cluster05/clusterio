@@ -3,9 +3,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PostType } from 'src/app/constant/enum/post.enum';
 import { Article } from 'src/app/constant/interface/post.interface';
+import { redirectToPageNotFound } from 'src/app/constant/redirect/page-not-found';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
 import { CourseService } from 'src/app/shared/services/course.service';
-
 @Component({
   selector: 'cluster-view-post',
   templateUrl: './view-post.component.html',
@@ -45,7 +45,7 @@ export class ViewPostComponent implements OnInit, OnDestroy {
             this.isContentRetriving = false;
             this.post = response;
           },
-          error => alert(error.error.message)
+          error => redirectToPageNotFound(this.router, error.error.message)
         );
 
 
@@ -56,11 +56,9 @@ export class ViewPostComponent implements OnInit, OnDestroy {
             this.isContentRetriving = false;
             this.post = response;
           },
-          error => alert(error.error.message)
+          error => redirectToPageNotFound(this.router, error.error.message)
         );
     }
-
-
   }
 
 

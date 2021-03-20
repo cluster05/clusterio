@@ -12,8 +12,13 @@ const routes: Routes = [
     loadChildren: () => import('./cluster/cluster.module').then(m => m.ClusterModule)
   },
   {
-    path: '**',
+    path: 'page-not-found',
     component: PageNotFoundComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'page-not-found',
+    pathMatch: 'full'
   }
 ];
 
