@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Article } from 'src/app/constant/interface/post.interface';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
 
@@ -13,7 +13,10 @@ export class ViewForTagComponent implements OnInit {
   searchTag = '';
   results: Article[] = [];
 
-  constructor(private route: ActivatedRoute, private articlesService: ArticlesService) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private articlesService: ArticlesService) { }
 
   ngOnInit(): void {
 
@@ -25,8 +28,13 @@ export class ViewForTagComponent implements OnInit {
           response => this.results = response,
           error => alert(error.error.message));
     });
+  }
 
-
+  navigateTo(article: Article): void {
+    const regex = /\ /gi;
+    const buildTitle = article.title.replace(regex, '-');
+    const postType = article.type;
+    this.router.navigate(['/' + postType + 's/', article.id], { queryParams: { title: buildTitle } });
   }
 
 }

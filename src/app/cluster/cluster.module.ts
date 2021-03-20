@@ -20,9 +20,9 @@ import { TagsComponent } from './components/tags/tags.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ViewForTagComponent } from './components/tags/view-for-tag/view-for-tag.component';
-import { ViewTagResultComponent } from './components/tags/view-tag-result/view-tag-result.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { ViewCourseComponent } from './shared/components/view-course/view-course.component';
+import { ViewArticleClipComponent } from './shared/components/view-article-clip/view-article-clip.component';
 
 
 @NgModule({
@@ -42,9 +42,9 @@ import { ViewCourseComponent } from './shared/components/view-course/view-course
     CommentsComponent,
     TagsComponent,
     ViewForTagComponent,
-    ViewTagResultComponent,
     CoursesComponent,
-    ViewCourseComponent
+    ViewCourseComponent,
+    ViewArticleClipComponent
   ],
   imports: [
     CommonModule,

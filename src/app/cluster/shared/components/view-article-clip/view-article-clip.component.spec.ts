@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewTagResultComponent } from './view-tag-result.component';
+import { ViewArticleClipComponent } from './view-article-clip.component';
 
-describe('ViewTagResultComponent', () => {
-  let component: ViewTagResultComponent;
-  let fixture: ComponentFixture<ViewTagResultComponent>;
+describe('ViewArticleClipComponent', () => {
+  let component: ViewArticleClipComponent;
+  let fixture: ComponentFixture<ViewArticleClipComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewTagResultComponent ]
+      declarations: [ ViewArticleClipComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ViewTagResultComponent);
+    fixture = TestBed.createComponent(ViewArticleClipComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

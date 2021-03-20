@@ -3,6 +3,7 @@ import { Article } from 'src/app/constant/interface/post.interface';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
 import { Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, mergeMap } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'cluster-search',
@@ -19,7 +20,10 @@ export class SearchComponent implements OnInit, OnDestroy {
     resultFound: 0
   };
 
-  constructor(private articlesService: ArticlesService) { }
+  constructor(
+    private articlesService: ArticlesService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
 
@@ -54,6 +58,14 @@ export class SearchComponent implements OnInit, OnDestroy {
       this.searches = [];
     }
   }
+
+  navigateTo(article: Article): void {
+    const regex = /\ /gi;
+    const buildTitle = article.title.replace(regex, '-');
+    const postType = article.type;
+    this.router.navigate(['/' + postType + 's/', article.id], { queryParams: { title: buildTitle } });
+  }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }

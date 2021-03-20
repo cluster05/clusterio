@@ -26,7 +26,10 @@
 <div class="mt-5" *ngIf="searches.length > 0">
   <h3 class="font-bold text-xl">Search Results :</h3>
   <div class="grid grid-cols-1 gap-2">
-    <cluster-view-tag-result *ngFor="let search of searches" [result]="search">
-    </cluster-view-tag-result>
+    <cluster-view-article-clip
+      (clickOnCard)="navigateTo($event)"
+      *ngFor="let search of searches"
+      [result]="search"
+    ></cluster-view-article-clip>
   </div>
 </div>
