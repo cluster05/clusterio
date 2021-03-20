@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Article } from 'src/app/constant/interface/post.interface';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
 
@@ -16,16 +16,17 @@ export class ViewForTagComponent implements OnInit {
   constructor(private route: ActivatedRoute, private articlesService: ArticlesService) { }
 
   ngOnInit(): void {
-    this.searchTag = this.route.snapshot.paramMap.get('tagName') as string;
 
-    if (this.searchTag) {
-      console.log('called');
+    this.route.params.subscribe((params: Params) => {
+      this.searchTag = params.tagName;
 
       this.articlesService.searchArticlesByTagName(this.searchTag)
         .subscribe(
           response => this.results = response,
           error => alert(error.error.message));
-    }
+    });
+
+
   }
 
 }
