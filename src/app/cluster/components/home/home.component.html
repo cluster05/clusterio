@@ -21,7 +21,7 @@
   <div class="dotted-line" *ngIf="courses.length > 0"></div>
   <section id="new-launched" *ngIf="courses.length > 0">
     <h1 class="title">New Courses</h1>
-    <div class="articles">
+    <div class="grid grid-cols-2 gap-4">
       <cluster-course-card
         *ngFor="let course of courses"
         [course]="course"
@@ -32,16 +32,10 @@
   <section id="new-launched" *ngIf="articles.length > 0">
     <h1 class="title">New Articles</h1>
     <div class="grid grid-cols-2 gap-4">
-      <article
+      <cluster-article
         *ngFor="let article of articles"
-        (click)="navigateToArticle(article)"
-      >
-        <img [src]="article.postImageUrl" [alt]="article.title" />
-        <div class="article-content">
-          <title>{{ article.title }}</title>
-          <p>{{ article.description }}</p>
-        </div>
-      </article>
+        [article]="article"
+      ></cluster-article>
     </div>
   </section>
   <div class="dotted-line" *ngIf="snippets.length > 0"></div>

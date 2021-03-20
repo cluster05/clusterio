@@ -30,6 +30,6 @@ export class SingleArticleComponent implements OnInit {
   navigateTo(article: Article): void {
     const regex = /\ /gi;
     const buildTitle = article.title.replace(regex, '-');
-    this.router.navigate(['./', article.id], { relativeTo: this.route, queryParams: { title: buildTitle } });
+    this.router.navigate(['/articles/', article.id], { relativeTo: this.route, queryParams: { title: buildTitle } });
   }
 }
