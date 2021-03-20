@@ -45,7 +45,7 @@ export class ViewPostComponent implements OnInit, OnDestroy {
             this.isContentRetriving = false;
             this.post = response;
           },
-          error => redirectToPageNotFound(this.router, error.error.message)
+          error => redirectToPageNotFound(this.router, this.router.url, error.error.message)
         );
 
 
@@ -56,7 +56,7 @@ export class ViewPostComponent implements OnInit, OnDestroy {
             this.isContentRetriving = false;
             this.post = response;
           },
-          error => redirectToPageNotFound(this.router, error.error.message)
+          error => redirectToPageNotFound(this.router, this.router.url, error.error.message)
         );
     }
   }

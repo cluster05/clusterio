@@ -1,1 +1,16 @@
-<div class="text-9xl text-center">Page Not Found</div>
+<section
+  id="page-not-found"
+  class="w-screen h-screen bg-green-300 text-white flex justify-center items-center text-center"
+>
+  <div class="">
+    <div class="font-bold text-6xl">
+      <span> 404 </span>
+    </div>
+    <div class="mt-5 font-bold text-4xl capitalize">
+      <span>{{ buildError ? buildError : "page not found" }}</span>
+    </div>
+    <button class="btn btn-sm hover:text-green-600" (click)="redirectToHome()">
+      go back
+    </button>
+  </div>
+</section>
