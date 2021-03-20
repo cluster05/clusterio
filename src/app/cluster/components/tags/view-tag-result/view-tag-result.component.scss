@@ -1,5 +1,5 @@
 article {
-  @apply shadow rounded border tracking-wide cursor-pointer;
+  @apply h-full shadow rounded border tracking-wide cursor-pointer;
   .article-content {
     @apply p-4 mb-4;
     title {
