@@ -54,18 +54,15 @@
     </div>
   </section>
   <div class="dotted-line" *ngIf="snippets.length > 0"></div>
-  <section id="new-launched" *ngIf="snippets.length > 0">
-    <h1 class="title">New Snippets</h1>
-    <div class="articles">
-      <article
+
+  <section id="new-launched" *ngIf="articles.length > 0">
+    <h1 class="title">New snippets</h1>
+    <div class="grid grid-cols-3 gap-4">
+      <cluster-view-article-clip
+        (clickOnCard)="navigateToSnippet($event)"
         *ngFor="let snippet of snippets"
-        (click)="navigateToSnippet(snippet)"
-      >
-        <div class="article-content">
-          <title>{{ snippet.title }}</title>
-          <p>{{ snippet.description }}</p>
-        </div>
-      </article>
+        [result]="snippet"
+      ></cluster-view-article-clip>
     </div>
   </section>
 </div>
