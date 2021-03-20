@@ -22,14 +22,11 @@
   <section id="new-launched">
     <h1 class="title">New Courses</h1>
     <div class="articles">
-      <article *ngFor="let item of [1, 2, 3, 4]">
-        <img
-          src="https://fireship.io/courses/stripe-js/img/featured.jpg"
-          alt=""
-        />
+      <article *ngFor="let course of courses">
+        <img [src]="course.courseImageUrl" [alt]="course.title" />
         <div class="article-content">
-          <title>Stripe Payments Master Course</title>
-          <p>Build a fullstack payment solution with Node.js and React.</p>
+          <title>{{ course.title }}</title>
+          <p>{{ course.description }}</p>
         </div>
         <button class="btn btn-sm btn-green">start</button>
       </article>
@@ -39,14 +36,11 @@
   <section id="new-launched">
     <h1 class="title">New Articles</h1>
     <div class="articles">
-      <article *ngFor="let item of [1, 2, 3, 4]">
-        <img
-          src="https://fireship.io/courses/stripe-js/img/featured.jpg"
-          alt=""
-        />
+      <article *ngFor="let article of articles">
+        <img [src]="article.postImageUrl" [alt]="article.title" />
         <div class="article-content">
-          <title>Stripe Payments Master Course</title>
-          <p>Build a fullstack payment solution with Node.js and React.</p>
+          <title>{{ article.title }}</title>
+          <p>{{ article.description }}</p>
         </div>
       </article>
     </div>

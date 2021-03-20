@@ -19,6 +19,10 @@ export class ArticlesService {
     return this.http.get<Article[]>(environment.backendBaseURL + '/articles?type=' + type);
   }
 
+  readNewArticle(type: string): Observable<Article[]> {
+    return this.http.get<Article[]>(environment.backendBaseURL + '/articles/new?type=' + type);
+  }
+
   createArticle(payload: Article): Observable<Article> {
     return this.http.post<Article>(environment.backendBaseURL + '/articles', payload);
   }

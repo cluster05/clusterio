@@ -20,6 +20,11 @@ export class CourseService {
     return this.http.get<Course[]>(environment.backendBaseURL + '/courses');
   }
 
+  readNewCourses(): Observable<Course[]> {
+    return this.http.get<Course[]>(environment.backendBaseURL + '/courses/new');
+  }
+
+
   createCourse(payload: Course): Observable<Course> {
     return this.http.post<Course>(environment.backendBaseURL + '/courses', payload);
   }
