@@ -22,25 +22,16 @@
   <section id="new-launched" *ngIf="courses.length > 0">
     <h1 class="title">New Courses</h1>
     <div class="articles">
-      <article *ngFor="let course of courses">
-        <img [src]="course.courseImageUrl" [alt]="course.title" />
-        <div class="article-content">
-          <title>{{ course.title }}</title>
-          <p>{{ course.description }}</p>
-        </div>
-        <button
-          class="btn btn-sm btn-green"
-          (click)="navigateToCourse(course.id)"
-        >
-          start
-        </button>
-      </article>
+      <cluster-course-card
+        *ngFor="let course of courses"
+        [course]="course"
+      ></cluster-course-card>
     </div>
   </section>
   <div class="dotted-line" *ngIf="articles.length > 0"></div>
   <section id="new-launched" *ngIf="articles.length > 0">
     <h1 class="title">New Articles</h1>
-    <div class="articles">
+    <div class="grid grid-cols-2 gap-4">
       <article
         *ngFor="let article of articles"
         (click)="navigateToArticle(article)"

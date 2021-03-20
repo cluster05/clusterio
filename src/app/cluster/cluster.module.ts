@@ -23,6 +23,7 @@ import { ViewForTagComponent } from './components/tags/view-for-tag/view-for-tag
 import { CoursesComponent } from './components/courses/courses.component';
 import { ViewCourseComponent } from './shared/components/view-course/view-course.component';
 import { ViewArticleClipComponent } from './shared/components/view-article-clip/view-article-clip.component';
+import { CourseCardComponent } from './shared/components/course-card/course-card.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { ViewArticleClipComponent } from './shared/components/view-article-clip/
     ViewForTagComponent,
     CoursesComponent,
     ViewCourseComponent,
-    ViewArticleClipComponent
+    ViewArticleClipComponent,
+    CourseCardComponent
   ],
   imports: [
     CommonModule,

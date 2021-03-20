@@ -76,10 +76,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   }
 
-  navigateToCourse(courseIdType: any): void {
-    const courseId = courseIdType as string;
-    this.router.navigate(['/courses/', courseId]);
-  }
 
   navigateToArticle(article: Article): void {
     const regex = /\ /gi;

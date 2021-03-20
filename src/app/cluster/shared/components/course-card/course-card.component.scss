@@ -1,0 +1,15 @@
+article {
+  @apply h-full p-4 shadow-md rounded border tracking-wide;
+  .article-content {
+    @apply text-center;
+    title {
+      @apply my-4 block font-bold text-gray-700;
+    }
+    p {
+      @apply my-4 text-sm text-gray-600;
+    }
+  }
+  button {
+    @apply w-full;
+  }
+}

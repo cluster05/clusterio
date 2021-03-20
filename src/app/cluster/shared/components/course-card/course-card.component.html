@@ -1,0 +1,10 @@
+<article>
+  <img [src]="course.courseImageUrl" [alt]="course.title" />
+  <div class="article-content">
+    <title>{{ course.title }}</title>
+    <p>{{ course.description }}</p>
+  </div>
+  <button class="btn btn-sm btn-green" (click)="navigateToCourse(course.id)">
+    start
+  </button>
+</article>
