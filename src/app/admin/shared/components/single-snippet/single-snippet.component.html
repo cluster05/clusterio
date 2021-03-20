@@ -2,6 +2,12 @@
   <div class="article-content">
     <title>{{ snippet.title }}</title>
     <p>{{ snippet.description }}</p>
-    <cluster-view-tags [tags]="snippet.tags"></cluster-view-tags>
+    <span
+      class="tag btn-gray"
+      [class]="'tag-' + tag.name"
+      *ngFor="let tag of snippet.tags"
+    >
+      #{{ tag.name }}
+    </span>
   </div>
 </article>
