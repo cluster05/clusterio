@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { PostType } from 'src/app/constant/enum/post.enum';
@@ -30,7 +31,10 @@ export class ViewPostComponent implements OnInit, OnDestroy {
     private articleService: ArticlesService,
     private courseService: CourseService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private meta: Meta,
+    private title: Title
+  ) { }
 
   ngOnInit(): void {
 
@@ -44,6 +48,7 @@ export class ViewPostComponent implements OnInit, OnDestroy {
           response => {
             this.isContentRetriving = false;
             this.post = response;
+            this.buildMeta();
           },
           error => redirectToPageNotFound(this.router, this.router.url, error.error.message)
         );
@@ -55,10 +60,20 @@ export class ViewPostComponent implements OnInit, OnDestroy {
           response => {
             this.isContentRetriving = false;
             this.post = response;
+            this.buildMeta();
           },
           error => redirectToPageNotFound(this.router, this.router.url, error.error.message)
         );
     }
+  }
+
+  buildMeta(): void {
+    this.title.setTitle('Clusterdev.io | ' + this.post.title);
+    this.meta.updateTag({
+      name: 'og:url',
+      content: 'www.clusterdev.io/' + this.post.type + 's/' + this.post.id + '?title=' + this.post.title
+    });
+    this.meta.updateTag({ name: 'description', content: this.post.description });
   }
 
 

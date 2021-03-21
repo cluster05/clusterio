@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Course } from 'src/app/constant/interface/course.interface';
 import { Article } from 'src/app/constant/interface/post.interface';
@@ -22,7 +23,9 @@ export class ViewCourseComponent implements OnInit {
   constructor(
     private courseSerive: CourseService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private meta: Meta,
+    private title: Title
   ) { }
 
   ngOnInit(): void {
@@ -32,10 +35,17 @@ export class ViewCourseComponent implements OnInit {
         response => {
           this.course = response;
           this.articles = this.course.content as Article[];
+          this.buildMeta();
         },
         error => alert(error.error.message)
       );
     }
+  }
+
+  buildMeta(): void {
+    this.title.setTitle('Clusterdev.io | ' + this.course.title);
+    this.meta.updateTag({ name: 'og:url', content: 'www.clusterdev.io/courses/' + this.course.id + '?title=' + this.course.title });
+    this.meta.updateTag({ name: 'description', content: this.course.description });
   }
 
   navigateTolesson(post: Article): void {

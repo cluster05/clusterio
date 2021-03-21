@@ -4,6 +4,7 @@ import { ArticlesService } from 'src/app/shared/services/articles.service';
 import { Subject, Subscription } from 'rxjs';
 import { debounceTime, distinctUntilChanged, mergeMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'cluster-search',
@@ -22,8 +23,15 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   constructor(
     private articlesService: ArticlesService,
-    private router: Router
-  ) { }
+    private router: Router,
+    private title: Title,
+    private meta: Meta
+  ) {
+    title.setTitle('Clusterdev.io | Search');
+    meta.updateTag({ name: 'og:url', content: 'www.clusterdev.io/search' });
+    meta.updateTag({ name: 'description', content: 'Search any article , snippets , courses across all clusterdev.' });
+
+  }
 
   ngOnInit(): void {
 

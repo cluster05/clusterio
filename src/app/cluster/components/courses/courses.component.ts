@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Course } from 'src/app/constant/interface/course.interface';
@@ -17,7 +18,15 @@ export class CoursesComponent implements OnInit, OnDestroy {
   constructor(
     private courseService: CourseService,
     private router: Router,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private title: Title,
+    private meta: Meta
+  ) {
+    title.setTitle('Clusterdev.io | Courses');
+    meta.updateTag({ name: 'og:url', content: 'www.clusterdev.io/courses' });
+    meta.updateTag({ name: 'description', content: 'Get high quality and best course in market for free.' });
+
+  }
 
   ngOnInit(): void {
     this.subscription = this.courseService

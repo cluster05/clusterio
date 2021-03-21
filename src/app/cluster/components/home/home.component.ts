@@ -6,6 +6,7 @@ import { Course } from 'src/app/constant/interface/course.interface';
 import { Article } from 'src/app/constant/interface/post.interface';
 import { ArticlesService } from 'src/app/shared/services/articles.service';
 import { CourseService } from 'src/app/shared/services/course.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'cluster-home',
@@ -27,7 +28,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     private router: Router,
     private route: ActivatedRoute,
     private articlesService: ArticlesService,
-    private courseService: CourseService) { }
+    private courseService: CourseService,
+    private title: Title,
+    private meta: Meta) {
+    title.setTitle('Clusterdev.io');
+    meta.updateTag({ name: 'og:url', content: 'www.clusterdev.io' });
+    meta.updateTag({ name: 'description', content: 'clusterdev.io provide the best quality content for web and app devlopment' });
+
+  }
 
 
   ngOnInit(): void {
