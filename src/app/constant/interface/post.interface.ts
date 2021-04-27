@@ -3,6 +3,7 @@ import { Tag } from './tag.inteface';
 
 export interface Article {
     id?: string;
+    isPrivate?: boolean;
     type: PostType;
     title: string;
     description: string;

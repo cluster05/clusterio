@@ -30,7 +30,7 @@ export class AllPostComponent implements OnInit, OnDestroy {
   }
 
   getPostByType(): void {
-    this.subscription = this.articleService.readAllArticle(this.postType)
+    this.subscription = this.articleService.readAllArticleAdmin(this.postType)
       .subscribe(
         response => {
           this.posts = response;

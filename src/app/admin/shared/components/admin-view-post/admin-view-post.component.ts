@@ -17,6 +17,7 @@ export class AdminViewPostComponent implements OnInit, OnDestroy {
 
   post: Article = {
     type: PostType.ARTICLE,
+    isPrivate: false,
     title: '',
     description: '',
     tags: [],
@@ -35,7 +36,7 @@ export class AdminViewPostComponent implements OnInit, OnDestroy {
 
     const postId = this.route.snapshot.paramMap.get('postId') as string;
 
-    this.subscription = this.articleService.readArticle(postId)
+    this.subscription = this.articleService.readArticleAdmin(postId)
       .subscribe(
         response => {
           this.isContentRetriving = false;

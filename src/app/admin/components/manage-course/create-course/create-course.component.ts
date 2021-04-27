@@ -61,7 +61,7 @@ export class CreateCourseComponent implements OnInit {
   }
 
   getPostOfType(): void {
-    this.articleService.readAllArticle(this.typeOfPostWantToAdd)
+    this.articleService.readAllArticleAdmin(this.typeOfPostWantToAdd)
       .subscribe(
         response => this.posts = response,
         error => alert(error.error.message)
@@ -109,10 +109,6 @@ export class CreateCourseComponent implements OnInit {
       },
         error => alert(error.error.message)
       );
-
-
-
-
   }
 
 }

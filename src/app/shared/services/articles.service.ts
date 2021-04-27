@@ -15,8 +15,16 @@ export class ArticlesService {
     return this.http.get<Article>(environment.backendBaseURL + '/articles/' + articleId);
   }
 
+  readArticleAdmin(articleId: string): Observable<Article> {
+    return this.http.get<Article>(environment.backendBaseURL + '/articles/admin/' + articleId);
+  }
+
   readAllArticle(type: string): Observable<Article[]> {
     return this.http.get<Article[]>(environment.backendBaseURL + '/articles?type=' + type);
+  }
+
+  readAllArticleAdmin(type: string): Observable<Article[]> {
+    return this.http.get<Article[]>(environment.backendBaseURL + '/articles/admin?type=' + type);
   }
 
   readNewArticle(type: string): Observable<Article[]> {

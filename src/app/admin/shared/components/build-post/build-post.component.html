@@ -13,6 +13,18 @@
   </div>
 
   <div class="form-group">
+    <label for="post-is-private">is post private</label>
+    <select
+      id="post-is-private"
+      [(ngModel)]="postBuilder.isPrivate"
+      [disabled]="postUpdatingMode"
+    >
+      <option value="false" selected>false</option>
+      <option value="true">true</option>
+    </select>
+  </div>
+
+  <div class="form-group">
     <label for="post-type">post type</label>
     <select
       id="post-type"

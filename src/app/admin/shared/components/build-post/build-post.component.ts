@@ -22,6 +22,7 @@ export class BuildPostComponent implements OnInit, OnDestroy {
   postUpdatingMode = false;
   postBuilder: Article = {
     content: '',
+    isPrivate: false,
     description: '',
     tags: [],
     title: '',
@@ -38,7 +39,7 @@ export class BuildPostComponent implements OnInit, OnDestroy {
 
     if (postId) {
       this.postUpdatingMode = true;
-      this.subscription = this.articleService.readArticle(postId)
+      this.subscription = this.articleService.readArticleAdmin(postId)
         .subscribe(
           response => {
             this.postBuilder = response;
@@ -76,6 +77,7 @@ export class BuildPostComponent implements OnInit, OnDestroy {
   postPost(): void {
     const buildPost: Article = {
       type: this.postBuilder.type,
+      isPrivate: this.postBuilder.isPrivate,
       title: this.postBuilder.title,
       description: this.postBuilder.description,
       content: this.postBuilder.content,
