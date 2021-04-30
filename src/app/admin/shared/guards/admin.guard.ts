@@ -22,7 +22,7 @@ export class AdminGuard implements CanActivate {
       if (decodeToken.role === 'ADMIN') {
         return true;
       } else {
-        alert('Route authorized for admin only')
+        alert('Route authorized for admin only');
         this.router.navigate(['/']);
         return false;
       }

@@ -75,9 +75,16 @@ export class BuildPostComponent implements OnInit, OnDestroy {
   }
 
   postPost(): void {
+
+    let isPrivate = false;
+
+    if (typeof (this.postBuilder.isPrivate) === 'string') {
+      isPrivate = this.postBuilder.isPrivate === 'true' ? true : false;
+    }
+
     const buildPost: Article = {
       type: this.postBuilder.type,
-      isPrivate: this.postBuilder.isPrivate,
+      isPrivate,
       title: this.postBuilder.title,
       description: this.postBuilder.description,
       content: this.postBuilder.content,

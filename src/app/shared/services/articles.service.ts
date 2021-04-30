@@ -24,6 +24,8 @@ export class ArticlesService {
   }
 
   readAllArticleAdmin(type: string): Observable<Article[]> {
+    console.log('[article admin] hitted');
+
     return this.http.get<Article[]>(environment.backendBaseURL + '/articles/admin?type=' + type);
   }
 
