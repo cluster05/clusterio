@@ -5,7 +5,7 @@ article {
   }
 
   .content {
-    @apply m-4;
+    @apply mx-2 mt-10 mb-20;
     .content-img {
       @apply w-full;
     }
@@ -38,6 +38,14 @@ article {
     }
     .content-content {
       @apply shadow-lg border my-4 px-5 pt-10 pb-20;
+    }
+  }
+}
+
+@screen lg {
+  article {
+    .content {
+      @apply m-4;
     }
   }
 }
