@@ -1,7 +1,6 @@
 #home {
-  @apply w-full h-full;
+  @apply w-full;
   #introduction {
-    @apply flex flex-row-reverse justify-evenly items-center;
     .block1 {
       @apply relative;
 
@@ -33,7 +32,7 @@
     }
   }
   #new-launched {
-    @apply mb-20;
+    @apply mb-20 p-4;
     .title {
       @apply my-5 text-xl text-gray-700 font-bold text-center;
     }
