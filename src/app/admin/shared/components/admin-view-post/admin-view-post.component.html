@@ -11,9 +11,14 @@
         delete post
       </button>
     </div>
-    <button class="ml-auto btn btn-sm btn-outline-gray">
-      {{ post.type }}
-    </button>
+    <div>
+      <button class="ml-auto btn btn-sm btn-outline-gray">
+        {{ post.isPrivate ? "private" : "non-private" }}
+      </button>
+      <button class="ml-auto btn btn-sm btn-outline-gray">
+        {{ post.type }}
+      </button>
+    </div>
   </div>
 
   <article>
