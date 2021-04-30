@@ -46,7 +46,7 @@
 .bar {
   cluster-navbar {
     box-shadow: 4px 0 10px -3px #c1c1c1;
-    @apply w-screen h-14 bg-white block fixed top-0 left-0;
+    @apply w-screen h-14 bg-white block fixed top-0 left-0 z-30;
 
     ul {
       @apply pr-6 text-xl text-gray-500  flex justify-between items-center;
@@ -59,7 +59,7 @@
 
   .bottom-nav-bar {
     box-shadow: 4px 0 10px -3px #c1c1c1;
-    @apply w-screen h-14 bg-white block fixed bottom-0 left-0;
+    @apply w-screen h-14 bg-white block fixed bottom-0 left-0 z-30;
 
     ul {
       @apply px-5 text-xl text-gray-500  w-full h-full flex justify-between items-center;
