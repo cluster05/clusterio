@@ -1,9 +1,9 @@
-<div class="main-title">Search</div>
-<div class="form-group">
+<div class="main-title hidden md:block">Search</div>
+<div class="form-group mt-0 md:mt-4">
   <input
     type="text"
     placeholder="Type here ..."
-    class="text-6xl font-bold"
+    class="text-2xl md:text-4xl lg:text-6xl font-bold"
     #searchWord
     (keyup)="searchPostByWord(searchWord.value)"
   />
