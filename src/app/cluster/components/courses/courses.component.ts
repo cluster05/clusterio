@@ -36,9 +36,11 @@ export class CoursesComponent implements OnInit, OnDestroy {
       );
   }
 
-  navigateToCourse(courseIdType: any): void {
-    const courseId = courseIdType as string;
-    this.router.navigate(['./', courseId], { relativeTo: this.route });
+  navigateToCourse(course: Course): void {
+    const courseId = course.id as string;
+    const regex = /\ /gi;
+    const courseTitle = course.title.replace(regex, '-');
+    this.router.navigate(['./', courseId], { relativeTo: this.route, queryParams: { course: courseTitle } });
 
   }
 
