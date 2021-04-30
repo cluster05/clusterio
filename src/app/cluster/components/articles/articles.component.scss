@@ -1,3 +1,24 @@
+.main-title {
+  @apply text-3xl font-bold;
+}
+
+@screen md {
+  .main-title {
+    @apply text-5xl;
+  }
+}
+
 .articles {
-  @apply grid grid-cols-3 gap-4;
+  @apply grid grid-cols-1 gap-4;
+}
+
+@screen lg {
+  .articles {
+    @apply grid-cols-2;
+  }
+}
+@screen xl {
+  .articles {
+    @apply grid-cols-3;
+  }
 }
