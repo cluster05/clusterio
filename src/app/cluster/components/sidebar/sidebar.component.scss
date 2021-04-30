@@ -49,7 +49,7 @@
     @apply w-screen h-14 bg-white block fixed top-0 left-0;
 
     ul {
-      @apply pr-4 text-2xl text-gray-500  flex justify-between items-center;
+      @apply pr-6 text-xl text-gray-500  flex justify-between items-center;
 
       img {
         @apply w-14 h-full;
@@ -62,11 +62,14 @@
     @apply w-screen h-14 bg-white block fixed bottom-0 left-0;
 
     ul {
-      @apply px-4 text-2xl text-gray-500  w-full h-full flex justify-between items-center;
+      @apply px-5 text-xl text-gray-500  w-full h-full flex justify-between items-center;
+      li {
+        @apply px-6 py-4;
+      }
     }
 
     .active {
-      @apply text-3xl text-gray-700;
+      @apply text-2xl text-gray-700;
     }
   }
 }
