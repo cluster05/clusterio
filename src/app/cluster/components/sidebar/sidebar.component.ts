@@ -17,9 +17,20 @@ export class SidebarComponent implements OnInit {
     { link: 'account', title: 'account', icon: faUser },
   ];
 
+  bottomBarLinks = [
+    { link: 'courses', title: 'courses', icon: faGripfire },
+    { link: 'articles', title: 'articles', icon: faBlog },
+    { link: 'search', title: 'search', icon: faSearch },
+    { link: 'snippets', title: 'snippets', icon: faRssSquare },
+    { link: 'tags', title: 'tags', icon: faTag }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+
+
 
 }

@@ -1,6 +1,6 @@
 .sidebar {
   box-shadow: 4px 0 10px -3px #c1c1c1;
-  @apply w-full h-screen bg-white;
+  @apply w-0 h-0 bg-white hidden;
   li {
     @apply p-4 text-2xl text-gray-500 relative flex items-center;
 
@@ -36,3 +36,49 @@
     @apply text-gray-700;
   }
 }
+
+@screen md {
+  .sidebar {
+    @apply block w-16 h-screen;
+  }
+}
+
+.bar {
+  cluster-navbar {
+    box-shadow: 4px 0 10px -3px #c1c1c1;
+    @apply w-screen h-14 bg-white block fixed top-0 left-0;
+
+    ul {
+      @apply pr-4 text-2xl text-gray-500  flex justify-between items-center;
+
+      img {
+        @apply w-14 h-full;
+      }
+    }
+  }
+
+  .bottom-nav-bar {
+    box-shadow: 4px 0 10px -3px #c1c1c1;
+    @apply w-screen h-14 bg-white block fixed bottom-0 left-0;
+
+    ul {
+      @apply px-4 text-2xl text-gray-500  w-full h-full flex justify-between items-center;
+    }
+
+    .active {
+      @apply text-3xl text-gray-700;
+    }
+  }
+}
+
+@screen md {
+  .bar {
+    @apply hidden;
+    @apply w-0 h-0;
+  }
+}
+
+// .bottom-bar {
+//   box-shadow: 4px 0 10px -3px #c1c1c1;
+//   @apply w-0 h-screen bg-white hidden;
+// }
