@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { TokenService } from '../shared/services/token.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'cluster-admin',
@@ -8,7 +8,16 @@ import { TokenService } from '../shared/services/token.service';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() {
+  constructor(
+    private title: Title,
+    private meta: Meta
+  ) {
+    title.setTitle('Clusterdev | Admin ');
+    meta.addTags([
+      { name: 'keywords', content: 'clusterdev admin , login clusterdev amdin page' },
+      { name: 'description', content: 'clusterdev admin page.' },
+      { name: 'robots', content: 'clusterdev admin , maange clusterdev admin page' }
+    ]);
   }
 
   ngOnInit(): void {
