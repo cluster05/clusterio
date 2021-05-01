@@ -53,7 +53,7 @@ export class AuthComponent implements OnInit, OnDestroy {
         this.loginUser();
       }
     } else {
-      if (this.authForm.get('username')?.value.length > 1 && this.authForm.get('username')?.value.length <= 10) {
+      if (this.authForm.get('username')?.value.length > 1 && this.authForm.get('username')?.value.length <= 15) {
         if (this.authForm.get('email')?.valid && this.authForm.get('password')?.valid) {
           this.registerUser();
         }
