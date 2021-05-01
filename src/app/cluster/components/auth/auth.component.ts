@@ -58,7 +58,7 @@ export class AuthComponent implements OnInit, OnDestroy {
           this.registerUser();
         }
       } else {
-        alert('Invalid username. Username must contain 1 to 10 letter only.');
+        alert('Invalid username. Username must contain 2 to 15 letter only.');
       }
     }
   }
