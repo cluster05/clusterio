@@ -1,0 +1,50 @@
+.sticky {
+  @apply w-screen h-14 bg-white block fixed  left-0 z-30;
+}
+
+.p-ul {
+  @apply text-xl text-gray-500  flex justify-between items-center;
+}
+
+.bar {
+  .top-navbar {
+    box-shadow: 4px 0 10px -3px #c1c1c1;
+    @extend .sticky;
+    @apply top-0;
+
+    ul {
+      @apply pr-6;
+      @extend .p-ul;
+
+      img {
+        @apply w-14 h-full;
+      }
+    }
+  }
+
+  .bottom-navbar {
+    box-shadow: 4px 0 10px -3px #c1c1c1;
+    @extend .sticky;
+    @apply bottom-0;
+
+    ul {
+      @apply px-5 w-full h-full;
+      @extend .p-ul;
+
+      li {
+        @apply px-6 py-4;
+      }
+    }
+
+    .active {
+      @apply text-2xl text-gray-700;
+    }
+  }
+}
+
+@screen md {
+  .bar {
+    @apply hidden;
+    @apply w-0 h-0;
+  }
+}

@@ -1,1 +1,26 @@
-<ng-content></ng-content>
+<div class="bar">
+  <div class="top-navbar">
+    <ul class="top-bar">
+      <li routerLink="/">
+        <img
+          src="./../../../../assets/cluster-icon.png"
+          alt="cluster.io icon"
+        />
+      </li>
+      <li routerLink="account">
+        <fa-icon [icon]="userIcon"></fa-icon>
+      </li>
+    </ul>
+  </div>
+  <div class="bottom-navbar">
+    <ul>
+      <li
+        *ngFor="let link of bottomBarLinks"
+        [routerLink]="link.link"
+        routerLinkActive="active"
+      >
+        <fa-icon [icon]="link.icon"></fa-icon>
+      </li>
+    </ul>
+  </div>
+</div>
