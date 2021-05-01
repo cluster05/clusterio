@@ -43,9 +43,12 @@ export class ViewCourseComponent implements OnInit {
   }
 
   buildMeta(): void {
-    this.title.setTitle('Clusterdev.io | ' + this.course.title);
-    this.meta.updateTag({ name: 'og:url', content: 'www.clusterdev.io/courses/' + this.course.id + '?title=' + this.course.title });
-    this.meta.updateTag({ name: 'description', content: this.course.description });
+    this.title.setTitle('Clusterdev | Course : ' + this.course.title);
+    this.meta.addTags([
+      { name: 'keywords', content: ` ${this.course.title}` },
+      { name: 'description', content: ` this course about the ${this.course.title} and gives knowledge about ${this.course.description}` },
+      { name: 'robots', content: ` ${this.course.title} , ${this.course.description}` }
+    ]);
   }
 
   navigateTolesson(post: Article): void {

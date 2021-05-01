@@ -6,6 +6,7 @@ import { AuthState } from 'src/app/constant/enum/authstate.enum';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { TokenService } from 'src/app/shared/services/token.service';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'cluster-auth',
   templateUrl: './auth.component.html',
@@ -31,7 +32,16 @@ export class AuthComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private authService: AuthService,
     private tokenService: TokenService,
-  ) { }
+    private title: Title,
+    private meta: Meta
+  ) {
+    title.setTitle('Clusterdev | Auth ');
+    meta.addTags([
+      { name: 'keywords', content: 'clusterdev auth , login clusterdev , create new account on clusterdev , clusterdev login ' },
+      { name: 'description', content: 'log in and create new account in clusterdev to get amazing content from cluster newsletter.' },
+      { name: 'robots', content: 'clusterdev auth , login clusterdev , create new account on clusterdev , clusterdev login' }
+    ]);
+  }
 
   ngOnInit(): void {
   }
@@ -43,7 +53,7 @@ export class AuthComponent implements OnInit, OnDestroy {
         this.loginUser();
       }
     } else {
-      if (this.authForm.get('username')?.value.length > 1 && this.authForm.get('username')?.value.length < 10) {
+      if (this.authForm.get('username')?.value.length > 1 && this.authForm.get('username')?.value.length <= 10) {
         if (this.authForm.get('email')?.valid && this.authForm.get('password')?.valid) {
           this.registerUser();
         }

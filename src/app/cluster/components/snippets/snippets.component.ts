@@ -20,10 +20,12 @@ export class SnippetsComponent implements OnInit, OnDestroy {
     private title: Title,
     private meta: Meta
   ) {
-    title.setTitle('Clusterdev.io | Snippets');
-    meta.updateTag({ name: 'og:url', content: 'www.clusterdev.io/snippets' });
-    meta.updateTag({ name: 'description', content: 'Get high quality and best course conentet in market for free.' });
-
+    title.setTitle('Clusterdev | Snippets');
+    meta.addTags([
+      { name: 'keywords', content: 'clusterdev snippets , articles , programming articles , clusterdev posts ' },
+      { name: 'description', content: 'search free courses, articles , snippets avaliable on clusterdev' },
+      { name: 'robots', content: 'posts , clusterdev snippets  , programming blog posts' }
+    ]);
   }
 
 

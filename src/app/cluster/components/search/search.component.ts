@@ -27,10 +27,12 @@ export class SearchComponent implements OnInit, OnDestroy {
     private title: Title,
     private meta: Meta
   ) {
-    title.setTitle('Clusterdev.io | Search');
-    meta.updateTag({ name: 'og:url', content: 'www.clusterdev.io/search' });
-    meta.updateTag({ name: 'description', content: 'Search any article , snippets , courses across all clusterdev.' });
-
+    title.setTitle('Clusterdev | Search ');
+    meta.addTags([
+      { name: 'keywords', content: 'clusterdev search , search coueses , search articles , search snippets ' },
+      { name: 'description', content: 'search free courses, articles , snippets avaliable on clusterdev' },
+      { name: 'robots', content: 'search , seach on clusterdev , clusterdev search' }
+    ]);
   }
 
   ngOnInit(): void {

@@ -31,10 +31,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     private courseService: CourseService,
     private title: Title,
     private meta: Meta) {
-    title.setTitle('Clusterdev.io');
-    meta.updateTag({ name: 'og:url', content: 'www.clusterdev.io' });
-    meta.updateTag({ name: 'description', content: 'clusterdev.io provide the best quality content for web and app devlopment' });
-
+    title.setTitle('Clusterdev | Provide high quality courses, articles and reading material for web developer ');
+    meta.addTags([
+      { name: 'keywords', content: 'clusterdev home , clusterdev' },
+      { name: 'description', content: 'Provide high quality courses, articles and reading material for web developer ' },
+      { name: 'robots', content: 'home page, clusterdev' }
+    ]);
   }
 
 

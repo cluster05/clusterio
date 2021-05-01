@@ -22,10 +22,12 @@ export class CoursesComponent implements OnInit, OnDestroy {
     private title: Title,
     private meta: Meta
   ) {
-    title.setTitle('Clusterdev.io | Courses');
-    meta.updateTag({ name: 'og:url', content: 'www.clusterdev.io/courses' });
-    meta.updateTag({ name: 'description', content: 'Get high quality and best course in market for free.' });
-
+    title.setTitle('Clusterdev | Courses');
+    meta.addTags([
+      { name: 'keywords', content: 'clusterdev courses , course , free course , clusterdev' },
+      { name: 'description', content: 'see all the free and high end course offered by clusterdev' },
+      { name: 'robots', content: 'course page, courses' }
+    ]);
   }
 
   ngOnInit(): void {

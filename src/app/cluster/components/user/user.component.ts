@@ -34,9 +34,12 @@ export class UserComponent implements OnInit {
   }
 
   updateMetatag(): void {
-    this.title.setTitle('Clusterdev.io | ' + this.user.username);
-    this.meta.updateTag({ name: 'og:url', content: 'www.clusterdev.io/' + this.user.username });
-    this.meta.updateTag({ name: 'description', content: 'user : ' + this.user.username });
+    this.title.setTitle(`Clusterdev | ${this.user.username}'s Account`);
+    this.meta.addTags([
+      { name: 'keywords', content: 'clusterdev user account , account , create account to get amazing newsletter from clusterdev' },
+      { name: 'description', content: ` this is ${this.user.username}'s acconut.` },
+      { name: 'robots', content: 'clusterdev user account ' }
+    ]);
   }
 
 

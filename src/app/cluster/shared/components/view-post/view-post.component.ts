@@ -68,12 +68,12 @@ export class ViewPostComponent implements OnInit, OnDestroy {
   }
 
   buildMeta(): void {
-    this.title.setTitle('Clusterdev.io | ' + this.post.title);
-    this.meta.updateTag({
-      name: 'og:url',
-      content: 'www.clusterdev.io/' + this.post.type + 's/' + this.post.id + '?title=' + this.post.title
-    });
-    this.meta.updateTag({ name: 'description', content: this.post.description });
+    this.title.setTitle(`Clusterdev | ${this.post.type} : ${this.post.title}`);
+    this.meta.addTags([
+      { name: 'keywords', content: ` ${this.post.tags.join(' ')}  , ${this.post.title}` },
+      { name: 'description', content: ` this ${this.post.type} is about the ${this.post.title} and gives information about ${this.post.description}` },
+      { name: 'robots', content: `${this.post.tags.join(' ')} , ${this.post.title} , ${this.post.description}` }
+    ]);
   }
 
 

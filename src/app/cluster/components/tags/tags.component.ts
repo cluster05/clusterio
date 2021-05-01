@@ -20,14 +20,18 @@ export class TagsComponent implements OnInit {
     private title: Title,
     private meta: Meta
   ) {
-    title.setTitle('Clusterdev.io | Tags');
-    meta.updateTag({ name: 'og:url', content: 'www.clusterdev.io/tags' });
-    meta.updateTag({ name: 'description', content: 'Search tags for you need from clusterdev.io' });
-
+    title.setTitle('Clusterdev | Tags');
   }
 
   ngOnInit(): void {
-    this.subscriptions.add(this.tagService.readAllTag().subscribe(tags => this.tags = tags));
+    this.subscriptions.add(this.tagService.readAllTag().subscribe(tags => {
+      this.tags = tags;
+      this.meta.addTags([
+        { name: 'keywords', content: `tags , clusterdev tags , search tags , search tag of  ${this.tags.join(' ')}` },
+        { name: 'description', content: 'search courses, articles , snippets by tag name avaliable on clusterdev' },
+        { name: 'robots', content: 'tags , clusterdev tags ' }
+      ]);
+    }));
   }
 
 }
