@@ -19,16 +19,23 @@ export class ArticlesComponent implements OnInit, OnDestroy {
     private articleService: ArticlesService,
     private title: Title,
     private meta: Meta) {
-    title.setTitle('Clusterdev | Articles ');
-    meta.addTags([
-      { name: 'keywords', content: 'clusterdev snippets , articles , programming articles , clusterdev posts ' },
-      { name: 'description', content: 'search free courses, articles , snippets avaliable on clusterdev' },
-      { name: 'robots', content: 'posts , clusterdev articles  , programming blog posts' }
-    ]);
   }
 
 
   ngOnInit(): void {
+
+    this.title.setTitle('Clusterdev | Articles ');
+    this.meta.updateTag(
+      { name: 'keywords', content: 'clusterdev snippets , articles , programming articles , clusterdev posts ' },
+    );
+    this.meta.updateTag(
+
+      { name: 'description', content: 'search free courses, articles , snippets avaliable on clusterdev' },
+    )
+    this.meta.updateTag(
+      { name: 'robots', content: 'posts , clusterdev articles  , programming blog posts' }
+
+    )
 
     this.subscription = this.articleService.readAllArticle(PostType.ARTICLE)
       .subscribe(

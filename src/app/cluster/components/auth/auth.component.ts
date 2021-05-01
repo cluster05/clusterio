@@ -35,15 +35,21 @@ export class AuthComponent implements OnInit, OnDestroy {
     private title: Title,
     private meta: Meta
   ) {
-    title.setTitle('Clusterdev | Auth ');
-    meta.addTags([
-      { name: 'keywords', content: 'clusterdev auth , login clusterdev , create new account on clusterdev , clusterdev login ' },
-      { name: 'description', content: 'log in and create new account in clusterdev to get amazing content from cluster newsletter.' },
-      { name: 'robots', content: 'clusterdev auth , login clusterdev , create new account on clusterdev , clusterdev login' }
-    ]);
+
   }
 
   ngOnInit(): void {
+
+    this.title.setTitle('Clusterdev | Auth ');
+    this.meta.updateTag(
+      { name: 'keywords', content: 'clusterdev auth , login clusterdev , create new account on clusterdev , clusterdev login ' },
+    );
+    this.meta.updateTag(
+      { name: 'description', content: 'log in and create new account in clusterdev to get amazing content from cluster newsletter.' },
+    );
+    this.meta.updateTag(
+      { name: 'robots', content: 'clusterdev auth , login clusterdev , create new account on clusterdev , clusterdev login' }
+    );
   }
 
   login(): void {
@@ -85,5 +91,4 @@ export class AuthComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
 }
