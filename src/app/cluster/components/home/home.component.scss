@@ -22,7 +22,7 @@
       }
     }
     .block2 {
-      @apply p-20 tracking-wide;
+      @apply p-5 py-20 tracking-wide;
       h1 {
         @apply text-5xl font-bold;
       }
@@ -35,6 +35,16 @@
     @apply mb-20 p-4;
     .title {
       @apply my-5 text-xl text-gray-700 font-bold text-center;
+    }
+  }
+}
+
+@screen md {
+  #home {
+    #introduction {
+      .block2 {
+        @apply p-20;
+      }
     }
   }
 }
