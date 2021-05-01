@@ -1,13 +1,11 @@
 .view-post-top-buttons {
   @apply flex justify-between;
 }
+
 article {
   color: #12181b;
   .title {
     @apply text-center text-5xl font-bold;
-  }
-  .dotted-line {
-    @apply my-5 border-b-4 border-gray-200 border-dashed;
   }
   .content {
     @apply m-4;
