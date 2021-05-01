@@ -22,7 +22,8 @@ import { JwtModule } from '@auth0/angular-jwt';
         tokenGetter: () => {
           return localStorage.getItem('access_token');
         },
-        allowedDomains: ["localhost:3000"],
+        allowedDomains: ['api-clusterdev.herokuapp.com'],
+        // allowedDomains: ['localhost:3000'],
       }
     }),
     HttpClientModule,
