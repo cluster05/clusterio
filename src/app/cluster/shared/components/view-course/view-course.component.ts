@@ -23,7 +23,6 @@ export class ViewCourseComponent implements OnInit {
   constructor(
     private courseSerive: CourseService,
     private route: ActivatedRoute,
-    private router: Router,
     private meta: Meta,
     private title: Title
   ) { }
@@ -51,12 +50,6 @@ export class ViewCourseComponent implements OnInit {
     ]);
   }
 
-  navigateTolesson(post: Article): void {
-    const articleId = post.id as string;
-    const regex = /\ /gi;
-    const buildTitle = post.title.replace(regex, '-');
-    this.router.navigate(['./lesson/', articleId], { relativeTo: this.route, queryParams: { title: buildTitle } });
 
-  }
 
 }
