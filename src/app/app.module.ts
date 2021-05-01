@@ -7,6 +7,7 @@ import { QuillModule } from 'ngx-quill';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -22,8 +23,7 @@ import { JwtModule } from '@auth0/angular-jwt';
         tokenGetter: () => {
           return localStorage.getItem('access_token');
         },
-        allowedDomains: ['api-clusterdev.herokuapp.com'],
-        // allowedDomains: ['localhost:3000'],
+        allowedDomains: [environment.allowedDomainURL],
       }
     }),
     HttpClientModule,

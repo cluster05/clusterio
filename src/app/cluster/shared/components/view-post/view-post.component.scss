@@ -1,7 +1,7 @@
 article {
   color: #12181b;
   .title {
-    @apply block text-center text-5xl font-bold;
+    @apply block text-center text-2xl font-bold;
   }
 
   .content {
@@ -42,8 +42,19 @@ article {
   }
 }
 
+@screen md {
+  article {
+    .title {
+      @apply text-4xl;
+    }
+  }
+}
+
 @screen lg {
   article {
+    .title {
+      @apply text-5xl;
+    }
     .content {
       @apply m-4;
     }
