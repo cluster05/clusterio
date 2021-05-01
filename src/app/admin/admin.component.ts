@@ -12,14 +12,14 @@ export class AdminComponent implements OnInit {
     private title: Title,
     private meta: Meta
   ) {
-    title.setTitle('Clusterdev | Admin ');
-    meta.addTags([
+  }
+
+  ngOnInit(): void {
+    this.title.setTitle('Clusterdev | Admin ');
+    this.meta.addTags([
       { name: 'keywords', content: 'clusterdev admin , login clusterdev amdin page' },
       { name: 'description', content: 'clusterdev admin page.' },
       { name: 'robots', content: 'clusterdev admin , maange clusterdev admin page' }
     ]);
-  }
-
-  ngOnInit(): void {
   }
 }
