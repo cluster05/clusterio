@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  backendBaseURL: 'http://localhost:3000'
+  backendBaseURL: 'https://api-clusterdev.herokuapp.com'
 };
