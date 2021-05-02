@@ -1,6 +1,8 @@
 <div class="text-5xl font-bold btn lowercase">#{{ searchTag }}</div>
 <div class="dotted-line"></div>
-<span *ngIf="results.length === 0" class="mt-5 text-3xl font-bold"
+<span
+  *ngIf="results.length === 0 && dataFetched"
+  class="mt-5 text-3xl font-bold"
   >Sorry ! posts for given tag {{ searchTag }} not avaliable.
 </span>
 <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">

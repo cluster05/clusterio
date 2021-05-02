@@ -12,6 +12,7 @@ export class ViewForTagComponent implements OnInit {
 
   searchTag = '';
   results: Article[] = [];
+  dataFetched = false;
 
   constructor(
     private router: Router,
@@ -25,7 +26,10 @@ export class ViewForTagComponent implements OnInit {
 
       this.articlesService.searchArticlesByTagName(this.searchTag)
         .subscribe(
-          response => this.results = response,
+          response => {
+            this.results = response;
+            this.dataFetched = true;
+          },
           error => alert(error.error.message));
     });
   }
